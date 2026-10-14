@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyRepl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#f0f9ff" />
+    </linearGradient>
+    <linearGradient id="oldShingleTear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52525b" />
+      <stop offset="100%" stop-color="#3f3f46" />
+    </linearGradient>
+    <linearGradient id="plywoodDecking" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="50%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="newShingleRepl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="hudShadowRepl" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="900" height="560" fill="url(#skyRepl)" />
+  <path d="M-10 240 Q 50 180 120 220 Q 200 160 280 230 L280 320 L-10 320 Z" fill="#14532d" opacity="0.4" />
+  <path d="M680 240 Q 760 170 840 220 Q 900 180 940 240 L940 320 L680 320 Z" fill="#14532d" opacity="0.4" />
+
+  <!-- MAIN ROOF TEAR-OFF & REPLACEMENT SLOPE -->
+  <!-- Left Side: Old 1990s 3-Tab Shingles Being Stripped Off -->
+  <polygon points="0,520 400,120 450,120 180,560" fill="url(#oldShingleTear)" />
+  <!-- Curling / Broken Shingle Details -->
+  <g stroke="#27272a" stroke-width="2">
+    <line x1="40" y1="460" x2="220" y2="460" stroke-dasharray="15,10" />
+    <line x1="80" y1="400" x2="260" y2="400" stroke-dasharray="20,8" />
+    <line x1="120" y1="340" x2="300" y2="340" stroke-dasharray="12,12" />
+    <line x1="160" y1="280" x2="340" y2="280" stroke-dasharray="18,10" />
+  </g>
+  <!-- Tear-Off Shingle Debris Piles -->
+  <polygon points="120,490 160,475 190,510 140,520" fill="#27272a" stroke="#18181b" />
+  <polygon points="170,450 200,440 220,465 180,470" fill="#27272a" stroke="#18181b" />
+
+  <!-- Center: Exposed CDX Plywood Decking (Sound Wood Inspected) -->
+  <polygon points="170,560 440,120 560,120 330,560" fill="url(#plywoodDecking)" />
+  <!-- CDX Plywood stamp text -->
+  <text x="290" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#78350f" transform="rotate(-40 290 360)">
+    ★ BARE DECK INSPECTION: ZERO ROT CONFIRMED
+  </text>
+  <!-- Galvanized ring-shank nail patterns along rafter lines -->
+  <g fill="#f8fafc" stroke="#475569" stroke-width="0.8">
+    <circle cx="280" cy="380" r="3" />
+    <circle cx="300" cy="350" r="3" />
+    <circle cx="320" cy="320" r="3" />
+    <circle cx="340" cy="290" r="3" />
+    <circle cx="360" cy="260" r="3" />
+  </g>
+
+  <!-- Right Side: Brand New Architectural Shingle Replacement Finished -->
+  <polygon points="320,560 550,120 900,320 740,560" fill="url(#newShingleRepl)" />
+  <!-- Clean, crisp architectural shingle lines -->
+  <g stroke="#000000" stroke-width="2.5">
+    <line x1="380" y1="520" x2="770" y2="380" />
+    <line x1="420" y1="460" x2="800" y2="320" />
+    <line x1="460" y1="400" x2="830" y2="260" />
+    <line x1="500" y1="340" x2="860" y2="200" />
+  </g>
+  <!-- Ridge Vent along apex -->
+  <polygon points="440,120 560,120 560,132 440,132" fill="#F07020" />
+
+  <!-- TEAR-OFF ROOFER OPERATING SHINGLE SHOVEL IN HIGH-VIS -->
+  <g transform="translate(190, 260)">
+    <!-- Safety Line -->
+    <line x1="40" y1="0" x2="240" y2="-140" stroke="#ef4444" stroke-width="4" />
+    <!-- Hardhat -->
+    <ellipse cx="40" cy="10" rx="18" ry="11" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" />
+    <!-- High-Vis Vest -->
+    <path d="M22 22 L58 22 L64 78 L18 78 Z" fill="#F07020" stroke="#c2410c" stroke-width="1.5" />
+    <line x1="34" y1="22" x2="32" y2="78" stroke="#ffffff" stroke-width="5" />
+    <line x1="48" y1="22" x2="50" y2="78" stroke="#ffffff" stroke-width="5" />
+    <!-- Roofer Shingle Tear-Off Shovel (Steel Serrated Blade) -->
+    <line x1="50" y1="60" x2="-20" y2="150" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" />
+    <polygon points="-30,140 -10,165 -15,170 -38,145" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+    <!-- Hand on Shovel -->
+    <rect x="35" y="45" width="16" height="18" rx="4" fill="#334155" />
+  </g>
+
+  <!-- CONTRACTOR CAMERA HUD & GEOTAG OVERLAY -->
+  <g transform="translate(20, 20)" filter="url(#hudShadowRepl)">
+    <rect width="450" height="106" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#F07020" stroke-width="1.5" />
+    <circle cx="20" cy="22" r="5" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="34" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff">
+      LIVE FIELD AUDIT • FULL ROOF TEAR-OFF &amp; REROOF
+    </text>
+    <rect x="360" y="14" width="76" height="18" rx="4" fill="#1D9E75" />
+    <text x="398" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">
+      PHASE 2/3
+    </text>
+    <text x="16" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#f8fafc">
+      <tspan font-weight="800" fill="#F07020">LOCATION:</tspan> Lochmere, South Cary, NC 27518
+    </text>
+    <text x="16" y="68" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#38bdf8">
+      GEO: 35.7368° N, -78.7832° W • SCOPE: Tear-off to Decking
+    </text>
+    <text x="16" y="88" font-family="'Courier New', monospace" font-size="10" font-weight="600" fill="#94a3b8">
+      JOB ID: NC-RPL-27518 | 50-YEAR CERTAINTEED LANDMARK PRO
+    </text>
+  </g>
+
+  <!-- Before / After Divider Visual Stamp -->
+  <g transform="translate(580, 440)" filter="url(#hudShadowRepl)">
+    <rect width="290" height="90" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#F07020" stroke-width="2" />
+    <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#ffffff">
+      ROOF REPLACEMENT CARY NC
+    </text>
+    <text x="20" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">
+      Clean Tear-Off Down to Decking
+    </text>
+    <text x="20" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#1D9E75">
+      100% HOA Architectural Approved
+    </text>
+  </g>
+</svg>

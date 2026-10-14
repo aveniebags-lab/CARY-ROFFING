@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="metalPanelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="25%" stop-color="#94a3b8" />
+      <stop offset="50%" stop-color="#cbd5e1" />
+      <stop offset="75%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <linearGradient id="highTempUnderlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+
+    <filter id="hudShadowMetal" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Bright Carolina Blue Sky -->
+  <rect width="900" height="560" fill="#38bdf8" />
+  <rect width="900" height="560" fill="url(#metalPanelGrad)" opacity="0.1" />
+
+  <!-- STANDING SEAM INSTALLATION FIELD SNAPSHOT -->
+  <!-- Left Side: High-Temperature (260°F) Red Peel-and-Stick Underlayment -->
+  <polygon points="0,560 380,120 500,120 120,560" fill="url(#highTempUnderlay)" />
+  <text x="230" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff" opacity="0.9" transform="rotate(-40 230 360)">
+    ★ HIGH-TEMP (260°F) METAL ROOFING UNDERLAYMENT
+  </text>
+  <!-- Stainless Steel Concealed Expansion Clips Screwed to Deck -->
+  <g transform="translate(190, 420)">
+    <rect x="0" y="0" width="16" height="24" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.5" />
+    <circle cx="8" cy="18" r="2.5" fill="#f8fafc" />
+  </g>
+  <g transform="translate(260, 320)">
+    <rect x="0" y="0" width="16" height="24" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.5" />
+    <circle cx="8" cy="18" r="2.5" fill="#f8fafc" />
+  </g>
+  <g transform="translate(330, 220)">
+    <rect x="0" y="0" width="16" height="24" rx="2" fill="#cbd5e1" stroke="#334155" stroke-width="1.5" />
+    <circle cx="8" cy="18" r="2.5" fill="#f8fafc" />
+  </g>
+
+  <!-- Right Side: 24-Gauge Galvalume Standing Seam Panels Laid Out -->
+  <!-- Panel 1 -->
+  <polygon points="120,560 490,120 570,120 200,560" fill="url(#metalPanelGrad)" stroke="#1e293b" stroke-width="1" />
+  <line x1="120" y1="560" x2="490" y2="120" stroke="#0f172a" stroke-width="5" />
+  <line x1="123" y1="560" x2="493" y2="120" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+
+  <!-- Panel 2 -->
+  <polygon points="200,560 570,120 650,120 280,560" fill="url(#metalPanelGrad)" stroke="#1e293b" stroke-width="1" />
+  <line x1="200" y1="560" x2="570" y2="120" stroke="#0f172a" stroke-width="5" />
+  <line x1="203" y1="560" x2="573" y2="120" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+
+  <!-- Panel 3 -->
+  <polygon points="280,560 650,120 730,120 360,560" fill="url(#metalPanelGrad)" stroke="#1e293b" stroke-width="1" />
+  <line x1="280" y1="560" x2="650" y2="120" stroke="#0f172a" stroke-width="5" />
+  <line x1="283" y1="560" x2="653" y2="120" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+
+  <!-- Panel 4 & 5 (Extending Right) -->
+  <polygon points="360,560 730,120 890,120 520,560" fill="url(#metalPanelGrad)" stroke="#1e293b" stroke-width="1" />
+  <line x1="360" y1="560" x2="730" y2="120" stroke="#0f172a" stroke-width="5" />
+  <line x1="440" y1="560" x2="810" y2="120" stroke="#0f172a" stroke-width="5" />
+
+  <!-- MECHANICAL ROOF SEAMER TOOL CRIMPING VERTICAL SEAM -->
+  <g transform="translate(240, 310)">
+    <!-- Electric / Manual Mechanical Seamer Locking Tool Clamped on Rib -->
+    <rect x="-10" y="-15" width="55" height="30" rx="4" fill="#ef4444" stroke="#991b1b" stroke-width="2" />
+    <circle cx="5" cy="0" r="10" fill="#334155" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="30" cy="0" r="10" fill="#334155" stroke="#ffffff" stroke-width="1.5" />
+    <!-- Pressure Roller Crimp Handles -->
+    <line x1="18" y1="-15" x2="18" y2="-45" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round" />
+    <circle cx="18" cy="-48" r="8" fill="#1e293b" />
+    <!-- Yellow warning label on tool -->
+    <rect x="-4" y="-8" width="22" height="6" fill="#facc15" />
+    <text x="60" y="5" font-family="'Courier New', monospace" font-size="10" font-weight="900" fill="#15803d">
+      DOUBLE-LOCK CRIMP: 180°
+    </text>
+  </g>
+
+  <!-- CONTRACTOR CAMERA HUD & GEOTAG OVERLAY -->
+  <g transform="translate(20, 20)" filter="url(#hudShadowMetal)">
+    <rect width="450" height="106" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#F07020" stroke-width="1.5" />
+    <circle cx="20" cy="22" r="5" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="34" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff">
+      JOB SITE PHOTO • 24-GAUGE STANDING SEAM
+    </text>
+    <rect x="360" y="14" width="76" height="18" rx="4" fill="#1D9E75" />
+    <text x="398" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">
+      CONCEALED
+    </text>
+    <text x="16" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#f8fafc">
+      <tspan font-weight="800" fill="#F07020">LOCATION:</tspan> Regency / Waverly, South Cary, NC 27518
+    </text>
+    <text x="16" y="68" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#38bdf8">
+      GEO: 35.7368° N, -78.7832° W • SPEC: 24-Ga Kynar 500 Galvalume
+    </text>
+    <text x="16" y="88" font-family="'Courier New', monospace" font-size="10" font-weight="600" fill="#94a3b8">
+      FASTENER: Zero Exposed Screws | Hidden Expansion Clips
+    </text>
+  </g>
+
+  <!-- 50+ Year Lifetime Stamp -->
+  <g transform="translate(580, 440)" filter="url(#hudShadowMetal)">
+    <rect width="290" height="90" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#1D9E75" stroke-width="2" />
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#ffffff">
+      STANDING SEAM METAL ROOF
+    </text>
+    <text x="20" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">
+      50-70+ Year Operational Life
+    </text>
+    <text x="20" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#F07020">
+      Class 4 Hail &amp; 150 MPH Wind Rated
+    </text>
+  </g>
+</svg>

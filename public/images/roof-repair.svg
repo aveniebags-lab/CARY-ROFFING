@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shingleTexture" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="40%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="pipeMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="35%" stop-color="#cbd5e1" />
+      <stop offset="70%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="rubberBoot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <filter id="hudShadowRep" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- SHINGLE BACKGROUND (MACRO ROOF CLOSE-UP SNAPSHOT) -->
+  <rect width="900" height="560" fill="url(#shingleTexture)" />
+
+  <!-- Shingle Course Lines & Mineral Granules Texture -->
+  <g stroke="#000000" stroke-width="3" opacity="0.7">
+    <line x1="0" y1="120" x2="900" y2="120" />
+    <line x1="0" y1="260" x2="900" y2="260" />
+    <line x1="0" y1="400" x2="900" y2="400" />
+    <line x1="0" y1="520" x2="900" y2="520" />
+    <!-- Vertical Shingle Keyways -->
+    <line x1="220" y1="120" x2="220" y2="260" />
+    <line x1="680" y1="120" x2="680" y2="260" />
+    <line x1="440" y1="260" x2="440" y2="400" />
+    <line x1="160" y1="400" x2="160" y2="520" />
+    <line x1="720" y1="400" x2="720" y2="520" />
+  </g>
+
+  <!-- LEAK REPAIR POINT: REPLACING FAILED ROOF PIPE VENT BOOT -->
+  <g transform="translate(420, 180)">
+    <!-- Old cracked rubber cutout outline on shingles -->
+    <ellipse cx="60" cy="140" rx="90" ry="42" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4" />
+    <text x="60" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#f87171" text-anchor="middle">
+      CRACKED 1990s NEOPRENE (LEAK ORIGIN)
+    </text>
+
+    <!-- Metal Flashing Base Plate of Pipe Boot -->
+    <polygon points="-40,140 160,140 180,210 -60,210" fill="url(#pipeMetal)" stroke="#0f172a" stroke-width="1.5" />
+
+    <!-- PVC / Cast Iron Plumbing Stack Pipe extending up -->
+    <rect x="38" y="20" width="44" height="130" fill="url(#pipeMetal)" rx="2" stroke="#0f172a" stroke-width="2" />
+    <!-- Pipe opening -->
+    <ellipse cx="60" cy="20" rx="22" ry="6" fill="#0f172a" stroke="#cbd5e1" stroke-width="1" />
+
+    <!-- Brand New UV-Resistant Lifetime Silicone Collar Shield (Green highlight) -->
+    <ellipse cx="60" cy="120" rx="38" ry="16" fill="url(#rubberBoot)" stroke="#166534" stroke-width="2" />
+    <ellipse cx="60" cy="120" rx="22" ry="7" fill="#14532d" />
+    
+    <!-- Fresh Polyurethane Sealant Bead Around Base (Orange Sealant Line) -->
+    <ellipse cx="60" cy="142" rx="46" ry="18" fill="none" stroke="#F07020" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  <!-- FIELD TECHNICIAN HANDS & PROFESSIONAL CAULK DISPENSER -->
+  <g transform="translate(240, 260)">
+    <!-- Work Gloves (High-dexterity safety nitrile/leather) -->
+    <!-- Left Hand Holding Pipe Base steady -->
+    <path d="M120 110 Q 150 90 170 120 Q 160 140 130 135 Z" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+    <rect x="135" y="105" width="28" height="12" rx="3" fill="#F07020" opacity="0.9" />
+
+    <!-- Right Hand Triggering Heavy-Duty Caulk Dispenser Gun -->
+    <g transform="translate(60, 40) rotate(-25)">
+      <!-- Aluminum Caulk Barrel & Polyurethane Sausage Cartridge -->
+      <rect x="0" y="0" width="130" height="24" rx="4" fill="#cbd5e1" stroke="#334155" stroke-width="2" />
+      <rect x="2" y="2" width="126" height="20" fill="#94a3b8" />
+      <text x="65" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#0f172a" text-anchor="middle">
+        INDUSTRIAL POLYURETHANE
+      </text>
+      <!-- Gun Handle & Trigger -->
+      <rect x="120" y="15" width="18" height="55" rx="3" fill="#1e293b" />
+      <path d="M110 35 Q 120 45 110 55" stroke="#ef4444" stroke-width="3" fill="none" />
+      <!-- Nozzle with fresh orange bead emerging -->
+      <polygon points="0,6 -20,12 0,18" fill="#ffffff" stroke="#334155" stroke-width="1.5" />
+      <circle cx="-22" cy="12" r="5" fill="#F07020" />
+    </g>
+  </g>
+
+  <!-- DIGITAL MOISTURE METER TELEMETRY READOUT (JOB TEST VERIFICATION) -->
+  <g transform="translate(620, 290)" filter="url(#hudShadowRep)">
+    <rect width="240" height="140" rx="10" fill="#0f172a" stroke="#F07020" stroke-width="2" />
+    <rect x="15" y="15" width="210" height="50" rx="6" fill="#141c27" stroke="#334155" stroke-width="1.5" />
+    <!-- LCD Screen -->
+    <text x="25" y="32" font-family="'Courier New', monospace" font-size="9" font-weight="700" fill="#94a3b8">
+      ATTIC SUB-DECK MOISTURE:
+    </text>
+    <!-- Moisture reading drop from 18.4% to 4.1% -->
+    <text x="25" y="55" font-family="'Courier New', monospace" font-size="20" font-weight="900" fill="#22c55e">
+      4.1% <tspan font-size="11" fill="#94a3b8">[DRY / PASSED]</tspan>
+    </text>
+    <text x="16" y="85" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#ffffff">
+      PRE-REPAIR READING: <tspan fill="#ef4444">18.4% LEAK</tspan>
+    </text>
+    <text x="16" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#cbd5e1">
+      STATUS: Sealed &amp; Water Tested
+    </text>
+    <text x="16" y="122" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#F07020">
+      WARRANTY: 10-YEAR LEAK-FREE SEAL
+    </text>
+  </g>
+
+  <!-- CONTRACTOR CAMERA HUD & GEOTAG OVERLAY -->
+  <g transform="translate(20, 20)" filter="url(#hudShadowRep)">
+    <rect width="440" height="106" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#F07020" stroke-width="1.5" />
+    <circle cx="20" cy="22" r="5" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="34" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff">
+      JOB SITE MACRO PHOTO • LEAK REPAIR AUDIT
+    </text>
+    <rect x="350" y="14" width="76" height="18" rx="4" fill="#1D9E75" />
+    <text x="388" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">
+      FIXED
+    </text>
+    <text x="16" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#f8fafc">
+      <tspan font-weight="800" fill="#F07020">LOCATION:</tspan> Downtown Historic Cary, NC 27511
+    </text>
+    <text x="16" y="68" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#38bdf8">
+      GEO: 35.7725° N, -78.7812° W • LEAK TYPE: Pipe Boot Split
+    </text>
+    <text x="16" y="88" font-family="'Courier New', monospace" font-size="10" font-weight="600" fill="#94a3b8">
+      REPAIR ID: NC-REP-27511 | 24/7 EMERGENCY LEAK RESOLVED
+    </text>
+  </g>
+
+  <!-- Focus Viewfinder Reticle -->
+  <g stroke="#F07020" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M470 190 h20 v20 M550 190 h-20 v20 M470 270 h20 v-20 M550 270 h-20 v-20" />
+    <circle cx="510" cy="230" r="3" fill="#F07020" />
+  </g>
+</svg>

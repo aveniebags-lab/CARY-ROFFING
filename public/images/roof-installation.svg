@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradInst" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#f0f9ff" />
+    </linearGradient>
+    <linearGradient id="deckWoodInst" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c28b49" />
+      <stop offset="50%" stop-color="#a86e2d" />
+      <stop offset="100%" stop-color="#be8746" />
+    </linearGradient>
+    <linearGradient id="blueUnderlay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#075985" />
+    </linearGradient>
+    <linearGradient id="iceShieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="hudShadowInst" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="900" height="560" fill="url(#skyGradInst)" />
+  <!-- Wake County Pines in Background -->
+  <path d="M-10 260 L30 180 L70 260 Z M50 260 L90 170 L130 260 Z M760 260 L800 170 L840 260 Z M820 260 L860 190 L900 260 Z" fill="#065f46" opacity="0.35" />
+
+  <!-- ROOF DECK SUBSTRATE CUTAWAY (REALISTIC INSTALLATION FIELD SHOT) -->
+  <!-- Layer 1: Bare CDX Plywood Sheathing -->
+  <polygon points="0,500 400,140 550,140 150,560" fill="url(#deckWoodInst)" stroke="#78350f" stroke-width="2" />
+  <text x="140" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#78350f" opacity="0.85" transform="rotate(-42 140 380)">
+    ★ APA RATED CDX PLYWOOD DECKING (1/2" EXTERIOR)
+  </text>
+  <!-- H-Clips between sheets -->
+  <rect x="235" y="275" width="8" height="12" fill="#cbd5e1" stroke="#475569" stroke-width="1" />
+  <rect x="180" y="335" width="8" height="12" fill="#cbd5e1" stroke="#475569" stroke-width="1" />
+
+  <!-- Layer 2: Ice & Water Shield in Valley & Eave -->
+  <polygon points="120,560 520,140 620,140 220,560" fill="url(#iceShieldGrad)" />
+  <text x="320" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#94a3b8" transform="rotate(-42 320 380)">
+    HIGH-TEMP SELF-ADHERING ICE &amp; WATER BARRIER
+  </text>
+
+  <!-- Layer 3: High-Tensile Blue Synthetic Underlayment -->
+  <polygon points="200,560 600,140 760,140 360,560" fill="url(#blueUnderlay)" />
+  <!-- Fastener Cap Nails on synthetic -->
+  <g fill="#f59e0b" stroke="#78350f" stroke-width="1">
+    <circle cx="340" cy="420" r="4.5" />
+    <circle cx="380" cy="380" r="4.5" />
+    <circle cx="430" cy="330" r="4.5" />
+    <circle cx="480" cy="280" r="4.5" />
+    <circle cx="530" cy="230" r="4.5" />
+    <circle cx="580" cy="180" r="4.5" />
+  </g>
+
+  <!-- Layer 4: New Shingles Being Fastened (Dimensional Charcoal Blend) -->
+  <polygon points="340,560 740,140 920,300 700,560" fill="#1e293b" />
+  <!-- Shingle courses -->
+  <g stroke="#0f172a" stroke-width="2">
+    <line x1="400" y1="520" x2="820" y2="340" />
+    <line x1="460" y1="460" x2="840" y2="290" />
+    <line x1="520" y1="400" x2="860" y2="240" />
+    <line x1="580" y1="340" x2="880" y2="190" />
+  </g>
+
+  <!-- Nail Fastening Line (6-Nail Wake County Wind Code) -->
+  <g fill="#F07020" stroke="#ffffff" stroke-width="1">
+    <circle cx="490" cy="425" r="4" />
+    <circle cx="510" cy="410" r="4" />
+    <circle cx="530" cy="395" r="4" />
+    <circle cx="550" cy="380" r="4" />
+    <circle cx="570" cy="365" r="4" />
+    <circle cx="590" cy="350" r="4" />
+  </g>
+  <text x="540" y="340" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#F07020">
+    6-NAIL 130 MPH ZONE
+  </text>
+
+  <!-- TECHNICIAN INSTALLING STARTER STRIP WITH NAIL GUN -->
+  <g transform="translate(480, 200)">
+    <!-- Safety Harness tether -->
+    <line x1="50" y1="20" x2="180" y2="-80" stroke="#ef4444" stroke-width="4" />
+    <!-- Yellow Hardhat -->
+    <ellipse cx="40" cy="25" rx="20" ry="12" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" />
+    <!-- High-Vis Vest -->
+    <path d="M22 38 L62 38 L68 95 L18 95 Z" fill="#F07020" stroke="#c2410c" stroke-width="1.5" />
+    <rect x="25" y="52" width="38" height="6" fill="#ffffff" />
+    <!-- Arms with Pneumatic Nailer -->
+    <path d="M58 48 L100 75 L90 88 L52 62 Z" fill="#ea580c" />
+    <!-- Coil Nail Gun -->
+    <rect x="95" y="70" width="24" height="12" rx="2" fill="#1e293b" />
+    <circle cx="118" cy="80" r="14" fill="#334155" />
+    <rect x="108" y="64" width="20" height="7" fill="#eab308" />
+    <!-- Air Hose -->
+    <path d="M98 82 Q 70 120 80 160 Q 90 200 50 250" stroke="#facc15" stroke-width="4" fill="none" />
+  </g>
+
+  <!-- CONTRACTOR CAMERA HUD & GEOTAG OVERLAY -->
+  <g transform="translate(20, 20)" filter="url(#hudShadowInst)">
+    <rect width="430" height="106" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#F07020" stroke-width="1.5" />
+    <circle cx="20" cy="22" r="5" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="34" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff">
+      FIELD SNAPSHOT • ROOF INSTALLATION AUDIT
+    </text>
+    <rect x="340" y="14" width="76" height="18" rx="4" fill="#1D9E75" />
+    <text x="378" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">
+      PASS 100%
+    </text>
+    <text x="16" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#f8fafc">
+      <tspan font-weight="800" fill="#F07020">LOCATION:</tspan> Prestonwood, North Cary, NC 27513
+    </text>
+    <text x="16" y="68" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#38bdf8">
+      GEO: 35.8010° N, -78.8051° W • PITCH: 8:12 • DECK: 1/2" CDX
+    </text>
+    <text x="16" y="88" font-family="'Courier New', monospace" font-size="10" font-weight="600" fill="#94a3b8">
+      INSPECTION ID: NC-INST-27513 | 6-NAIL ZONE 4A COMPLIANT
+    </text>
+  </g>
+
+  <!-- Quality Stamp -->
+  <g transform="translate(620, 450)" filter="url(#hudShadowInst)">
+    <rect width="260" height="85" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#1D9E75" stroke-width="2" />
+    <text x="20" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#ffffff">
+      NEW ROOF INSTALLATION
+    </text>
+    <text x="20" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">
+      Town of Cary Permit Verified
+    </text>
+    <text x="20" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#1D9E75">
+      NC LIC #82914 • LIFETIME SYSTEM
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <!-- Night Storm Atmosphere -->
+    <linearGradient id="stormNightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="60%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- Blue Commercial Tarp (Heavy Duty Polyethylene) -->
+    <linearGradient id="blueTarpMat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+
+    <filter id="hudShadowStorm" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Emergency Floodlight Beam -->
+    <radialGradient id="workLightBeam" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#fef08a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Storm Sky -->
+  <rect width="900" height="560" fill="url(#stormNightSky)" />
+
+  <!-- Rain Streaks in Flashlight Beam -->
+  <g stroke="#93c5fd" stroke-width="1.5" opacity="0.4" stroke-linecap="round">
+    <line x1="80" y1="40" x2="60" y2="90" />
+    <line x1="180" y1="70" x2="160" y2="120" />
+    <line x1="320" y1="50" x2="300" y2="100" />
+    <line x1="520" y1="60" x2="500" y2="110" />
+    <line x1="720" y1="40" x2="700" y2="90" />
+    <line x1="840" y1="80" x2="820" y2="130" />
+  </g>
+
+  <!-- ROOF STRUCTURE (STORM DAMAGE ZONE) -->
+  <polygon points="50,560 400,160 850,560" fill="#1e293b" stroke="#0f172a" stroke-width="3" />
+
+  <!-- PINE TREE LIMB IMPACT DAMAGE (PUNCTURE ZONE) -->
+  <g transform="translate(480, 260)">
+    <!-- Broken Tree Limb Branches -->
+    <path d="M-80 -40 Q -20 -10 60 -60 Q 120 -80 180 -50" stroke="#78350f" stroke-width="16" stroke-linecap="round" fill="none" />
+    <path d="M20 -25 Q 60 10 90 40" stroke="#78350f" stroke-width="10" stroke-linecap="round" fill="none" />
+    <!-- Pine Needles on Limb -->
+    <path d="M120 -80 L140 -100 M130 -75 L155 -90 M140 -70 L165 -80" stroke="#15803d" stroke-width="3" />
+    <path d="M70 15 L95 25 M80 25 L105 35" stroke="#15803d" stroke-width="3" />
+    <!-- Puncture Decking Hole (Prior to Tarp) -->
+    <ellipse cx="20" cy="30" rx="35" ry="18" fill="#451a03" stroke="#ef4444" stroke-width="2" />
+  </g>
+
+  <!-- HEAVY-DUTY COMMERCIAL BLUE WATERPROOF TARP OVER DAMAGED SLOPE -->
+  <polygon points="340,160 620,160 780,500 420,500" fill="url(#blueTarpMat)" stroke="#1d4ed8" stroke-width="2" />
+  <!-- Tarp Weave Texture Lines -->
+  <g stroke="#3b82f6" stroke-width="1" opacity="0.4">
+    <line x1="360" y1="180" x2="440" y2="500" />
+    <line x1="420" y1="180" x2="500" y2="500" />
+    <line x1="480" y1="180" x2="560" y2="500" />
+    <line x1="540" y1="180" x2="620" y2="500" />
+    <line x1="600" y1="180" x2="680" y2="500" />
+  </g>
+
+  <!-- 2X4 WOODEN FURRING STRIPS SECURING TARP EDGES (NON-DAMAGING BALLAST SYSTEM) -->
+  <!-- Top 2x4 Lumber Strip -->
+  <polygon points="350,170 610,170 610,184 350,184" fill="#d97706" stroke="#78350f" stroke-width="1.5" />
+  <circle cx="380" cy="177" r="2.5" fill="#f8fafc" />
+  <circle cx="480" cy="177" r="2.5" fill="#f8fafc" />
+  <circle cx="580" cy="177" r="2.5" fill="#f8fafc" />
+
+  <!-- Diagonal Batten 2x4 Strips -->
+  <line x1="390" y1="184" x2="450" y2="490" stroke="#d97706" stroke-width="8" stroke-linecap="square" />
+  <line x1="550" y1="184" x2="610" y2="490" stroke="#d97706" stroke-width="8" stroke-linecap="square" />
+
+  <!-- Heavy-Duty Sandbags Ballasting Lower Eave -->
+  <rect x="420" y="480" width="45" height="24" rx="8" fill="#ca8a04" stroke="#78350f" stroke-width="1.5" />
+  <rect x="480" y="480" width="45" height="24" rx="8" fill="#ca8a04" stroke="#78350f" stroke-width="1.5" />
+  <rect x="540" y="480" width="45" height="24" rx="8" fill="#ca8a04" stroke="#78350f" stroke-width="1.5" />
+  <rect x="600" y="480" width="45" height="24" rx="8" fill="#ca8a04" stroke="#78350f" stroke-width="1.5" />
+
+  <!-- EMERGENCY LIGHTING TRIPOD FLOODLIGHT (WORKLIGHT BEAM OVER ROOF) -->
+  <g transform="translate(140, 320)">
+    <!-- Tripod Legs -->
+    <line x1="60" y1="60" x2="20" y2="180" stroke="#cbd5e1" stroke-width="4" />
+    <line x1="60" y1="60" x2="60" y2="180" stroke="#cbd5e1" stroke-width="4" />
+    <line x1="60" y1="60" x2="100" y2="180" stroke="#cbd5e1" stroke-width="4" />
+    <!-- Yellow LED Dual Floodlight Heads -->
+    <rect x="35" y="40" width="50" height="24" rx="4" fill="#facc15" stroke="#ca8a04" stroke-width="2" />
+    <circle cx="50" cy="52" r="7" fill="#ffffff" />
+    <circle cx="70" cy="52" r="7" fill="#ffffff" />
+    <!-- Light Cone Projection -->
+    <polygon points="85,52 480,-60 620,240 85,60" fill="url(#workLightBeam)" opacity="0.65" />
+  </g>
+
+  <!-- EMERGENCY ROOFER IN ACTION SECURING BATTER STRIP -->
+  <g transform="translate(320, 240)">
+    <ellipse cx="35" cy="15" rx="16" ry="10" fill="#facc15" />
+    <!-- High-Vis Vest with 3M reflective tape -->
+    <path d="M18 25 L52 25 L58 75 L14 75 Z" fill="#F07020" />
+    <rect x="18" y="42" width="36" height="5" fill="#ffffff" />
+    <!-- Reaching down with drill driver -->
+    <path d="M48 35 L80 65 L72 75 L42 45 Z" fill="#ea580c" />
+    <rect x="75" y="65" width="16" height="18" rx="2" fill="#1e293b" />
+  </g>
+
+  <!-- CONTRACTOR CAMERA HUD & GEOTAG OVERLAY -->
+  <g transform="translate(20, 20)" filter="url(#hudShadowStorm)">
+    <rect width="450" height="106" rx="10" fill="#0f172a" fill-opacity="0.92" stroke="#ef4444" stroke-width="2" />
+    <circle cx="20" cy="22" r="5" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="34" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#ffffff">
+      24/7 EMERGENCY DISPATCH • STORM DAMAGE STABILIZATION
+    </text>
+    <rect x="360" y="14" width="76" height="18" rx="4" fill="#ef4444" />
+    <text x="398" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">
+      SECURED
+    </text>
+    <text x="16" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#f8fafc">
+      <tspan font-weight="800" fill="#F07020">LOCATION:</tspan> Amberly, West Cary, NC 27519
+    </text>
+    <text x="16" y="68" font-family="'Courier New', monospace" font-size="11" font-weight="700" fill="#38bdf8">
+      GEO: 35.8115° N, -78.8890° W • DISPATCH TIME: 42 MIN
+    </text>
+    <text x="16" y="88" font-family="'Courier New', monospace" font-size="10" font-weight="600" fill="#94a3b8">
+      HAZARD: Pine Limb Puncture | 10-Mil Commercial Tarp Installed
+    </text>
+  </g>
+
+  <!-- Bottom Insurance Compliance Stamp -->
+  <g transform="translate(560, 440)" filter="url(#hudShadowStorm)">
+    <rect width="315" height="95" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#ef4444" stroke-width="2" />
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#ffffff">
+      INSURANCE MITIGATION PASSED
+    </text>
+    <text x="20" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#cbd5e1">
+      Duty to Mitigate Compliance Verified
+    </text>
+    <text x="20" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#F07020">
+      Zero Interior Water Penetration Guaranteed
+    </text>
+  </g>
+</svg>
