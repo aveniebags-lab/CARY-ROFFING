@@ -16,10 +16,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
     issueDetails: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [calling, setCalling] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    setCalling(true);
+    // Immediately trigger phone call to the company hotline
+    try {
+      window.location.href = `tel:${COMPANY_DETAILS.mainPhoneRaw}`;
+    } catch (err) {
+      console.log('Call trigger error:', err);
+    }
   };
 
   return (
@@ -34,16 +42,25 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
 
         {submitted ? (
           <div className="bg-white/10 border border-[#1D9E75] rounded-2xl p-8 text-center text-white backdrop-blur-sm animate-fadeIn">
-            <div className="w-14 h-14 bg-[#1D9E75] text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4 font-bold">
-              ✓
+            <div className="w-16 h-16 bg-[#1D9E75] text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-4 font-bold shadow-lg animate-pulse">
+              📞
             </div>
-            <h3 className="text-white text-2xl font-bold mb-2">Inspection Request Received!</h3>
-            <p className="text-white/80 max-w-md mx-auto mb-6 text-sm">
-              Thank you, <strong>{formData.fullName}</strong>. Our local Cary roofing dispatch network is reviewing your request ({formData.zipCode || 'Cary Area'}) and a dedicated specialist will call you at <strong>{formData.phone}</strong> promptly to confirm your free inspection time.
+            <div className="inline-block px-3 py-1 bg-[#F07020] text-white font-bold text-xs uppercase tracking-wider rounded-full mb-3">
+              Calling Now • Direct Dispatch Line
+            </div>
+            <h3 className="text-white text-2xl md:text-3xl font-extrabold mb-2">Connecting Your Call Now!</h3>
+            <p className="text-white/90 max-w-lg mx-auto mb-4 text-sm leading-relaxed">
+              Thank you, <strong>{formData.fullName}</strong>. Your request for <strong>{formData.serviceInterest}</strong> ({formData.zipCode || 'Cary, NC'}) has been registered. Your phone is now opening to dial our Cary dispatcher directly at <strong>{COMPANY_DETAILS.mainPhone}</strong>.
             </p>
+            <div className="p-3 bg-black/30 rounded-xl max-w-md mx-auto mb-6 text-xs text-white/80 border border-white/10">
+              ⚡ If the automatic call prompt was blocked by your browser, tap the button below to connect instantly:
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary">
-                📞 Need Urgent Help? Call {COMPANY_DETAILS.mainPhone}
+              <a 
+                href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} 
+                className="btn btn-primary !text-base !py-3 !px-6 animate-bounce"
+              >
+                📞 Dial {COMPANY_DETAILS.mainPhone} Now
               </a>
               <button 
                 type="button" 

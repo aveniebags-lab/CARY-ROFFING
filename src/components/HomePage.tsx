@@ -60,15 +60,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary btn-lg">
                 Call {COMPANY_DETAILS.mainPhone}
               </a>
-              {onOpenEstimator && (
-                <button
-                  type="button"
-                  onClick={onOpenEstimator}
-                  className="btn btn-secondary !mt-0 !py-3.5 !px-6 border-2 border-black/20 hover:border-[#F07020] text-black font-bold"
-                >
-                  ⚡ Instant Roof Cost Calculator
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
+                className="btn btn-secondary !mt-0 !py-3.5 !px-6 border-2 border-black/20 hover:border-[#F07020] text-black font-bold flex items-center gap-1.5 cursor-pointer shadow-xs"
+              >
+                <span>🧮</span>
+                <span>Cary NC Roofing Calculator</span>
+              </button>
             </div>
             
             <div className="sub-guarantee">
@@ -76,7 +75,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
             </div>
             
             <div className="trust-badges">
-              <span className="badge-item">✓ Wake County Local Experts</span>
+              <span className="badge-item">✓ Cary, NC Certified Roofers</span>
               <span className="badge-item">✓ Premium Materials &amp; Workmanship</span>
               <span className="badge-item">✓ 50-Year Comprehensive Warranties</span>
             </div>
@@ -226,7 +225,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="mb-3 rounded-xl overflow-hidden border border-[#e8e4df] relative group">
                 <img 
                   src="/images/roof-repair.webp" 
-                  alt="Roof Repair Cary NC - Precision field leak detection, pipe collar boot fixes, and storm damage repairs in Cary NC benchmarked against top ranking roofers"
+                  alt="Roof Repair Cary NC - Precision field leak detection, pipe collar boot fixes, and storm damage repairs in Cary NC"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   referrerPolicy="no-referrer"
@@ -539,15 +538,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
         </div>
       </section>
 
-      {/* ================= SECTION 7: FULL SERVICE DIRECTORY & TARGET KEYWORDS (H2) ================= */}
-      <section id="keywords" className="section">
+      {/* ================= SECTION 7: CERTIFIED ROOFING SERVICES DIRECTORY (H2) ================= */}
+      <section id="services-directory" className="section">
         <div className="container">
           <div className="section-header">
-            <div className="kicker">Service Directory &amp; Keyword Coverage</div>
+            <div className="kicker">Our Services</div>
             <h2>
-              Cary NC Roofing Service Directory &amp; <span className="font-serif-accent">Target Keywords</span>
+              Cary NC Roofing Service Directory &amp; <span className="font-serif-accent">Certified Solutions</span>
             </h2>
-            <p>Direct internal navigation to our specialized service pages for homeowners, building managers, and insurance adjusters in Cary, NC.</p>
+            <p>Explore our specialized residential and commercial roofing solutions, precision-engineered for Cary homeowners, property managers, and local businesses.</p>
           </div>
 
           <div className="grid grid-3">
@@ -575,10 +574,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
             ))}
           </div>
 
-          {/* Prominent Keyword Anchors for Search Engines & Users */}
+          {/* Certified Service Highlights for Homeowners & Property Owners */}
           <div className="mt-8 p-6 bg-[#FAF8F4] border border-[#e8e4df] rounded-2xl">
             <h3 className="text-sm font-bold uppercase tracking-wider text-black mb-3">
-              Frequently Searched Roofing Services in Cary, North Carolina:
+              Frequently Requested Roofing Solutions in Cary, North Carolina:
             </h3>
             <div className="flex flex-wrap gap-2 text-xs">
               {SEO_AEO_GUIDE.mainKeywords.map((kw, i) => (
@@ -640,7 +639,64 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
         </div>
       </section>
 
-      {/* ================= SECTION 9: BOOK / CONTACT ================= */}
+      {/* ================= SECTION 9: 5 CARY NEIGHBORHOODS CONTACT & MAP PINS ================= */}
+      <section className="section bg-[#FAF8F4] border-t border-[#e8e4df]">
+        <div className="container">
+          <div className="section-header">
+            <div className="kicker">Direct Local Contact &amp; Neighborhood Hubs</div>
+            <h2>
+              Contact CaryRoofing Across <span className="font-serif-accent">5 Local Neighborhoods</span>
+            </h2>
+            <p>Select your local Cary zip code or neighborhood below to view our dedicated service pin, map directions, and instant click-to-call phone lines.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {CARY_ZIP_CODES.map((loc) => {
+              const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${loc.areaName} ${loc.zip}`)}`;
+              return (
+                <div 
+                  key={loc.zip}
+                  className="bg-white p-5 rounded-2xl border border-[#e8e4df] shadow-xs flex flex-col justify-between hover:border-[#F07020] transition-all"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="px-2 py-0.5 rounded text-xs font-extrabold bg-[#F07020] text-white">
+                        ZIP {loc.zip}
+                      </span>
+                      <span className="text-[10px] text-[#1D9E75] font-bold">● Active 24/7</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-black mb-1">
+                      {loc.areaName}
+                    </h3>
+                    <p className="text-[11px] text-black/70 mb-3">
+                      {loc.neighborhoods.slice(0, 2).join(', ')}
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 pt-3 border-t border-[#e8e4df]">
+                    <a
+                      href={mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-1.5 px-2 bg-[#FAF8F4] hover:bg-[#FAF8F4]/80 border border-[#e8e4df] text-black text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors"
+                    >
+                      <span>📍 Google Maps Pin ↗</span>
+                    </a>
+                    <a
+                      href={`tel:${loc.phoneRaw}`}
+                      className="w-full py-2 px-2 bg-[#F07020] hover:bg-[#d65f17] text-white text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                    >
+                      <span>📞 Call {loc.phone}</span>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SECTION 10: BOOK / CONTACT ================= */}
       <BookingForm />
     </article>
   );

@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <span>•</span>
             <span>Pre-Screened &amp; Insured Roofers</span>
             <span>•</span>
-            <span>Wake County Local Coverage</span>
+            <span>580 New Waverly Pl, Cary, NC 27518</span>
           </div>
           <div className="mt-4">
             <button
@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
               onClick={onOpenSeoDrawer}
               className="text-xs text-[#F07020] font-bold hover:underline flex items-center gap-1 cursor-pointer"
             >
-              ⚙ Open Technical SEO &amp; Cost Estimator Portal
+              ⚙ CaryRoofing Technical Specifications &amp; Cost Estimator
             </button>
           </div>
         </div>
@@ -88,8 +88,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <span>🕒 Hours: {COMPANY_DETAILS.dispatchHours}</span>
             <button 
               type="button"
+              onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
+              className="text-[#F07020] hover:underline text-left text-xs font-bold mt-1"
+            >
+              🧮 Cary NC Roofing Calculator
+            </button>
+            <button 
+              type="button"
               onClick={() => onNavigate('our-locations')}
-              className="text-white/80 hover:text-[#F07020] text-left text-xs font-semibold mt-1"
+              className="text-white/80 hover:text-[#F07020] text-left text-xs font-semibold"
             >
               🗺️ View All Cary Service Locations
             </button>

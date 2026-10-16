@@ -149,7 +149,7 @@ export const COMPANY_DETAILS = {
   state: "NC",
   zip: "27518",
   dispatchHours: "Rapid Local Service (Mon - Sun 7:00 AM - 9:00 PM)",
-  email: "contact@caryncroofing.com",
+  email: "caryncroofing@gmail.com",
   license: "Vetted Local Certified Roofing Network",
   insurance: "Verified Local Licensed & Insured Partners ($2M Coverage)"
 };

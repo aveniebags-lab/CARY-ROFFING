@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { COMPANY_DETAILS, ALL_SERVICES } from '../data/roofingData';
 import { BookingForm } from './BookingForm';
 import { SeoSchema } from './SeoSchema';
+import { GoogleServiceAreaMap } from './GoogleServiceAreaMap';
 
 interface OurLocationsPageProps {
   onNavigate: (path: string) => void;
@@ -15,6 +16,10 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
       zip: '27511',
       name: 'Central & Downtown Cary',
       kicker: 'Historic & Established Neighborhoods',
+      pinAddress: 'Downtown Cary Park & Academy St Corridor, Cary, NC 27511',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Downtown+Cary+Park+Cary+NC+27511',
+      phone: '(919) 335-9543',
+      phoneRaw: '+19193359543',
       landmarks: ['Downtown Cary Park', 'Kildaire Farm Rd Corridor', 'Academy & Chatham St Historic District', 'Maynard Loop'],
       housingType: 'Charming historic bungalows, mid-century brick ranches, and renovated modern homes.',
       roofNeeds: [
@@ -23,13 +28,17 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         'Architectural shingle replacement (GAF Timberline HDZ / CertainTeed)',
         'Drip edge and valley leak repair'
       ],
-      dispatchTime: 'Same-Day Local Service',
+      dispatchTime: 'Same-Day Local Service (30-45 Min)',
       coords: '35.7915° N, -78.7811° W'
     },
     {
       zip: '27513',
       name: 'North Cary & Preston',
       kicker: 'Golf Course Estates & Executive Residences',
+      pinAddress: 'Prestonwood Country Club & Park West Village, Cary, NC 27513',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Prestonwood+Country+Club+Cary+NC+27513',
+      phone: '(984) 520-4071',
+      phoneRaw: '+19845204071',
       landmarks: ['Prestonwood Country Club', 'Fred G. Bond Metro Park', 'Highcroft & Park West Village', 'Cary Parkway NW'],
       housingType: 'Expansive multi-story executive residences with steep pitches, complex hip & valley architectures.',
       roofNeeds: [
@@ -38,14 +47,18 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         'Rafter and truss structural reinforcements',
         'Attic ventilation balancing and baffles'
       ],
-      dispatchTime: 'Prompt Wake County Response',
+      dispatchTime: 'Prompt Wake County Response (45 Min)',
       coords: '35.8122° N, -78.8041° W'
     },
     {
       zip: '27518',
-      name: 'South Cary & Lochmere / Regency',
-      kicker: 'Lakeside Living & Tree-Canopied Properties',
-      landmarks: ['Lochmere Lake & Golf Club', 'Regency Park & Amphitheatre', 'Waverly Place', 'Tryon Road Corridor'],
+      name: 'South Cary & Lochmere / Waverly Place',
+      kicker: 'Lakeside Living & Headquarters Dispatch Hub',
+      pinAddress: '580 New Waverly Pl Ste 216, Cary, NC 27518 (Headquarters Hub)',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=580+New+Waverly+Pl+Cary+NC+27518',
+      phone: '(919) 973-7931',
+      phoneRaw: '+19199737931',
+      landmarks: ['Lochmere Lake & Golf Club', 'Regency Park & Amphitheatre', 'Waverly Place Center', 'Tryon Road Corridor'],
       housingType: 'Wooded waterfront properties, custom craftsman homes, and upscale suburban estates.',
       roofNeeds: [
         'Algae and moss mitigation from dense hardwood shade',
@@ -53,13 +66,17 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         'Underlayment ice-and-water barrier installations',
         'Roof leak diagnostics and emergency limb strike repairs'
       ],
-      dispatchTime: 'Same-Day Assessment',
+      dispatchTime: 'Immediate Headquarters Dispatch (20-30 Min)',
       coords: '35.7351° N, -78.7884° W'
     },
     {
       zip: '27519',
       name: 'West Cary, Amberly & Carpenter',
       kicker: 'Modern Master-Planned Communities',
+      pinAddress: 'Amberly Village Center & Green Level Church Rd, Cary, NC 27519',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Amberly+Village+Center+Cary+NC+27519',
+      phone: '(919) 335-9948',
+      phoneRaw: '+19193359948',
       landmarks: ['Amberly Village Center', 'Historic Carpenter District', 'Green Level Church Road', 'NC-55 Technology Corridor'],
       housingType: 'Fast-growing master-planned communities, open-concept designs, and HOA-governed neighborhoods.',
       roofNeeds: [
@@ -68,13 +85,17 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         'HOA architectural review board color and material compliance',
         'Solar panel roof preparation and detachment/reinstallation'
       ],
-      dispatchTime: 'Rapid Neighborhood Scheduling',
+      dispatchTime: 'Rapid Neighborhood Scheduling (35-50 Min)',
       coords: '35.8367° N, -78.8789° W'
     },
     {
       zip: '27512',
       name: 'East Cary & Crossroads Commercial Center',
       kicker: 'Commercial Hubs & Multi-Family Facilities',
+      pinAddress: 'Crossroads Plaza & Walnut St Commercial Corridor, Cary, NC 27512',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Crossroads+Plaza+Cary+NC+27512',
+      phone: '(919) 756-3165',
+      phoneRaw: '+19197563165',
       landmarks: ['Crossroads Plaza', 'Walnut Street Shopping Corridor', 'US-1 / I-40 Interchange', 'Corporate Office Parks'],
       housingType: 'Commercial flat roofing, retail centers, apartment complexes, and suburban townhome clusters.',
       roofNeeds: [
@@ -83,7 +104,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         'Commercial roof coatings (elastomeric and silicone restoration)',
         'Scheduled preventive maintenance and warranty inspections'
       ],
-      dispatchTime: 'Priority Commercial Service',
+      dispatchTime: 'Priority Commercial & Multi-Family Service',
       coords: '35.7725° N, -78.7512° W'
     }
   ];
@@ -139,43 +160,30 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
       {/* Hero Header with Exactly ONE H1 */}
       <section className="py-12 md:py-16 bg-[#FFFDF9] border-b border-[#e8e4df]">
         <div className="container container-medium">
-          <div className="kicker">WAKE COUNTY SERVICE COVERAGE</div>
+          <div className="kicker">CARY &amp; SURROUNDING TRIANGLE SERVICE COVERAGE</div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-4">
             Roofing Service Locations in <span className="font-serif-accent">Cary, NC &amp; Triangle</span>
           </h1>
           <p className="text-base md:text-lg text-black font-medium max-w-3xl leading-relaxed">
-            With fully stocked mobile dispatch units based right here in Cary, our certified roofing crews deliver fast, dependable residential and commercial roofing services across every neighborhood and zip code in Cary, NC and surrounding Triangle communities.
+            With fully stocked mobile dispatch units based at our Cary headquarters, our certified roofing crews deliver fast, dependable residential and commercial roofing services across every neighborhood and zip code in Cary, NC and surrounding Triangle communities.
           </p>
 
-          <div className="my-6 rounded-2xl overflow-hidden border border-[#e8e4df] shadow-md bg-white">
-            <img 
-              src="/images/cary-service-map.svg" 
-              alt="Cary NC Roofing Service Locations - Local coverage map for zip codes 27511, 27512, 27513, 27518, 27519 benchmarked against top ranking Triangle roofers"
-              className="w-full h-auto object-cover max-h-[380px]"
-              loading="lazy"
-            />
-            <div className="bg-[#0f172a] text-white px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs border-t border-[#F07020]/40 text-left">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#1D9E75] animate-ping"></span>
-                <span className="font-bold text-[#F07020]">Active GIS Geotargeting:</span>
-                <span className="text-white font-medium">Cary, NC (27511, 27512, 27513, 27518, 27519)</span>
-              </div>
-              <div className="font-mono text-[11px] text-[#38bdf8]">
-                Hub: 35.7368° N, -78.7832° W • Prompt Same-Day Local Service
-              </div>
-            </div>
-          </div>
+          {/* Dynamic Google Map Component for Local SEO & Service Radius Trust */}
+          <GoogleServiceAreaMap />
 
-          <div className="flex flex-wrap items-center gap-3 mt-5 text-xs font-semibold text-black">
-            <span className="px-3.5 py-1.5 bg-[#FAF8F4] border border-[#e8e4df] rounded-full">
-              📍 Central Network Hub: {COMPANY_DETAILS.address}
+          <div className="flex flex-wrap items-center gap-3 mt-4 text-xs font-semibold text-black">
+            <span className="px-3.5 py-2 bg-white border border-[#e8e4df] rounded-xl shadow-xs">
+              📍 <strong>Official Address:</strong> 580 New Waverly Pl Ste 216, Cary, NC 27518
             </span>
-            <span className="px-3.5 py-1.5 bg-[#E8F8F1] text-[#1D9E75] border border-[#1D9E75]/30 rounded-full font-bold">
+            <span className="px-3.5 py-2 bg-[#E8F8F1] text-[#1D9E75] border border-[#1D9E75]/30 rounded-xl font-bold">
               ⚡ Free Prompt On-Site Assessment
             </span>
-            <span className="px-3.5 py-1.5 bg-[#FAF8F4] border border-[#e8e4df] rounded-full">
-              📞 Local Phone: {COMPANY_DETAILS.mainPhone}
-            </span>
+            <a 
+              href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
+              className="px-3.5 py-2 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#F07020] rounded-xl font-bold transition-colors"
+            >
+              📞 Direct Dispatch: {COMPANY_DETAILS.mainPhone}
+            </a>
           </div>
 
           {/* Quick Zip Code Jump Selector */}
@@ -217,6 +225,27 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
       {/* Location Cards with Structured H2, H3, H4, H5, H6 */}
       <section className="py-12 md:py-16 bg-[#FAF8F4]">
         <div className="container">
+          {/* Custom Pin Notice */}
+          <div className="mb-8 p-5 bg-[#FFF8F2] border-2 border-[#F07020]/30 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-black shadow-xs">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl mt-0.5">📍</span>
+              <div>
+                <strong className="text-black font-bold text-sm block mb-1">
+                  Custom Property Pins &amp; Specific Neighborhood Addresses:
+                </strong>
+                <p className="text-black font-medium leading-relaxed">
+                  Have a specific residential address, commercial facility, or custom neighborhood pin in mind? You can provide any street address or landmark across Wake County, and our local team will pin and dispatch direct on-site inspection crews!
+                </p>
+              </div>
+            </div>
+            <a 
+              href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
+              className="btn btn-primary !py-2.5 !px-5 !text-xs whitespace-nowrap self-start sm:self-auto shrink-0 font-bold"
+            >
+              📞 Pin Your Address: {COMPANY_DETAILS.mainPhone}
+            </a>
+          </div>
+
           <div className="space-y-8">
             {filteredLocations.map((loc) => (
               <div 
@@ -237,6 +266,10 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                     <h2 className="text-2xl md:text-3xl font-extrabold text-black">
                       {loc.name}
                     </h2>
+                    <div className="flex items-center gap-1.5 mt-1.5 text-xs text-black font-bold">
+                      <span className="text-[#F07020]">📍 Pinned Hub:</span>
+                      <span>{loc.pinAddress}</span>
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
@@ -249,10 +282,11 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                       </span>
                     </div>
                     <a
-                      href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-                      className="btn btn-primary !py-2.5 !px-5 !text-sm font-bold"
+                      href={`tel:${loc.phoneRaw}`}
+                      className="btn btn-primary !py-2.5 !px-5 !text-sm font-bold flex items-center gap-1.5"
                     >
-                      Dispatch Crew
+                      <span>📞</span>
+                      <span>Call {loc.phone}</span>
                     </a>
                   </div>
                 </div>
@@ -328,12 +362,12 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                     </div>
                   </div>
 
-                  {/* Column 3: Local Dispatch & Verification */}
-                  <div className="bg-[#FAF8F4] p-5 rounded-xl border border-[#e8e4df] space-y-3">
-                    <h3 className="font-bold text-black text-sm uppercase tracking-wide">
-                      Town of Cary Fast Facts
-                    </h3>
-                    <div className="text-xs space-y-2 text-black">
+                  {/* Column 3: Local Dispatch, Pinned Map & CTA */}
+                  <div className="bg-[#FAF8F4] p-5 rounded-xl border border-[#e8e4df] space-y-3 flex flex-col justify-between">
+                    <div className="space-y-2 text-xs text-black">
+                      <h3 className="font-bold text-black text-sm uppercase tracking-wide mb-2">
+                        Town of Cary Pin &amp; Map Data
+                      </h3>
                       <p><strong>Coordinates:</strong> {loc.coords}</p>
                       <h4 className="text-xs font-normal">
                         <strong>Permit Authority:</strong> Town of Cary Inspections &amp; Permits
@@ -345,16 +379,31 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                         <strong>Certification:</strong> HAAG Certified Master Inspector
                       </h6>
                     </div>
-                    <div className="pt-2">
+
+                    <div className="space-y-2 pt-3 border-t border-[#e8e4df]">
+                      <a
+                        href={loc.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-2 bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
+                      >
+                        <span>🗺️ Open Pin in Google Maps ↗</span>
+                      </a>
+                      <a
+                        href={`tel:${loc.phoneRaw}`}
+                        className="w-full py-2 bg-[#F07020] text-white font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 hover:bg-[#d65f17] shadow-2xs"
+                      >
+                        <span>📞 Dial {loc.phone}</span>
+                      </a>
                       <button
                         type="button"
                         onClick={() => {
                           const bookEl = document.getElementById('book');
                           if (bookEl) bookEl.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="w-full py-2 bg-white border border-[#e8e4df] hover:border-[#F07020] text-black font-bold text-xs rounded-lg transition-colors cursor-pointer"
+                        className="w-full py-2 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#1D9E75] text-[#1D9E75] font-bold text-xs rounded-lg transition-colors cursor-pointer text-center"
                       >
-                        Request Quote in {loc.zip}
+                        Free On-Site Inspection in {loc.zip}
                       </button>
                     </div>
                   </div>

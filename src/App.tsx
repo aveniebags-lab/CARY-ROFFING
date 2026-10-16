@@ -5,8 +5,9 @@ import { HomePage } from './components/HomePage';
 import { ServicePage } from './components/ServicePage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { OurLocationsPage } from './components/OurLocationsPage';
+import { CalculatorPage } from './components/CalculatorPage';
 import { Footer } from './components/Footer';
-import { RankAndRentSeoDrawer } from './components/RankAndRentSeoDrawer';
+import { TechnicalPortalDrawer } from './components/TechnicalPortalDrawer';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>('home');
@@ -18,6 +19,8 @@ export default function App() {
       const hash = window.location.hash.replace('#', '');
       if (hash && ALL_SERVICES.some(s => s.slug === hash)) {
         setCurrentPath(hash);
+      } else if (hash === 'calculator' || hash === 'cary-nc-roofing-calculator.html' || hash === 'roofing-calculator' || hash === 'roofing-calculator.html') {
+        setCurrentPath('cary-nc-roofing-calculator.html');
       } else if (hash === 'privacy-policy' || hash === 'privacy' || hash === 'privacy-policy.html') {
         setCurrentPath('privacy-policy');
       } else if (hash === 'our-locations' || hash === 'locations' || hash === 'service-areas' || hash === 'our-locations.html') {
@@ -74,6 +77,8 @@ export default function App() {
   useEffect(() => {
     if (currentPath === 'home' || currentPath === 'index.html') {
       document.title = 'Best Roofing Services, Cary NC, | caryncroofing.com';
+    } else if (currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator') {
+      document.title = 'Cary NC Roofing Calculator | Roof Replacement Cost Guide';
     } else if (currentPath === 'privacy-policy') {
       document.title = 'Privacy Policy | caryncroofing.com - Cary, NC';
     } else if (currentPath === 'our-locations') {
@@ -107,7 +112,9 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {currentPath === 'privacy-policy' ? (
+        {currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator' ? (
+          <CalculatorPage onNavigate={handleNavigate} />
+        ) : currentPath === 'privacy-policy' ? (
           <PrivacyPolicyPage onNavigate={handleNavigate} />
         ) : currentPath === 'our-locations' ? (
           <OurLocationsPage onNavigate={handleNavigate} />
@@ -137,8 +144,8 @@ export default function App() {
           <span className="text-[10px] uppercase font-bold tracking-wider text-[#F07020]">
             Emergency Dispatch
           </span>
-          <span className="text-xs font-bold text-white">
-            Wake County Local
+          <span className="text-xs font-bold text-white truncate max-w-[150px]">
+            580 New Waverly Pl, Cary
           </span>
         </div>
         <div className="flex gap-2">
@@ -162,7 +169,7 @@ export default function App() {
       </div>
 
       {/* Specifications & Dispatch Drawer */}
-      <RankAndRentSeoDrawer 
+      <TechnicalPortalDrawer 
         isOpen={seoDrawerOpen}
         onClose={() => setSeoDrawerOpen(false)}
         currentPageTitle={activeService ? activeService.title : 'Home Page'}

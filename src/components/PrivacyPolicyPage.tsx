@@ -173,10 +173,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
                 If you have questions regarding this Privacy Policy or wish to exercise your data rights, please contact our local Cary administration team:
               </p>
               <div className="bg-[#FAF8F4] p-5 rounded-xl border border-[#e8e4df] space-y-2 text-sm text-black">
-                <p><strong>caryncroofing Technologies, LLC</strong></p>
+                <p><strong>CaryRoofing LLC</strong></p>
                 <p><strong>Physical Hub:</strong> {COMPANY_DETAILS.address}</p>
                 <p><strong>Telephone:</strong> <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="text-[#F07020] font-bold hover:underline">{COMPANY_DETAILS.mainPhone}</a></p>
-                <p><strong>Email:</strong> privacy@caryncroofing.com</p>
+                <p><strong>Email:</strong> <a href="mailto:caryncroofing@gmail.com" className="text-[#F07020] hover:underline">caryncroofing@gmail.com</a></p>
                 <p><strong>Hours of Operation:</strong> Monday – Friday 7:00 AM – 7:00 PM EST (24/7 Emergency Storm Dispatch)</p>
               </div>
             </div>

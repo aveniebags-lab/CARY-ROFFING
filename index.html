@@ -37,16 +37,46 @@
     <script id="app-dynamic-schema" type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["RoofingContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
+      "@type": ["LocalBusiness", "RoofingContractor", "HomeAndConstructionBusiness"],
+      "@id": "https://caryncroofing.com/#localbusiness",
       "name": "CaryRoofing",
       "legalName": "Cary Roofing Contractors LLC",
-      "image": "https://caryncroofing.com/images/hero-roofing.webp",
+      "alternateName": [
+        "Cary Roofing",
+        "CaryRoofing",
+        "Cary NC Roofing",
+        "Roofing Contractors Cary NC",
+        "caryncroofing.com"
+      ],
       "url": "https://caryncroofing.com",
-      "telephone": "+1-919-335-9543",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://caryncroofing.com/favicon.svg",
+        "width": 512,
+        "height": 512,
+        "caption": "CaryRoofing - Premier Roofing Services Cary NC"
+      },
+      "image": [
+        "https://caryncroofing.com/images/hero-roofing.webp",
+        "https://caryncroofing.com/images/roof-replacement.webp",
+        "https://caryncroofing.com/images/roof-repair.webp",
+        "https://caryncroofing.com/images/split-replacement.webp",
+        "https://caryncroofing.com/images/split-repair.webp",
+        "https://caryncroofing.com/images/split-installation.webp",
+        "https://caryncroofing.com/images/split-storm-emergency.webp"
+      ],
+      "telephone": "+1 919-335-9543",
+      "email": "caryncroofing@gmail.com",
       "priceRange": "$$",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Cash, Credit Card, Check, Insurance Financing, Financing Available",
-      "description": "Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call us today!",
+      "slogan": "Best Roofing Services in Cary, NC - Precision Craftsmanship & 50-Year Protection",
+      "foundingDate": "2011",
+      "founder": {
+        "@type": "Person",
+        "name": "Cary Roofing Specialist Team"
+      },
+      "description": "Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call +1 919-335-9543 today!",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "580 New Waverly Pl Ste 216",
@@ -61,6 +91,18 @@
         "longitude": -78.7832,
         "elevation": "418 FT"
       },
+      "hasMap": "https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518",
+      "map": "https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.7368,
+          "longitude": -78.7832
+        },
+        "geoRadius": 40000
+      },
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -70,8 +112,12 @@
         }
       ],
       "areaServed": [
-        { "@type": "City", "name": "Cary, NC" },
-        { "@type": "AdministrativeArea", "name": "Wake County, NC" },
+        { "@type": "City", "name": "Cary, NC", "sameAs": "https://en.wikipedia.org/wiki/Cary,_North_Carolina" },
+        { "@type": "AdministrativeArea", "name": "Wake County, NC", "sameAs": "https://en.wikipedia.org/wiki/Wake_County,_North_Carolina" },
+        { "@type": "City", "name": "Raleigh, NC" },
+        { "@type": "City", "name": "Apex, NC" },
+        { "@type": "City", "name": "Morrisville, NC" },
+        { "@type": "City", "name": "Holly Springs, NC" },
         { "@type": "PostalCode", "postalCode": "27511" },
         { "@type": "PostalCode", "postalCode": "27512" },
         { "@type": "PostalCode", "postalCode": "27513" },
@@ -85,9 +131,123 @@
         "bestRating": "5",
         "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "David Miller"
+          },
+          "datePublished": "2026-03-12",
+          "reviewBody": "Outstanding roof replacement in Preston, Cary. Handled full tear-off and installed brand new GAF Timberline HDZ architectural shingles with flawless magnetic nail sweeps."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Jenkins"
+          },
+          "datePublished": "2026-04-05",
+          "reviewBody": "Emergency chimney flashing and roof leak repair in Lochmere. Prompt same-day dispatch and watertight copper counter-flashing that held up beautifully during intense NC storms."
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Roofing Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof Installation Services Cary NC USA",
+              "description": "Complete new roof installations using architectural shingles, metal, tile, and low-slope flat roofs tailored for Wake County homes."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof Repair Services Cary NC USA",
+              "description": "Rapid diagnostics and durable roof leak repair for shingles, flashing, vent collars, and chimney junctions across Cary NC."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof Replacement Services Cary NC USA",
+              "description": "Turnkey tear-off and roof replacement featuring premium 50-year warranty GAF, Owens Corning, and CertainTeed roofing systems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Storm Damage Roof Repair Cary NC",
+              "description": "24/7 rapid dispatch for emergency roof tarping, tree strike stabilization, and hail damage mitigation in Wake County."
+            }
+          }
+        ]
+      },
       "sameAs": [
         "https://www.google.com/maps/place/Cary,+NC/",
-        "https://www.facebook.com/caryncroofing"
+        "https://www.facebook.com/caryncroofing",
+        "https://www.yelp.com/biz/cary-roofing-cary",
+        "https://www.bbb.org/us/nc/cary/profile/roofing-contractors/cary-roofing"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1 919-335-9543",
+          "contactType": "central headquarters dispatch",
+          "areaServed": ["US-NC", "Wake County", "Cary NC"],
+          "availableLanguage": ["English", "Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "(919) 335-9543",
+          "contactType": "local dispatch - Central & Downtown Cary (27511)",
+          "areaServed": { "@type": "PostalCode", "postalCode": "27511" },
+          "availableLanguage": ["English", "Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "(919) 756-3165",
+          "contactType": "local dispatch - East Cary & Crossroads (27512)",
+          "areaServed": { "@type": "PostalCode", "postalCode": "27512" },
+          "availableLanguage": ["English", "Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "(984) 520-4071",
+          "contactType": "local dispatch - North Cary & Preston (27513)",
+          "areaServed": { "@type": "PostalCode", "postalCode": "27513" },
+          "availableLanguage": ["English", "Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "(919) 973-7931",
+          "contactType": "local dispatch - South Cary & Lochmere / Waverly Place HQ (27518)",
+          "areaServed": { "@type": "PostalCode", "postalCode": "27518" },
+          "availableLanguage": ["English", "Spanish"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "(919) 335-9948",
+          "contactType": "local dispatch - West Cary, Amberly & Carpenter (27519)",
+          "areaServed": { "@type": "PostalCode", "postalCode": "27519" },
+          "availableLanguage": ["English", "Spanish"]
+        }
       ]
     }
     </script>

@@ -89,6 +89,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
           <button
             type="button"
+            onClick={(e) => handleLinkClick(e, 'cary-nc-roofing-calculator.html')}
+            className={`cursor-pointer ${currentPath === 'cary-nc-roofing-calculator.html' ? 'font-bold text-[#F07020]' : ''}`}
+          >
+            Roofing Calculator
+          </button>
+
+          <button
+            type="button"
             onClick={(e) => handleLinkClick(e, 'our-locations')}
             className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#F07020]' : ''}`}
           >

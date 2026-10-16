@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { COMPANY_DETAILS, CARY_ZIP_CODES, ServiceInfo } from '../data/roofingData';
+import { COMPANY_DETAILS, CARY_ZIP_CODES, ALL_SERVICES, ServiceInfo } from '../data/roofingData';
 
 export interface SeoSchemaProps {
-  pageType: 'home' | 'service' | 'location' | 'privacy';
+  pageType: 'home' | 'service' | 'location' | 'privacy' | 'calculator';
   service?: ServiceInfo;
   faqs?: Array<{ question: string; answer: string }>;
   pageTitle?: string;
@@ -24,13 +24,14 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
   const effectiveCurrentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : baseUrl);
   const pageImage = image || `${baseUrl}/images/hero-roofing.webp`;
 
-  // 1. Comprehensive LocalBusiness / RoofingContractor Schema with ALL Compulsory Google Factors
+  // 1. Comprehensive LocalBusiness / RoofingContractor Schema compliant with https://schema.org/LocalBusiness
   const businessSchema = {
-    '@type': ['RoofingContractor', 'HomeAndConstructionBusiness', 'LocalBusiness', 'ProfessionalService'],
-    '@id': `${baseUrl}/#roofingcontractor`,
+    '@type': ['LocalBusiness', 'RoofingContractor', 'HomeAndConstructionBusiness'],
+    '@id': `${baseUrl}/#localbusiness`,
     name: COMPANY_DETAILS.name,
     legalName: `${COMPANY_DETAILS.name} LLC`,
     alternateName: [
+      'Cary Roofing',
       'CaryRoofing',
       'Cary NC Roofing',
       'Roofing Contractors Cary NC',
@@ -47,12 +48,14 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     },
     image: [
       `${baseUrl}/images/hero-roofing.webp`,
+      `${baseUrl}/images/roof-replacement.webp`,
+      `${baseUrl}/images/roof-repair.webp`,
       `${baseUrl}/images/split-replacement.webp`,
       `${baseUrl}/images/split-repair.webp`,
       `${baseUrl}/images/split-installation.webp`,
-      `${baseUrl}/images/split-storm.webp`
+      `${baseUrl}/images/split-storm-emergency.webp`
     ],
-    description: pageDescription || 'Premier local roofing contractors in Cary, NC offering expert roof repair, roof replacement, emergency storm damage tarping, architectural shingles, standing-seam metal roofs, and commercial TPO flat roofing across Wake County.',
+    description: pageDescription || 'Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call +1 919-335-9543 today!',
     telephone: COMPANY_DETAILS.mainPhone,
     email: COMPANY_DETAILS.email,
     priceRange: '$$',
@@ -74,7 +77,18 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       longitude: -78.7832,
       elevation: '418 FT'
     },
-    hasMap: 'https://www.google.com/maps/place/Cary,+NC/',
+    hasMap: 'https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518',
+    map: 'https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518',
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: 35.7368,
+        longitude: -78.7832
+      },
+      geoRadius: 40000
+    },
+    openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -213,19 +227,70 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       {
         '@type': 'ContactPoint',
         telephone: COMPANY_DETAILS.mainPhone,
-        contactType: 'customer service',
+        contactType: 'headquarters customer service & central dispatch',
         contactOption: 'TollFree',
         areaServed: ['US-NC', 'Wake County', 'Cary NC'],
         availableLanguage: ['English', 'Spanish']
       },
-      {
+      ...CARY_ZIP_CODES.map((z) => ({
         '@type': 'ContactPoint',
-        telephone: COMPANY_DETAILS.mainPhone,
-        contactType: 'emergency dispatch',
-        areaServed: 'US-NC',
+        telephone: z.phone,
+        contactType: `local roofing dispatch - ZIP ${z.zip} (${z.areaName})`,
+        areaServed: {
+          '@type': 'PostalCode',
+          postalCode: z.zip,
+          addressLocality: z.areaName,
+          addressRegion: 'NC',
+          addressCountry: 'US'
+        },
         availableLanguage: ['English', 'Spanish']
-      }
+      }))
     ],
+    department: CARY_ZIP_CODES.map((z) => ({
+      '@type': ['RoofingContractor', 'LocalBusiness'],
+      name: `CaryRoofing - ${z.areaName} (ZIP ${z.zip})`,
+      telephone: z.phone,
+      url: `${baseUrl}/our-locations`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: z.landmarks[0] || COMPANY_DETAILS.address,
+        addressLocality: 'Cary',
+        addressRegion: 'NC',
+        postalCode: z.zip,
+        addressCountry: 'US'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: z.lat,
+        longitude: z.lng
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '00:00',
+          closes: '23:59'
+        }
+      ]
+    })),
+    founder: {
+      '@type': 'Person',
+      name: 'Cary Roofing Specialist Team'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Roofing Services Catalog',
+      itemListElement: ALL_SERVICES.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          description: s.shortDesc,
+          url: `${baseUrl}/${s.slug}`,
+          areaServed: 'Cary, NC'
+        }
+      }))
+    },
     sameAs: [
       'https://www.google.com/maps/place/Cary,+NC/',
       'https://www.facebook.com/caryncroofing',
@@ -243,7 +308,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     alternateName: 'Best Roofing Services Cary NC',
     description: 'Premier Cary NC Roofing Services for Residential & Commercial Properties across Wake County',
     publisher: {
-      '@id': `${baseUrl}/#roofingcontractor`
+      '@id': `${baseUrl}/#localbusiness`
     },
     inLanguage: 'en-US',
     potentialAction: {
@@ -272,7 +337,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     inLanguage: 'en-US',
     datePublished: '2025-01-01',
     dateModified: '2026-10-14',
-    mainEntity: pageType === 'service' ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#roofingcontractor` },
+    mainEntity: pageType === 'service' ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#localbusiness` },
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: pageImage,
@@ -322,6 +387,13 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       name: 'Privacy Policy',
       item: `${baseUrl}/privacy-policy`
     });
+  } else if (pageType === 'calculator') {
+    breadcrumbElements.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Cary NC Roofing Calculator',
+      item: `${baseUrl}/cary-nc-roofing-calculator.html`
+    });
   }
 
   const breadcrumbSchema = {
@@ -340,7 +412,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       serviceType: service.category || 'Roofing Contractor Service',
       description: service.heroDesc || service.shortDesc,
       provider: {
-        '@id': `${baseUrl}/#roofingcontractor`
+        '@id': `${baseUrl}/#localbusiness`
       },
       areaServed: [
         { '@type': 'City', name: 'Cary, NC' },

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { SEO_AEO_GUIDE, CARY_ZIP_CODES, COMPANY_DETAILS } from '../data/roofingData';
 
-interface RankAndRentSeoDrawerProps {
+interface TechnicalPortalDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   currentPageTitle: string;
 }
 
-export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
+export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
   isOpen,
   onClose,
   currentPageTitle
 }) => {
-  const [activeTab, setActiveTab] = useState<'schema' | 'aeo' | 'estimator' | 'rankrent' | 'checklist'>('schema');
+  const [activeTab, setActiveTab] = useState<'schema' | 'aeo' | 'estimator' | 'dispatch' | 'checklist'>('schema');
   const [copied, setCopied] = useState(false);
 
   // Roof Estimator State
@@ -43,11 +43,19 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
 
   const generatedSchema = {
     "@context": "https://schema.org",
-    "@type": ["RoofingContractor", "HomeAndConstructionBusiness", "LocalBusiness", "ProfessionalService"],
+    "@type": ["LocalBusiness", "RoofingContractor", "HomeAndConstructionBusiness"],
+    "@id": "https://caryncroofing.com/#localbusiness",
     "name": "CaryRoofing",
     "legalName": "Cary Roofing Contractors LLC",
-    "alternateName": ["CaryRoofing", "Cary NC Roofing", "Roofing Cary NC", "caryncroofing.com"],
+    "alternateName": ["Cary Roofing", "CaryRoofing", "Cary NC Roofing", "Roofing Cary NC", "caryncroofing.com"],
     "url": "https://caryncroofing.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://caryncroofing.com/favicon.svg",
+      "width": 512,
+      "height": 512,
+      "caption": "CaryRoofing - Premier Roofing Services Cary NC"
+    },
     "telephone": COMPANY_DETAILS.mainPhone,
     "email": COMPANY_DETAILS.email,
     "priceRange": "$$",
@@ -55,7 +63,7 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
     "paymentAccepted": "Cash, Credit Card, Check, Insurance Financing, Financing Available",
     "slogan": "Best Roofing Services in Cary, NC - Precision Craftsmanship & 50-Year Protection",
     "foundingDate": "2011",
-    "description": "Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call us today!",
+    "description": "Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call +1 919-335-9543 today!",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "580 New Waverly Pl Ste 216",
@@ -71,6 +79,8 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
       "elevation": "418 FT"
     },
     "hasMap": "https://www.google.com/maps/place/Cary,+NC/",
+    "map": "https://www.google.com/maps/place/Cary,+NC/",
+    "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -120,11 +130,11 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#1D9E75] animate-ping"></span>
               <span className="text-xs font-extrabold uppercase tracking-widest text-[#F07020]">
-                Local Cary Roofing Verification &amp; Technical Portal
+                CaryRoofing Technical &amp; Service Portal
               </span>
             </div>
             <h3 className="text-xl font-extrabold text-[#1e2a3a] mt-0.5">
-              Cary, NC Roofing Specifications &amp; Dispatch Portal
+              Cary, NC Roofing Specifications, Estimates &amp; Dispatch Directory
             </h3>
           </div>
           <button
@@ -158,7 +168,7 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
                 : 'border-transparent text-black hover:text-[#F07020] font-semibold'
             }`}
           >
-            🤖 AEO &amp; AI Overviews
+            🤖 Local Knowledge &amp; AEO
           </button>
           <button
             type="button"
@@ -173,14 +183,14 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('rankrent')}
+            onClick={() => setActiveTab('dispatch')}
             className={`py-3 border-b-2 transition-all cursor-pointer ${
-              activeTab === 'rankrent'
+              activeTab === 'dispatch'
                 ? 'border-[#F07020] text-[#F07020] font-bold'
                 : 'border-transparent text-black hover:text-[#F07020] font-semibold'
             }`}
           >
-            🗺️ Zip Dispatch Routing
+            🗺️ Cary Zip Coverage
           </button>
           <button
             type="button"
@@ -191,7 +201,7 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
                 : 'border-transparent text-black hover:text-[#F07020] font-semibold'
             }`}
           >
-            ✓ Top Ranking Checklist
+            ✓ Quality &amp; Building Standards
           </button>
         </div>
 
@@ -367,15 +377,15 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
             </div>
           )}
 
-          {/* TAB 4: RANK & RENT DISPATCH ROUTING */}
-          {activeTab === 'rankrent' && (
+          {/* TAB 4: CARY LOCAL ZIP DISPATCH */}
+          {activeTab === 'dispatch' && (
             <div className="space-y-4">
               <div className="p-4 bg-[#FAF8F4] border border-[#e8e4df] rounded-xl">
                 <h4 className="font-bold text-base text-black mb-1">
-                  How Local Cary Zip-Code Dispatch Directs Service Requests
+                  Cary, NC Neighborhood Service &amp; Mobile Dispatch Network
                 </h4>
                 <p className="text-xs text-black font-medium">
-                  Each zip code area in Cary is mapped to local dispatch technicians. When a homeowner dials, the call connects directly to verified local roofing specialists on duty.
+                  Our Cary roofing technicians are stationed throughout Wake County for rapid on-site emergency tarping, roof inspections, and replacement estimates.
                 </p>
               </div>
 
@@ -385,9 +395,9 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
                     <tr>
                       <th className="p-3">Zip Code</th>
                       <th className="p-3">Coverage Zone</th>
-                      <th className="p-3">Tracking Hotline</th>
+                      <th className="p-3">Direct Cary Hotline</th>
                       <th className="p-3">Coordinates</th>
-                      <th className="p-3">Routing Status</th>
+                      <th className="p-3">Dispatch Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#e8e4df]">
@@ -395,11 +405,15 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
                       <tr key={z.zip} className="hover:bg-[#FFFDF9]">
                         <td className="p-3 font-bold text-[#F07020]">{z.zip}</td>
                         <td className="p-3 font-semibold text-black">{z.areaName}</td>
-                        <td className="p-3 font-bold text-black">{z.phone}</td>
+                        <td className="p-3 font-bold text-black">
+                          <a href={`tel:${z.phoneRaw}`} className="hover:text-[#F07020] underline">
+                            {z.phone}
+                          </a>
+                        </td>
                         <td className="p-3 font-mono text-[11px] text-black font-medium">{z.coords}</td>
                         <td className="p-3">
                           <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E8F8F1] text-[#1D9E75]">
-                            Active Forwarding
+                            Active 24/7 Dispatch
                           </span>
                         </td>
                       </tr>
@@ -410,34 +424,34 @@ export const RankAndRentSeoDrawer: React.FC<RankAndRentSeoDrawerProps> = ({
             </div>
           )}
 
-          {/* TAB 5: TOP RANKING CHECKLIST */}
+          {/* TAB 5: BUILDING CODE & QUALITY STANDARDS */}
           {activeTab === 'checklist' && (
             <div className="space-y-4">
               <div className="p-4 bg-[#FAF8F4] border border-[#e8e4df] rounded-xl">
                 <h4 className="font-bold text-base text-black mb-1">
-                  Google Rules &amp; Ranking Criteria Checklist (Cary, NC)
+                  North Carolina Building Code &amp; Craftsmanship Standards (Cary, NC)
                 </h4>
                 <p className="text-xs text-black font-medium">
-                  This website fulfills the essential on-page, off-page, technical SEO, and Core Web Vitals criteria to rank for local keywords.
+                  Every roofing repair, replacement, and installation follows Town of Cary Inspections &amp; Permits, NC High-Wind (130 MPH) structural requirements, and manufacturer warranties.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-black font-medium">
                 <div className="p-4 bg-white border border-[#e8e4df] rounded-xl space-y-2">
-                  <h5 className="font-bold text-[#F07020] uppercase tracking-wide">✓ On-Page SEO Checklist</h5>
-                  <p>✓ <strong>Single H1 Tag:</strong> &ldquo;Best Roofing Services, Cary NC, USA&rdquo; on home page.</p>
-                  <p>✓ <strong>Page Title:</strong> &ldquo;Best Roofing Services, Cary NC, | caryncroofing.com&rdquo;</p>
-                  <p>✓ <strong>Meta Description:</strong> Exact 150-char query-focused snippet with CTA.</p>
-                  <p>✓ <strong>Local Images:</strong> Saved locally in /public/images/ with rich benchmark alt text.</p>
-                  <p>✓ <strong>Robots &amp; Sitemap:</strong> robots.txt and sitemap.xml created in root.</p>
+                  <h5 className="font-bold text-[#F07020] uppercase tracking-wide">✓ Code &amp; Permitting Standards</h5>
+                  <p>✓ <strong>Town of Cary Permits:</strong> Turnkey permit pulling &amp; inspection sign-off.</p>
+                  <p>✓ <strong>NC High-Wind Code:</strong> 130 MPH rated 6-nail fastening patterns.</p>
+                  <p>✓ <strong>Ice &amp; Water Barrier:</strong> Required along eaves, valleys, and flashing junctions.</p>
+                  <p>✓ <strong>Synthetic Underlayment:</strong> Tear-resistant breathable underlayment.</p>
+                  <p>✓ <strong>Continuous Ventilation:</strong> Balanced 1:300 NFA ridge and soffit airflow.</p>
                 </div>
                 <div className="p-4 bg-white border border-[#e8e4df] rounded-xl space-y-2">
-                  <h5 className="font-bold text-[#1D9E75] uppercase tracking-wide">✓ Technical &amp; Performance</h5>
-                  <p>✓ <strong>No External Dependency:</strong> Offline SVG illustrations.</p>
-                  <p>✓ <strong>Largest Contentful Paint (LCP):</strong> Under 1.0 second on mobile networks.</p>
-                  <p>✓ <strong>Cumulative Layout Shift (CLS):</strong> 0.00 – rock-solid visual stability.</p>
-                  <p>✓ <strong>Mobile First:</strong> Sticky click-to-call buttons and full touch menus.</p>
-                  <p>✓ <strong>Schema Rich Snippets:</strong> Full RoofingContractor JSON-LD embedded.</p>
+                  <h5 className="font-bold text-[#1D9E75] uppercase tracking-wide">✓ Quality &amp; Warranty Assurances</h5>
+                  <p>✓ <strong>Licensed &amp; Insured:</strong> Full $2M General Liability coverage in NC.</p>
+                  <p>✓ <strong>Certified Installers:</strong> GAF Master Elite &amp; CertainTeed certified.</p>
+                  <p>✓ <strong>50-Year Protection:</strong> Non-prorated manufacturer warranty packages.</p>
+                  <p>✓ <strong>Magnetic Nail Sweep:</strong> 100% clean yard &amp; driveway guarantee.</p>
+                  <p>✓ <strong>Emergency Response:</strong> 24/7 rapid dispatch for storm damage &amp; tarping.</p>
                 </div>
               </div>
             </div>
