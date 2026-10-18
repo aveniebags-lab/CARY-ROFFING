@@ -49,23 +49,23 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
               Calling Now • Direct Dispatch Line
             </div>
             <h3 className="text-white text-2xl md:text-3xl font-extrabold mb-2">Connecting Your Call Now!</h3>
-            <p className="text-white/90 max-w-lg mx-auto mb-4 text-sm leading-relaxed">
+            <p className="text-white max-w-lg mx-auto mb-4 text-sm leading-relaxed font-normal">
               Thank you, <strong>{formData.fullName}</strong>. Your request for <strong>{formData.serviceInterest}</strong> ({formData.zipCode || 'Cary, NC'}) has been registered. Your phone is now opening to dial our Cary dispatcher directly at <strong>{COMPANY_DETAILS.mainPhone}</strong>.
             </p>
-            <div className="p-3 bg-black/30 rounded-xl max-w-md mx-auto mb-6 text-xs text-white/80 border border-white/10">
+            <div className="p-3 bg-black/40 rounded-xl max-w-md mx-auto mb-6 text-xs text-white border border-white/20 font-medium">
               ⚡ If the automatic call prompt was blocked by your browser, tap the button below to connect instantly:
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a 
                 href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} 
-                className="btn btn-primary !text-base !py-3 !px-6 animate-bounce"
+                className="btn btn-primary !text-base !py-3 !px-6 animate-bounce !text-white font-extrabold"
               >
                 📞 Dial {COMPANY_DETAILS.mainPhone} Now
               </a>
               <button 
                 type="button" 
                 onClick={() => setSubmitted(false)}
-                className="btn btn-secondary !mt-0 !text-white !bg-white/10 hover:!bg-white/20 !border-white/20"
+                className="btn btn-secondary !mt-0 !text-white !bg-white/10 hover:!bg-white/20 !border-white/20 font-bold"
               >
                 Submit Another Request
               </button>
@@ -75,7 +75,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
           <form className="book-form" id="auditForm" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="fullName">Full Name *</label>
+                <label htmlFor="fullName" className="text-white font-bold">Full Name *</label>
                 <input 
                   id="fullName"
                   type="text" 
@@ -86,7 +86,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email Address *</label>
+                <label htmlFor="email" className="text-white font-bold">Email Address *</label>
                 <input 
                   id="email"
                   type="email" 
@@ -100,7 +100,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="zipCode">Cary Zip Code / Address</label>
+                <label htmlFor="zipCode" className="text-white font-bold">Cary Zip Code / Address</label>
                 <input 
                   id="zipCode"
                   type="text" 
@@ -110,7 +110,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="phone">Phone Number *</label>
+                <label htmlFor="phone" className="text-white font-bold">Phone Number *</label>
                 <input 
                   id="phone"
                   type="tel" 
@@ -123,10 +123,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
             </div>
 
             <div className="mb-4">
-              <label htmlFor="serviceNeeded" className="block text-xs text-white/80 mb-1.5 font-medium">Service Needed</label>
+              <label htmlFor="serviceNeeded" className="block text-xs text-white mb-1.5 font-bold">Service Needed</label>
               <select
                 id="serviceNeeded"
-                className="w-full p-3 rounded-lg bg-black/25 border border-white/15 text-white text-sm"
+                className="w-full p-3 rounded-lg bg-black/40 border border-white/25 text-white text-sm font-medium"
                 value={formData.serviceInterest}
                 onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
               >
@@ -141,18 +141,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
             </div>
 
             <div className="mb-4">
-              <label htmlFor="issueDetails" className="block text-xs text-white/80 mb-1.5 font-medium">Project Notes / Roof Condition</label>
+              <label htmlFor="issueDetails" className="block text-xs text-white mb-1.5 font-bold">Project Notes / Roof Condition</label>
               <textarea
                 id="issueDetails"
                 rows={3}
                 placeholder="Describe your roof leak, storm damage, or replacement goals..."
-                className="w-full p-3 rounded-lg bg-black/25 border border-white/15 text-white text-sm"
+                className="w-full p-3 rounded-lg bg-black/40 border border-white/25 text-white text-sm"
                 value={formData.issueDetails}
                 onChange={(e) => setFormData({ ...formData, issueDetails: e.target.value })}
               />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-lg w-full">
+            <button type="submit" className="btn btn-primary btn-lg w-full !text-white font-extrabold">
               Schedule Free Roof Inspection →
             </button>
             <div className="form-notice">

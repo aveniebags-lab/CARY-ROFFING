@@ -52,13 +52,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
         </a>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} id="navLinks">
-          <a 
-            href="#flow"
-            onClick={(e) => scrollToSection(e, 'flow')}
-          >
-            Service Flow
-          </a>
-
           {/* DROPDOWN FOR OUR SERVICES */}
           <div 
             className={`dropdown ${dropdownOpen ? 'active' : ''}`}
@@ -104,6 +97,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           </button>
 
           <a 
+            href="#recent-projects"
+            onClick={(e) => scrollToSection(e, 'recent-projects')}
+          >
+            Recent Projects
+          </a>
+
+          <a 
             href="#why-us"
             onClick={(e) => scrollToSection(e, 'why-us')}
           >
@@ -130,13 +130,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           <button
             type="button"
             onClick={(e) => scrollToSection(e, 'book')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-full bg-[#E8F8F1] text-[#1D9E75] border border-[#1D9E75]/30 hover:bg-[#1D9E75] hover:text-white transition-all cursor-pointer shadow-xs"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-extrabold rounded-full bg-[#E8F8F1] text-[#0d684d] border border-[#0d684d]/30 hover:bg-[#0d684d] hover:text-white transition-all cursor-pointer shadow-xs"
           >
-            <span className="w-2 h-2 rounded-full bg-[#1D9E75]"></span>
+            <span className="w-2 h-2 rounded-full bg-[#0d684d]"></span>
             Free Inspection
           </button>
 
-          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary">
+          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !text-white font-extrabold">
             Call Us Now
           </a>
 

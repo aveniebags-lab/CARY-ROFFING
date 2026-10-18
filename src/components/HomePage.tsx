@@ -3,6 +3,7 @@ import { ALL_SERVICES, CARY_ZIP_CODES, COMPANY_DETAILS, SEO_AEO_GUIDE } from '..
 import { BookingForm } from './BookingForm';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { SeoSchema } from './SeoSchema';
+import { RecentProjectsCarousel } from './RecentProjectsCarousel';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -101,19 +102,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               
               {/* Hierarchical H4, H5, H6 for complete semantic tree */}
               <div className="mt-4 pt-3 border-t border-[#e8e4df]/60 text-left">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-[#F07020] mb-1">
+                <h4 className="text-xs font-extrabold uppercase tracking-wide text-[#B43B06] mb-1">
                   Local Referral Network
                 </h4>
                 <h5 className="text-[11px] font-semibold text-black mb-1">
                   Standard Response: Fast Dispatch &amp; Estimate
                 </h5>
-                <h6 className="text-[10px] text-black/70 font-medium">
+                <h6 className="text-[10px] text-black font-semibold">
                   Network: Vetted &amp; Insured Cary Specialists
                 </h6>
               </div>
 
               <div className="btn-group mt-3">
-                <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary">
+                <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !text-white font-extrabold">
                   Call {COMPANY_DETAILS.mainPhone}
                 </a>
               </div>
@@ -126,13 +127,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <p>A certified local Cary roofer visits your property to conduct a thorough 21-point roof assessment, identify damage, and map out the exact repair plan.</p>
               
               <div className="mt-4 pt-3 border-t border-[#e8e4df]/60 text-left">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-[#F07020] mb-1">
+                <h4 className="text-xs font-extrabold uppercase tracking-wide text-[#B43B06] mb-1">
                   Drone &amp; Attic Moisture Probe
                 </h4>
                 <h5 className="text-[11px] font-semibold text-black mb-1">
                   Inspection Scope: 21-Point Written Audit
                 </h5>
-                <h6 className="text-[10px] text-black/70 font-medium">
+                <h6 className="text-[10px] text-black font-semibold">
                   Standard: HAAG Certified Residential Inspector
                 </h6>
               </div>
@@ -155,13 +156,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <p>Our experienced crew carries out the repair or replacement with premium materials, leaving your home protected, clean, and fully restored.</p>
               
               <div className="mt-4 pt-3 border-t border-[#e8e4df]/60 text-left">
-                <h4 className="text-xs font-bold uppercase tracking-wide text-[#F07020] mb-1">
+                <h4 className="text-xs font-extrabold uppercase tracking-wide text-[#B43B06] mb-1">
                   130 MPH Wind Resistant Materials
                 </h4>
                 <h5 className="text-[11px] font-semibold text-black mb-1">
                   Building Code: NC Zone 4A High-Wind Fastening
                 </h5>
-                <h6 className="text-[10px] text-black/70 font-medium">
+                <h6 className="text-[10px] text-black font-semibold">
                   Warranty: Lifetime Material &amp; Workmanship
                 </h6>
               </div>
@@ -208,7 +209,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">Installation &amp; Reroofing</div>
               <h3>Roof Replacement Services</h3>
               <p>Complete tear-offs, rotten wood replacement, and high-wind architectural shingle installations for homes in Preston, Lochmere, and Kildaire Farms.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ 6-Nail High Wind Fastening • ✓ CDX Plywood Replacement
               </div>
               <button 
@@ -238,7 +239,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">Leak Diagnostics &amp; Patches</div>
               <h3>Roof Repair &amp; Leak Fixes</h3>
               <p>Fast, effective repairs for active roof leaks, missing shingles, failed chimney flashings, and storm-damaged roof valleys across Wake County.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ Infrared Thermal Leak Tracing • ✓ Fast Local Assistance
               </div>
               <button 
@@ -268,7 +269,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">Priority Emergency Intake</div>
               <h3>Storm Damage &amp; Emergency Roofing</h3>
               <p>Rapid emergency coordination across Cary for fallen pine tree impacts, hail damage, and heavy rain leaks with insurance claim support.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ Commercial 10-Mil Poly Tarps • ✓ Xactimate Insurance Scopes
               </div>
               <button 
@@ -298,7 +299,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">New Construction &amp; Custom Homes</div>
               <h3>Roof Installation Services</h3>
               <p>Engineered new roof builds for residential additions, modern custom homes, and commercial developments with multi-layer ice/water shields.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ Synthetic Underlayment • ✓ North Carolina Building Code Zone 4A
               </div>
               <button 
@@ -328,7 +329,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">Lifetime 50+ Year Protection</div>
               <h3>Metal Roofing Services</h3>
               <p>Architectural standing seam 24-gauge Galvalume steel, aluminum, and copper metal roofs with concealed clips and Kynar 500 cool-roof finishes.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ Non-Combustible Class A Fire • ✓ Zero Exposed Screw Holes
               </div>
               <button 
@@ -358,7 +359,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="kicker text-[11px]">Custom Extrusion &amp; Guards</div>
               <h3>Seamless Gutter Services</h3>
               <p>Custom roll-formed 6-inch seamless aluminum gutters, surgical stainless steel micro-mesh leaf guards, and oversized downspouts.</p>
-              <div className="mt-2 text-xs text-black/70 font-semibold">
+              <div className="mt-2 text-xs text-black font-bold">
                 ✓ Heavy .032" Commercial Aluminum • ✓ Lifetime No-Clog Guards
               </div>
               <button 
@@ -372,6 +373,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
           </div>
         </div>
       </section>
+
+      {/* ================= RECENT LOCAL PROJECTS CAROUSEL ================= */}
+      <RecentProjectsCarousel onNavigate={onNavigate} />
 
       {/* ================= SECTION 4: ZIP COVERAGE & MAPS (H2) ================= */}
       <section id="coverage" className="section section-alt">

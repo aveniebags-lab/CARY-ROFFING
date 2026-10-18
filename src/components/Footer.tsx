@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
           <p className="footer-desc mt-2">
             Premier local roofing network connecting homeowners in Cary, NC and Wake County with pre-screened, insured roofing professionals for high-standard craftsmanship and lifetime protection.
           </p>
-          <div className="mt-4 flex flex-wrap gap-2 text-xs text-white/70">
+          <div className="mt-4 flex flex-wrap gap-2 text-xs text-white font-medium">
             <span>Verified Local Pro Network</span>
             <span>•</span>
             <span>Pre-Screened &amp; Insured Roofers</span>
@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <button
               type="button"
               onClick={onOpenSeoDrawer}
-              className="text-xs text-[#F07020] font-bold hover:underline flex items-center gap-1 cursor-pointer"
+              className="text-xs text-[#FB923C] font-bold hover:underline flex items-center gap-1 cursor-pointer"
             >
               ⚙ CaryRoofing Technical Specifications &amp; Cost Estimator
             </button>
@@ -89,21 +89,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <button 
               type="button"
               onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
-              className="text-[#F07020] hover:underline text-left text-xs font-bold mt-1"
+              className="text-[#FB923C] hover:underline text-left text-xs font-bold mt-1"
             >
               🧮 Cary NC Roofing Calculator
             </button>
             <button 
               type="button"
               onClick={() => onNavigate('our-locations')}
-              className="text-white/80 hover:text-[#F07020] text-left text-xs font-semibold"
+              className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
               🗺️ View All Cary Service Locations
             </button>
             <button 
               type="button"
               onClick={() => onNavigate('privacy-policy')}
-              className="text-white/80 hover:text-[#F07020] text-left text-xs font-semibold"
+              className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
               🔒 Privacy Policy &amp; Terms
             </button>

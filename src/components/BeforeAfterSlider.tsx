@@ -304,7 +304,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 <h3 className="text-white text-base md:text-lg font-bold">
                   High-Resolution Field Inspection: {serviceTitle}
                 </h3>
-                <p className="text-xs text-white/70">
+                <p className="text-xs text-white font-medium">
                   Cary NC Jobsite Telemetry: {gpsCoords} • Authentic Macro Craftsmanship
                 </p>
               </div>
@@ -331,14 +331,14 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                     className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-zoom-in"
                   />
                 </div>
-                <p className="text-[11px] text-white/60 mt-1.5 italic">
+                <p className="text-[11px] text-white mt-1.5 font-medium">
                   Field diagnostic snapshot highlighting weathering and leak vulnerabilities before intervention.
                 </p>
               </div>
 
               <div>
-                <div className="text-xs font-bold text-[#1D9E75] mb-1.5 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#1D9E75]"></span>
+                <div className="text-xs font-bold text-[#4ade80] mb-1.5 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#4ade80]"></span>
                   Completed Installation ({afterLabel})
                 </div>
                 <div className="rounded-xl overflow-hidden border border-white/10 bg-black">
@@ -348,7 +348,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                     className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-zoom-in"
                   />
                 </div>
-                <p className="text-[11px] text-white/60 mt-1.5 italic">
+                <p className="text-[11px] text-white mt-1.5 font-medium">
                   Finished execution compliant with North Carolina High-Wind 130 MPH code and warranty standards.
                 </p>
               </div>
@@ -369,12 +369,12 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             </div>
 
             {/* Modal Footer */}
-            <div className="px-5 py-3 border-t border-white/10 bg-black/40 flex flex-wrap items-center justify-between text-xs text-white/70">
-              <span>📍 Town of Cary, Wake County, NC Service Area</span>
+            <div className="px-5 py-3 border-t border-white/10 bg-black/40 flex flex-wrap items-center justify-between text-xs text-white">
+              <span className="font-medium">📍 Town of Cary, Wake County, NC Service Area</span>
               <button
                 type="button"
                 onClick={() => setIsZoomOpen(false)}
-                className="px-4 py-1.5 bg-[#F07020] text-white rounded-lg font-bold hover:bg-[#d95e12] cursor-pointer"
+                className="px-4 py-1.5 bg-[#D9531E] text-white rounded-lg font-bold hover:bg-[#b43b06] cursor-pointer !text-white"
               >
                 Close Inspection
               </button>

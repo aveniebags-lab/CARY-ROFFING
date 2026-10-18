@@ -231,8 +231,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                         onClick={() => setHouseSqFt(size)}
                         className={`px-2.5 py-1 text-xs rounded-lg font-bold border transition-all cursor-pointer ${
                           houseSqFt === size
-                            ? 'bg-[#F07020] text-white border-[#F07020]'
-                            : 'bg-[#FAF8F4] text-black border-[#e8e4df] hover:border-[#F07020]'
+                            ? 'bg-[#D9531E] text-white border-[#D9531E] !text-white'
+                            : 'bg-[#FAF8F4] text-black border-[#e8e4df] hover:border-[#D9531E]'
                         }`}
                       >
                         {size === 1700 ? '1,700 (Cary Avg)' : `${size.toLocaleString()} sq ft`}
@@ -250,7 +250,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                     id="materialSelect"
                     value={material}
                     onChange={(e) => setMaterial(e.target.value)}
-                    className="w-full p-3 bg-[#FAF8F4] border border-[#e8e4df] rounded-xl text-sm font-bold text-black focus:border-[#F07020] focus:outline-hidden"
+                    className="w-full p-3 bg-[#FAF8F4] border border-[#e8e4df] rounded-xl text-sm font-bold text-black focus:border-[#D9531E] focus:outline-hidden"
                   >
                     {Object.entries(materialsData).map(([key, data]) => (
                       <option key={key} value={key}>
@@ -258,7 +258,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                       </option>
                     ))}
                   </select>
-                  <p className="text-xs text-black/70 mt-1 font-medium">
+                  <p className="text-xs text-black mt-1 font-medium">
                     {materialsData[material]?.desc}
                   </p>
                 </div>
@@ -401,11 +401,11 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                   </div>
 
                   <div className="mb-6">
-                    <span className="text-xs text-black/70 font-semibold block">Total Estimated Cost Range:</span>
+                    <span className="text-xs text-black font-extrabold block">Total Estimated Cost Range:</span>
                     <div className="text-3xl sm:text-4xl font-extrabold text-[#1e2a3a] tracking-tight mt-1">
                       ${calculation.totalLow.toLocaleString()} – ${calculation.totalHigh.toLocaleString()}
                     </div>
-                    <div className="text-sm font-bold text-[#1D9E75] mt-1">
+                    <div className="text-sm font-bold text-[#0d684d] mt-1">
                       Midpoint Estimate: ${calculation.average.toLocaleString()}
                     </div>
                   </div>
@@ -413,46 +413,46 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                   {/* Surface Breakdown */}
                   <div className="bg-white p-4 rounded-xl border border-[#e8e4df] space-y-2.5 text-xs text-black mb-6">
                     <div className="flex justify-between border-b border-[#e8e4df] pb-2">
-                      <span className="text-black/70">Calculated Roof Surface:</span>
+                      <span className="font-semibold text-black">Calculated Roof Surface:</span>
                       <span className="font-bold">{calculation.roofSqFt.toLocaleString()} sq ft</span>
                     </div>
                     <div className="flex justify-between border-b border-[#e8e4df] pb-2">
-                      <span className="text-black/70">Roofing Squares (100 sq ft):</span>
+                      <span className="font-semibold text-black">Roofing Squares (100 sq ft):</span>
                       <span className="font-bold">{calculation.squares} Squares</span>
                     </div>
                     <div className="flex justify-between border-b border-[#e8e4df] pb-2">
-                      <span className="text-black/70">Material &amp; Labor:</span>
+                      <span className="font-semibold text-black">Material &amp; Labor:</span>
                       <span className="font-bold">${calculation.materialCostLow.toLocaleString()} – ${calculation.materialCostHigh.toLocaleString()}</span>
                     </div>
                     {includeTearOff && (
                       <div className="flex justify-between border-b border-[#e8e4df] pb-2">
-                        <span className="text-black/70">Tear-Off &amp; Wake Disposal:</span>
+                        <span className="font-semibold text-black">Tear-Off &amp; Wake Disposal:</span>
                         <span className="font-bold">${calculation.tearOffCost.toLocaleString()}</span>
                       </div>
                     )}
                     {includePermit && (
                       <div className="flex justify-between border-b border-[#e8e4df] pb-2">
-                        <span className="text-black/70">Town of Cary Permit:</span>
+                        <span className="font-semibold text-black">Town of Cary Permit:</span>
                         <span className="font-bold">${calculation.permitCost}</span>
                       </div>
                     )}
                     {deckingPercent > 0 && (
                       <div className="flex justify-between">
-                        <span className="text-black/70">Decking Repair ({deckingPercent}%):</span>
+                        <span className="font-semibold text-black">Decking Repair ({deckingPercent}%):</span>
                         <span className="font-bold">${calculation.deckingCost.toLocaleString()}</span>
                       </div>
                     )}
                   </div>
 
                   {/* Local Dispatch Notice */}
-                  <div className="p-4 bg-white border border-[#F07020]/30 rounded-xl mb-6">
+                  <div className="p-4 bg-white border border-[#D9531E]/40 rounded-xl mb-6">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-base">📍</span>
                       <strong className="text-xs font-bold text-black">
                         Direct Hub for ZIP {selectedZip}:
                       </strong>
                     </div>
-                    <p className="text-xs text-black/80 font-medium">
+                    <p className="text-xs text-black font-medium">
                       {activeZip.areaName} • Pinned Dispatch: {activeZip.landmarks[0]}
                     </p>
                   </div>
@@ -462,7 +462,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                 <div className="space-y-3">
                   <a
                     href={`tel:${activeZip.phoneRaw}`}
-                    className="w-full btn btn-primary !py-3.5 !text-sm font-bold flex items-center justify-center gap-2 shadow-md"
+                    className="w-full btn btn-primary !py-3.5 !text-sm font-extrabold flex items-center justify-center gap-2 shadow-md !text-white"
                   >
                     <span>📞 Call Local Hub: {activeZip.phone}</span>
                   </a>
@@ -472,11 +472,11 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                       const el = document.getElementById('book');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full py-3 bg-white border border-[#e8e4df] hover:border-[#F07020] text-black font-bold text-xs rounded-xl transition-all cursor-pointer shadow-xs"
+                    className="w-full py-3 bg-white border border-[#e8e4df] hover:border-[#D9531E] text-black font-extrabold text-xs rounded-xl transition-all cursor-pointer shadow-xs"
                   >
                     Lock In Quote &amp; Book Free On-Site Inspection →
                   </button>
-                  <p className="text-[11px] text-center text-black/60 font-medium">
+                  <p className="text-[11px] text-center text-black font-semibold">
                     100% Free on-site laser measurement confirms exact roof plane dimensions &amp; scope.
                   </p>
                 </div>

@@ -350,25 +350,25 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
 
                 <div className="bg-[#1e2a3a] text-white p-6 rounded-xl flex flex-col justify-between">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#F07020]">
+                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#FB923C]">
                       Cary, NC Market Estimate
                     </span>
                     <div className="text-3xl font-extrabold text-white mt-2">
                       ${low.toLocaleString()} – ${high.toLocaleString()}
                     </div>
-                    <p className="text-xs text-white/70 mt-2">
+                    <p className="text-xs text-white font-medium mt-2">
                       Estimated price for complete tear-off, synthetic underlayment, drip edges, code-compliant fastening, and clean-up in Wake County.
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-white/10">
+                  <div className="mt-6 pt-4 border-t border-white/20">
                     <a
                       href="#book"
                       onClick={onClose}
-                      className="btn btn-primary w-full text-center text-sm font-bold block"
+                      className="btn btn-primary w-full text-center text-sm font-extrabold block !text-white"
                     >
                       Claim Exact Written Quote &amp; Free Inspection →
                     </a>
-                    <div className="text-center text-[11px] text-white/50 mt-2">
+                    <div className="text-center text-[11px] text-white font-medium mt-2">
                       Zero obligation • On-site inspection confirms decking &amp; scope
                     </div>
                   </div>
@@ -403,16 +403,16 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
                   <tbody className="divide-y divide-[#e8e4df]">
                     {CARY_ZIP_CODES.map((z) => (
                       <tr key={z.zip} className="hover:bg-[#FFFDF9]">
-                        <td className="p-3 font-bold text-[#F07020]">{z.zip}</td>
+                        <td className="p-3 font-bold text-[#B43B06]">{z.zip}</td>
                         <td className="p-3 font-semibold text-black">{z.areaName}</td>
                         <td className="p-3 font-bold text-black">
-                          <a href={`tel:${z.phoneRaw}`} className="hover:text-[#F07020] underline">
+                          <a href={`tel:${z.phoneRaw}`} className="hover:text-[#B43B06] underline">
                             {z.phone}
                           </a>
                         </td>
                         <td className="p-3 font-mono text-[11px] text-black font-medium">{z.coords}</td>
                         <td className="p-3">
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E8F8F1] text-[#1D9E75]">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E8F8F1] text-[#0d684d]">
                             Active 24/7 Dispatch
                           </span>
                         </td>
@@ -438,7 +438,7 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-black font-medium">
                 <div className="p-4 bg-white border border-[#e8e4df] rounded-xl space-y-2">
-                  <h5 className="font-bold text-[#F07020] uppercase tracking-wide">✓ Code &amp; Permitting Standards</h5>
+                  <h5 className="font-bold text-[#B43B06] uppercase tracking-wide">✓ Code &amp; Permitting Standards</h5>
                   <p>✓ <strong>Town of Cary Permits:</strong> Turnkey permit pulling &amp; inspection sign-off.</p>
                   <p>✓ <strong>NC High-Wind Code:</strong> 130 MPH rated 6-nail fastening patterns.</p>
                   <p>✓ <strong>Ice &amp; Water Barrier:</strong> Required along eaves, valleys, and flashing junctions.</p>
@@ -446,7 +446,7 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
                   <p>✓ <strong>Continuous Ventilation:</strong> Balanced 1:300 NFA ridge and soffit airflow.</p>
                 </div>
                 <div className="p-4 bg-white border border-[#e8e4df] rounded-xl space-y-2">
-                  <h5 className="font-bold text-[#1D9E75] uppercase tracking-wide">✓ Quality &amp; Warranty Assurances</h5>
+                  <h5 className="font-bold text-[#0d684d] uppercase tracking-wide">✓ Quality &amp; Warranty Assurances</h5>
                   <p>✓ <strong>Licensed &amp; Insured:</strong> Full $2M General Liability coverage in NC.</p>
                   <p>✓ <strong>Certified Installers:</strong> GAF Master Elite &amp; CertainTeed certified.</p>
                   <p>✓ <strong>50-Year Protection:</strong> Non-prorated manufacturer warranty packages.</p>

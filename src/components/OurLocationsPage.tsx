@@ -255,7 +255,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-[#e8e4df]">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 text-xs font-extrabold bg-[#F07020] text-white rounded-md">
+                      <span className="px-2.5 py-0.5 text-xs font-extrabold bg-[#D9531E] text-white rounded-md !text-white">
                         ZIP {loc.zip}
                       </span>
                       <span className="text-xs font-bold text-black uppercase tracking-wider">
@@ -267,7 +267,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                       {loc.name}
                     </h2>
                     <div className="flex items-center gap-1.5 mt-1.5 text-xs text-black font-bold">
-                      <span className="text-[#F07020]">📍 Pinned Hub:</span>
+                      <span className="text-[#B43B06]">📍 Pinned Hub:</span>
                       <span>{loc.pinAddress}</span>
                     </div>
                   </div>
@@ -277,13 +277,13 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                       <span className="text-[11px] uppercase tracking-wider text-black block font-bold">
                         Average Response Time
                       </span>
-                      <span className="text-sm font-extrabold text-[#1D9E75]">
+                      <span className="text-sm font-extrabold text-[#0d684d]">
                         ⚡ {loc.dispatchTime}
                       </span>
                     </div>
                     <a
                       href={`tel:${loc.phoneRaw}`}
-                      className="btn btn-primary !py-2.5 !px-5 !text-sm font-bold flex items-center gap-1.5"
+                      className="btn btn-primary !py-2.5 !px-5 !text-sm font-extrabold !text-white flex items-center gap-1.5 shadow-sm"
                     >
                       <span>📞</span>
                       <span>Call {loc.phone}</span>
@@ -325,20 +325,20 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                     <ul className="space-y-2 text-sm text-black">
                       {loc.roofNeeds.map((need, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <span className="text-[#1D9E75] font-bold">✓</span>
+                          <span className="text-[#0d684d] font-bold">✓</span>
                           <span>{need}</span>
                         </li>
                       ))}
                     </ul>
                     <div className="pt-2">
-                      <h4 className="text-xs font-bold text-[#F07020] uppercase mb-1">
+                      <h4 className="text-xs font-bold text-[#B43B06] uppercase mb-1">
                         Frequently Requested Services
                       </h4>
                       <div className="flex flex-wrap gap-2 text-xs">
                         <button
                           type="button"
                           onClick={() => onNavigate('roof-repair-services-cary-nc-usa.html')}
-                          className="text-[#F07020] font-semibold hover:underline"
+                          className="text-[#B43B06] font-bold hover:underline"
                         >
                           Roof Repair
                         </button>
@@ -346,7 +346,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                         <button
                           type="button"
                           onClick={() => onNavigate('roof-replacement-services-cary-nc-usa.html')}
-                          className="text-[#F07020] font-semibold hover:underline"
+                          className="text-[#B43B06] font-bold hover:underline"
                         >
                           Roof Replacement
                         </button>
@@ -354,7 +354,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                         <button
                           type="button"
                           onClick={() => onNavigate('gutter-services-cary-nc-usa.html')}
-                          className="text-[#F07020] font-semibold hover:underline"
+                          className="text-[#B43B06] font-bold hover:underline"
                         >
                           Seamless Gutters
                         </button>

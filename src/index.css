@@ -4,9 +4,10 @@
   --mouse-bg-hero: #FFFDF9;
   --mouse-bg-alt: #FAF8F4;
   --mouse-navy: #141c27;
-  --mouse-orange: #F07020;
-  --mouse-orange-hover: #d95e12;
-  --mouse-green: #1D9E75;
+  --mouse-orange: #D9531E;
+  --mouse-orange-text: #B43B06;
+  --mouse-orange-hover: #b43b06;
+  --mouse-green: #0d684d;
   --mouse-green-bg: #E8F8F1;
   --mouse-muted: #1e293b;
   --mouse-border: #e8e4df;
@@ -38,7 +39,7 @@ body {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--mouse-orange);
+  color: var(--mouse-orange-text);
 }
 
 .container {
@@ -291,10 +292,10 @@ h3 {
 
 .kicker {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--mouse-orange);
+  color: var(--mouse-orange-text);
   margin-bottom: 12px;
 }
 
@@ -345,11 +346,12 @@ h3 {
 
 .badge-item {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--mouse-green);
   background: var(--mouse-green-bg);
   padding: 6px 16px;
   border-radius: 9999px;
+  border: 1px solid rgba(13, 104, 77, 0.2);
 }
 
 .location-badge {
@@ -424,8 +426,8 @@ h3 {
 }
 
 .link-arrow {
-  color: var(--mouse-orange);
-  font-weight: 700;
+  color: var(--mouse-orange-text);
+  font-weight: 800;
   text-decoration: none;
   font-size: 14px;
   margin-top: auto;
@@ -450,7 +452,7 @@ h3 {
 .step-badge {
   font-size: 12px;
   font-weight: 800;
-  color: var(--mouse-orange);
+  color: var(--mouse-orange-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 6px;
@@ -458,7 +460,7 @@ h3 {
 
 .cta-notice {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--mouse-green);
   text-transform: uppercase;
   text-align: center;
@@ -674,17 +676,17 @@ h3 {
 /* BOOKING SECTION */
 .book-section {
   background: #141c27;
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 80px 0;
 }
 
-.book-section h2 { color: #ffffff; }
-.book-subtitle { color: rgba(255, 255, 255, 0.95); margin-bottom: 32px; }
-.book-section p { color: rgba(255, 255, 255, 0.95); }
+.book-section h2 { color: #ffffff !important; }
+.book-subtitle { color: #ffffff !important; margin-bottom: 32px; font-weight: 500; }
+.book-section p { color: #ffffff !important; }
 
 .book-form {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   padding: 32px;
   text-align: left;
@@ -700,8 +702,8 @@ h3 {
 .form-group label {
   display: block;
   font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
+  font-weight: 700;
+  color: #ffffff !important;
   margin-bottom: 6px;
 }
 
@@ -709,40 +711,41 @@ h3 {
   width: 100%;
   padding: 12px 14px;
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
   font-size: 14px;
 }
 
 .form-group select option {
   background: #1e2a3a;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .form-notice {
   text-align: center;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff !important;
+  font-weight: 600;
   margin-top: 12px;
 }
 
 /* FOOTER */
 .footer {
   background: #0f151e;
-  color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 60px 0 24px;
 }
 
 .footer-desc {
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: #ffffff !important;
   font-size: 14px;
   line-height: 1.6;
 }
 
 .footer p {
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: #ffffff !important;
 }
 
 .footer-grid {
@@ -754,8 +757,8 @@ h3 {
 
 .footer-col h4 {
   font-size: 13px;
-  color: #ffffff;
-  font-weight: 700;
+  color: #ffffff !important;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 16px;
@@ -768,7 +771,7 @@ h3 {
 }
 
 .footer-links a, .footer-links span, .footer-links button {
-  color: rgba(255, 255, 255, 0.92);
+  color: #ffffff !important;
   font-size: 14px;
   text-decoration: none;
   background: none;
@@ -779,12 +782,12 @@ h3 {
 }
 
 .footer-links a:hover, .footer-links button:hover {
-  color: #ffffff;
+  color: #ffffff !important;
   text-decoration: underline;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
@@ -792,11 +795,55 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff !important;
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   GOOGLE PAGESPEED INSIGHTS / WCAG AA HIGH CONTRAST ENFORCEMENT
+   1. Black & Dark Backgrounds -> ALWAYS Pure White Text (#ffffff)
+   2. Orange Backgrounds -> ALWAYS Pure White Text (#ffffff)
+   3. Light Backgrounds -> High Contrast Solid Black (#000000)
+   ============================================================ */
+
+/* All dark containers: enforce pure white text */
+.book-section,
+.footer,
+[class*="bg-[#1e2a3a]"],
+[class*="bg-[#141c27]"],
+[class*="bg-[#0f172a]"],
+[class*="bg-[#0f151e]"],
+.bg-slate-900,
+.bg-black {
+  color: #ffffff !important;
+}
+
+.book-section :where(p, span:not(.font-serif-accent), h1, h2, h3, h4, h5, h6, li, label, strong),
+.footer :where(p, span, h1, h2, h3, h4, h5, h6, li, label, strong, a, button),
+[class*="bg-[#1e2a3a]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
+[class*="bg-[#141c27]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
+[class*="bg-[#0f172a]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
+[class*="bg-[#0f151e]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
+.bg-slate-900 :where(p, span:not([class*="bg-"]), h1, h2, h3, h4, h5, h6, li, label, strong),
+.bg-black :where(p, span:not([class*="bg-"]), h1, h2, h3, h4, h5, h6, li, label, strong) {
+  color: #ffffff !important;
+}
+
+/* All orange backgrounds: enforce pure white text */
+.btn-primary,
+.btn-primary *,
+[class*="bg-[#F07020]"],
+[class*="bg-[#F07020]"] *,
+[class*="bg-[#D9531E]"],
+[class*="bg-[#D9531E]"] *,
+[class*="bg-[#d9531e]"],
+[class*="bg-[#d9531e]"] *,
+[class*="bg-[#ea580c]"],
+[class*="bg-[#ea580c]"] * {
+  color: #ffffff !important;
 }
 
 /* RESPONSIVE */

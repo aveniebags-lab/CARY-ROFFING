@@ -606,34 +606,35 @@ export const ALL_SERVICES: ServiceInfo[] = [
     ],
     faqs: [
       {
-        q: "1. How much does a roof replacement cost in Cary, North Carolina in 2026?",
-        a: "For an average Cary home (between 2,000 and 3,000 square feet), a complete architectural shingle roof replacement typically ranges from $7,500 to $15,500. Factors that influence cost include roof pitch steepness, the number of rotted plywood decking sheets that need replacement, architectural complexity (dormers and valleys), and material selection.",
+        q: "1. How do I know whether my roof needs replacement?",
+        a: "If it keeps leaking again and again, that's a clear sign. Or the shingles are deteriorating everywhere, not just in one small spot. Old roofs naturally reach an age where patch repair doesn't make financial sense anymore. The best first step is getting an on-site inspection done—we will inspect the decking and flashing and tell you straight whether repairs are still practical or replacement will provide better long-term value.",
+        note: "Important Note: We offer 100% free on-site roof diagnostic inspections across all 5 Cary ZIP codes."
+      },
+      {
+        q: "2. Is partial roof replacement cheaper than complete replacement?",
+        a: "At first, a partial replacement looks cheaper upfront, especially if only one slope or storm-hit exposure is damaged. But whether it's truly cost-effective depends on the age and condition of the remaining roof, whether new materials will match seamlessly, and whether you'll just need another repair in a year. Our inspection assesses the entire roofing system so you can decide with full clarity."
+      },
+      {
+        q: "3. How long does a roof replacement take on a Cary home?",
+        a: "There is no single fixed duration for every building. It depends on your home's square footage, chosen roofing material, architectural complexity (dormers, valleys, steepness), and weather conditions. If our crew opens the roof and finds rotted decking underneath, replacing those sheets takes extra time. For most standard residential homes in Cary, asphalt shingle replacements are completed in just 1 to 2 days."
+      },
+      {
+        q: "4. How much does a roof replacement cost in Cary, North Carolina in 2026?",
+        a: "For an average Cary home (between 1,700 and 3,000 square feet), a complete architectural shingle roof replacement typically ranges from $8,500 to $15,500. Factors that influence cost include roof pitch steepness, the number of rotted plywood decking sheets that need replacement, architectural complexity (dormers and valleys), and material selection.",
         note: "Important Note: We provide a free, zero-obligation on-site roof inspection where we measure your roof and hand you a transparent, line-item written estimate."
       },
       {
-        q: "2. What is the difference between a Roof Tear-Off and Overlay Roofing, and which is better?",
+        q: "5. What is the difference between a Roof Tear-Off and Overlay Roofing, and which is better?",
         a: "A Roof Tear-Off completely removes all existing shingle layers down to the bare plywood, allowing us to inspect the wood deck, replace rotted framing, and install brand-new synthetic underlayment and ice/water shield. Overlay Roofing (nailing a new layer of shingles directly on top of the old layer) saves on labor and disposal fees, but it traps heat, adds thousands of pounds of dead weight, hides underlying wood rot, and generally voids manufacturer lifetime warranties.",
         note: "Important Note: North Carolina State Building Code strictly forbids overlays if a roof already has two layers installed."
       },
       {
-        q: "3. When is a Partial Roof Replacement a good idea versus a Complete Roof Replacement?",
-        a: "A partial roof replacement makes sense when damage is isolated to a specific slope such as a single side hit by a falling pine tree or severe wind gusts while the rest of the roof is less than 10 to 12 years old and in excellent condition."
-      },
-      {
-        q: "4. Why are so many 1990s and early 2000s homes in Cary replacing their roofs right now?",
-        a: "During the 1990s tech and RTP expansion, thousands of homes were built across Cary communities like Preston, Lochmere, Kildaire Farms, and Weatherstone. Most builders used basic 20-year 3-tab asphalt shingles. Those roofs are now 20 to 25+ years old and need replacement."
-      },
-      {
-        q: "5. How long does a residential roof replacement take on a Cary house?",
-        a: "For most suburban Cary homes (2,000 to 3,500 sq ft), our experienced crew completes the entire replacement including tear-off, decking repairs, dry-in underlayment, shingle installation, and magnetic nail sweep in just 1 to 2 days."
-      },
-      {
         q: "6. Do I need HOA approval for a roof replacement in Cary, NC?",
-        a: "In most master-planned Cary subdivisions (such as Amberly, Carpenter Village, Lochmere, and Preston), HOAs have specific guidelines regarding shingle color, profile, and architectural grade. We provide homeowners with official manufacturer color sample boards and technical specification sheets."
+        a: "In most master-planned Cary subdivisions (such as Amberly, Carpenter Village, Lochmere, and Preston), HOAs have specific guidelines regarding shingle color, profile, and architectural grade. We provide homeowners with official manufacturer color sample boards and technical specification sheets to streamline HOA approval."
       },
       {
         q: "7. How do I know if my roof replacement will be covered by homeowners insurance?",
-        a: "If your roof sustained sudden, direct damage from a documented hail storm, tornado, high-wind microburst, or fallen tree limb, your homeowner insurance policy typically covers replacement (minus your deductible)."
+        a: "If your roof sustained sudden, direct damage from a documented hail storm, tornado, high-wind microburst, or fallen tree limb, your homeowner insurance policy typically covers replacement (minus your deductible). We provide detailed photographic reports to support your insurance claim."
       },
       {
         q: "8. What roofing materials are best for the climate in Cary and Wake County?",

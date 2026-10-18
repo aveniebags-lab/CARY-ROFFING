@@ -139,9 +139,9 @@ export default function App() {
       />
 
       {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#1e2a3a]/95 backdrop-blur-md border-t border-white/10 p-3 flex sm:hidden items-center justify-between gap-2 shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#1e2a3a] border-t border-white/20 p-3 flex sm:hidden items-center justify-between gap-2 shadow-2xl">
         <div className="flex flex-col">
-          <span className="text-[10px] uppercase font-bold tracking-wider text-[#F07020]">
+          <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#FB923C]">
             Emergency Dispatch
           </span>
           <span className="text-xs font-bold text-white truncate max-w-[150px]">
@@ -155,13 +155,13 @@ export default function App() {
               const bookEl = document.getElementById('book');
               if (bookEl) bookEl.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-3 py-2 text-xs font-bold rounded-full bg-white/15 text-white border border-white/20"
+            className="px-3 py-2 text-xs font-bold rounded-full bg-white/15 text-white border border-white/30"
           >
             Inspection
           </button>
           <a
             href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-            className="btn btn-primary !py-2 !px-4 !text-xs font-bold shadow-md"
+            className="btn btn-primary !py-2 !px-4 !text-xs font-extrabold !text-white shadow-md"
           >
             Call Now
           </a>

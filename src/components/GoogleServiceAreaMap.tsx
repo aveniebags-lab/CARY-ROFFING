@@ -175,19 +175,19 @@ export const GoogleServiceAreaMap: React.FC = () => {
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-black hover:bg-slate-100 text-xs font-extrabold rounded-xl transition-all shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white text-black hover:bg-slate-100 text-xs font-extrabold rounded-xl transition-all shadow-sm cursor-pointer border border-[#e8e4df]"
             >
               <span>🗺️ View on Google Maps</span>
-              <span className="text-black/60">↗</span>
+              <span className="text-black">↗</span>
             </a>
             <a
               href={googleMapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#F07020] hover:bg-[#d95e12] text-white text-xs font-extrabold rounded-xl transition-all shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#D9531E] hover:bg-[#b43b06] text-white text-xs font-extrabold rounded-xl transition-all shadow-sm cursor-pointer !text-white"
             >
               <span>🚗 Get Directions</span>
-              <span className="text-white/80">↗</span>
+              <span className="text-white font-bold">↗</span>
             </a>
           </div>
         </div>
@@ -196,7 +196,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
       {/* Hub Selection Buttons */}
       <div className="bg-[#FAF8F4] border-b border-[#e8e4df] p-3 sm:p-4 overflow-x-auto">
         <div className="flex flex-nowrap sm:flex-wrap items-center gap-2 min-w-max sm:min-w-0">
-          <span className="text-xs font-bold text-black/70 mr-1 hidden sm:inline">
+          <span className="text-xs font-extrabold text-black mr-1 hidden sm:inline">
             Select Map View:
           </span>
           {mapOptions.map((opt) => (
@@ -207,14 +207,14 @@ export const GoogleServiceAreaMap: React.FC = () => {
               className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
                 activeId === opt.id
                   ? 'bg-[#1e2a3a] text-white shadow-md'
-                  : 'bg-white text-black border border-[#e8e4df] hover:border-[#F07020]'
+                  : 'bg-white text-black border border-[#e8e4df] hover:border-[#D9531E]'
               }`}
             >
               <span>{opt.id === 'hq' ? '🏢' : opt.id === 'full' ? '🌐' : '📍'}</span>
               <span>{opt.name}</span>
               {opt.zip && (
                 <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono ${
-                  activeId === opt.id ? 'bg-[#F07020] text-white' : 'bg-slate-100 text-black/70'
+                  activeId === opt.id ? 'bg-[#D9531E] text-white' : 'bg-slate-200 text-black font-bold'
                 }`}>
                   {opt.zip}
                 </span>
@@ -239,10 +239,10 @@ export const GoogleServiceAreaMap: React.FC = () => {
           {/* Floating Hub Badge inside map corner */}
           <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-[#e8e4df] text-xs max-w-[280px]">
             <div className="font-extrabold text-black flex items-center gap-1.5">
-              <span className="text-[#F07020]">📍</span>
+              <span className="text-[#D9531E]">📍</span>
               <span className="truncate">{activeHub.name}</span>
             </div>
-            <p className="text-[11px] text-black/70 font-medium truncate mt-0.5">
+            <p className="text-[11px] text-black font-semibold truncate mt-0.5">
               {activeHub.address}
             </p>
           </div>
@@ -252,10 +252,10 @@ export const GoogleServiceAreaMap: React.FC = () => {
         <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-[#e8e4df]">
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-[#e8e4df] pb-3">
-              <span className="text-xs uppercase font-extrabold tracking-wider text-[#F07020]">
+              <span className="text-xs uppercase font-extrabold tracking-wider text-[#B43B06]">
                 {activeHub.tag}
               </span>
-              <span className="text-[11px] font-mono font-bold text-slate-500">
+              <span className="text-[11px] font-mono font-bold text-slate-800">
                 {activeHub.lat.toFixed(4)}° N, {Math.abs(activeHub.lng).toFixed(4)}° W
               </span>
             </div>
@@ -264,10 +264,10 @@ export const GoogleServiceAreaMap: React.FC = () => {
               <h3 className="text-xl font-extrabold text-black mb-1">
                 {activeHub.name}
               </h3>
-              <p className="text-xs font-semibold text-black/80">
+              <p className="text-xs font-bold text-black">
                 📌 {activeHub.address}
               </p>
-              <p className="text-xs text-black/60 mt-1">
+              <p className="text-xs text-black mt-1">
                 <strong>Key Landmarks:</strong> {activeHub.landmarks}
               </p>
             </div>
@@ -278,8 +278,8 @@ export const GoogleServiceAreaMap: React.FC = () => {
                 Local Coverage Capabilities:
               </span>
               {activeHub.highlights.map((h, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs text-black/85">
-                  <span className="text-[#1D9E75] font-bold">✓</span>
+                <div key={i} className="flex items-start gap-2 text-xs text-black font-medium">
+                  <span className="text-[#0d684d] font-bold">✓</span>
                   <span>{h}</span>
                 </div>
               ))}
@@ -287,7 +287,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
 
             {/* 5 Cary ZIP Codes Quick Badges */}
             <div>
-              <span className="text-[11px] font-bold text-black/70 uppercase tracking-wider block mb-2">
+              <span className="text-[11px] font-bold text-black uppercase tracking-wider block mb-2">
                 Certified Cary Coverage Hubs:
               </span>
               <div className="flex flex-wrap gap-1.5">
@@ -296,7 +296,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
                     key={z.zip}
                     className={`px-2.5 py-1 text-[11px] font-bold rounded-lg border ${
                       activeHub.zip === z.zip
-                        ? 'bg-[#F07020] text-white border-[#F07020]'
+                        ? 'bg-[#D9531E] text-white border-[#D9531E]'
                         : 'bg-white text-black border-[#e8e4df]'
                     }`}
                   >
@@ -311,7 +311,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
           <div className="pt-6 border-t border-[#e8e4df] mt-6 space-y-2.5">
             <a
               href={`tel:${activeHub.phoneRaw}`}
-              className="w-full btn btn-primary !py-3 !text-sm font-bold flex items-center justify-center gap-2 shadow-md"
+              className="w-full btn btn-primary !py-3 !text-sm font-extrabold !text-white flex items-center justify-center gap-2 shadow-md"
             >
               <span>📞 Call Dispatch: {activeHub.phone}</span>
             </a>
@@ -320,7 +320,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
                 href={googleMapsPlaceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-black font-bold rounded-xl border border-[#e8e4df] transition-colors"
+                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-black font-extrabold rounded-xl border border-[#e8e4df] transition-colors"
               >
                 Google Maps Pin ↗
               </a>
@@ -330,7 +330,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
                   const el = document.getElementById('book');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-[#F07020] font-bold rounded-xl border border-[#e8e4df] transition-colors cursor-pointer"
+                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-[#B43B06] font-extrabold rounded-xl border border-[#e8e4df] transition-colors cursor-pointer"
               >
                 Book Inspection →
               </button>
@@ -340,12 +340,12 @@ export const GoogleServiceAreaMap: React.FC = () => {
       </div>
 
       {/* Footer Info Strip */}
-      <div className="bg-[#FAF8F4] border-t border-[#e8e4df] px-6 py-3 text-xs text-black/80 flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-[#FAF8F4] border-t border-[#e8e4df] px-6 py-3 text-xs text-black flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <span className="text-[#1D9E75] font-bold">✓ Town of Cary Permitting:</span>
-          <span>Pulled daily from 580 New Waverly Pl Ste 216</span>
+          <span className="text-[#0d684d] font-extrabold">✓ Town of Cary Permitting:</span>
+          <span className="font-medium">Pulled daily from 580 New Waverly Pl Ste 216</span>
         </div>
-        <div className="text-[11px] text-black/60">
+        <div className="text-[11px] text-black font-medium">
           Google Maps Grounding • Code-Compliant NC High-Wind (130 MPH) Installations
         </div>
       </div>

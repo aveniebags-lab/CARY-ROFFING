@@ -3,6 +3,7 @@ import { ServiceInfo, ALL_SERVICES, CARY_ZIP_CODES, COMPANY_DETAILS } from '../d
 import { BookingForm } from './BookingForm';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { SeoSchema } from './SeoSchema';
+import { RoofReplacementEditorialGuide } from './RoofReplacementEditorialGuide';
 
 interface ServicePageProps {
   service: ServiceInfo;
@@ -344,14 +345,14 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
                 {/* Hierarchical H4, H5, H6 within step protocol */}
                 <div className="mt-4 pt-3 border-t border-[#e8e4df]/60 flex flex-wrap items-center justify-between gap-2 text-left">
                   <div>
-                    <h4 className="text-xs font-bold text-[#F07020] uppercase">
+                    <h4 className="text-xs font-extrabold text-[#B43B06] uppercase">
                       Quality Gate #{idx + 1}
                     </h4>
                     <h5 className="text-[11px] font-semibold text-black">
                       NC Code Compliance Standard: Zone 4A
                     </h5>
                   </div>
-                  <h6 className="text-[10px] text-black/70 bg-[#FAF8F4] px-2.5 py-1 rounded-md border border-[#e8e4df]">
+                  <h6 className="text-[10px] text-black font-semibold bg-[#FAF8F4] px-2.5 py-1 rounded-md border border-[#e8e4df]">
                     Supervisor Verified: Master Roofer
                   </h6>
                 </div>
@@ -360,6 +361,14 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
           </div>
         </div>
       </section>
+
+      {/* ================= COMPREHENSIVE HUMAN-WRITTEN EDITORIAL GUIDE FOR ROOF REPLACEMENT ================= */}
+      {service.id === 'replacement' && (
+        <RoofReplacementEditorialGuide 
+          onNavigate={onNavigate} 
+          onOpenEstimator={onOpenEstimator} 
+        />
+      )}
 
       {/* ================= SECTION 3: FAQS (H2) ================= */}
       <section id="faqs" className="section">
