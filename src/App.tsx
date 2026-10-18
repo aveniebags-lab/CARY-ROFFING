@@ -13,64 +13,102 @@ export default function App() {
   const [currentPath, setCurrentPath] = useState<string>('home');
   const [seoDrawerOpen, setSeoDrawerOpen] = useState<boolean>(false);
 
-  // Sync with window.location.hash if present
+  // Clean URL handling without '#' sign using HTML5 History API
   useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && ALL_SERVICES.some(s => s.slug === hash)) {
-        setCurrentPath(hash);
-      } else if (hash === 'calculator' || hash === 'cary-nc-roofing-calculator.html' || hash === 'roofing-calculator' || hash === 'roofing-calculator.html') {
-        setCurrentPath('cary-nc-roofing-calculator.html');
-      } else if (hash === 'privacy-policy' || hash === 'privacy' || hash === 'privacy-policy.html') {
-        setCurrentPath('privacy-policy');
-      } else if (hash === 'our-locations' || hash === 'locations' || hash === 'service-areas' || hash === 'our-locations.html') {
-        setCurrentPath('our-locations');
-      } else if (hash === 'additional' || hash === 'additional-roofing' || hash === 'specialty' || hash === 'ancillary-roofing') {
-        setCurrentPath('additional-roofing-services-cary-nc-usa.html');
-      } else if (hash === 'commercial-industrial' || hash === 'commercial' || hash === 'commercial-roofing' || hash === 'industrial-roofing') {
-        setCurrentPath('commercial-industrial-roofing-cary-nc-usa.html');
-      } else if (hash === 'structure-carpentry' || hash === 'roof-carpentry' || hash === 'roof-structure' || hash === 'carpentry') {
-        setCurrentPath('roof-structure-carpentry-cary-nc-usa.html');
-      } else if (hash === 'chimney-edge' || hash === 'chimney' || hash === 'fascia-soffit' || hash === 'roof-edge') {
-        setCurrentPath('chimney-roof-edge-services-cary-nc-usa.html');
-      } else if (hash === 'skylight-window' || hash === 'skylight' || hash === 'skylights' || hash === 'roof-window') {
-        setCurrentPath('skylight-roof-window-services-cary-nc-usa.html');
-      } else if (hash === 'storm-emergency' || hash === 'emergency-roofing' || hash === 'storm-roofing' || hash === 'storm-damage') {
-        setCurrentPath('storm-emergency-roofing-services-cary-nc-usa.html');
-      } else if (hash === 'coating-restoration' || hash === 'roof-coating' || hash === 'coating' || hash === 'restoration') {
-        setCurrentPath('roof-coating-restoration-cary-nc-usa.html');
-      } else if (hash === 'shingle-tile-slate' || hash === 'shingle-roofing' || hash === 'slate-roofing' || hash === 'tile-roofing') {
-        setCurrentPath('shingle-tile-slate-roofing-cary-nc-usa.html');
-      } else if (hash === 'flat-roofing' || hash === 'flat-roof') {
-        setCurrentPath('flat-roofing-services-cary-nc-usa.html');
-      } else if (hash === 'metal-roofing' || hash === 'metal-roof') {
-        setCurrentPath('metal-roofing-services-cary-nc-usa.html');
-      } else if (hash === 'insulation' || hash === 'roof-insulation') {
-        setCurrentPath('roof-insulation-services-cary-nc-usa.html');
-      } else if (hash === 'flashing-ventilation' || hash === 'roof-flashing-ventilation') {
-        setCurrentPath('roof-flashing-ventilation-services-cary-nc-usa.html');
-      } else if (hash === 'gutter' || hash === 'gutter-services') {
-        setCurrentPath('gutter-services-cary-nc-usa.html');
-      } else if (hash === 'waterproofing' || hash === 'roof-waterproofing') {
-        setCurrentPath('roof-waterproofing-services-cary-nc-usa.html');
-      } else if (hash === 'maintenance' || hash === 'roof-maintenance') {
-        setCurrentPath('roof-maintenance-services-cary-nc-usa.html');
-      } else if (hash === 'inspection' || hash === 'roof-inspection') {
-        setCurrentPath('roof-inspection-services-cary-nc-usa.html');
-      } else if (hash === 'replacement' || hash === 'roof-replacement') {
-        setCurrentPath('roof-replacement-services-cary-nc-usa.html');
-      } else if (hash === 'repair' || hash === 'roof-repair') {
-        setCurrentPath('roof-repair-services-cary-nc-usa.html');
-      } else if (hash === 'installation' || hash === 'roof-installation') {
-        setCurrentPath('roof-installation-services-cary-nc-usa.html');
-      } else if (hash === 'home' || hash === 'index.html' || !hash) {
+    const resolvePath = () => {
+      let rawHash = '';
+      // If legacy '#' sign is present in URL, strip it immediately from the address bar
+      if (window.location.hash) {
+        rawHash = window.location.hash.replace(/^#\/?/, '').trim();
+        const cleanTarget = rawHash && rawHash !== 'home' && rawHash !== 'index.html'
+          ? `/${rawHash}`
+          : '/';
+        window.history.replaceState({ path: rawHash }, '', cleanTarget);
+      }
+
+      // Extract clean pathname (e.g. /roof-installation-services-cary-nc-usa.html -> roof-installation-services-cary-nc-usa.html)
+      const pathname = window.location.pathname.replace(/^\//, '').trim();
+      const path = pathname || rawHash;
+
+      if (!path || path === 'home' || path === 'index.html') {
         setCurrentPath('home');
+      } else if (ALL_SERVICES.some(s => s.slug === path)) {
+        setCurrentPath(path);
+      } else if (path === 'calculator' || path === 'cary-nc-roofing-calculator.html' || path === 'roofing-calculator' || path === 'roofing-calculator.html') {
+        setCurrentPath('cary-nc-roofing-calculator.html');
+      } else if (path === 'privacy-policy' || path === 'privacy' || path === 'privacy-policy.html') {
+        setCurrentPath('privacy-policy');
+      } else if (path === 'our-locations' || path === 'locations' || path === 'service-areas' || path === 'our-locations.html') {
+        setCurrentPath('our-locations');
+      } else if (path === 'additional' || path === 'additional-roofing' || path === 'specialty' || path === 'ancillary-roofing') {
+        setCurrentPath('additional-roofing-services-cary-nc-usa.html');
+      } else if (path === 'commercial-industrial' || path === 'commercial' || path === 'commercial-roofing' || path === 'industrial-roofing') {
+        setCurrentPath('commercial-industrial-roofing-cary-nc-usa.html');
+      } else if (path === 'structure-carpentry' || path === 'roof-carpentry' || path === 'roof-structure' || path === 'carpentry') {
+        setCurrentPath('roof-structure-carpentry-cary-nc-usa.html');
+      } else if (path === 'chimney-edge' || path === 'chimney' || path === 'fascia-soffit' || path === 'roof-edge') {
+        setCurrentPath('chimney-roof-edge-services-cary-nc-usa.html');
+      } else if (path === 'skylight-window' || path === 'skylight' || path === 'skylights' || path === 'roof-window') {
+        setCurrentPath('skylight-roof-window-services-cary-nc-usa.html');
+      } else if (path === 'storm-emergency' || path === 'emergency-roofing' || path === 'storm-roofing' || path === 'storm-damage') {
+        setCurrentPath('storm-emergency-roofing-services-cary-nc-usa.html');
+      } else if (path === 'coating-restoration' || path === 'roof-coating' || path === 'coating' || path === 'restoration') {
+        setCurrentPath('roof-coating-restoration-cary-nc-usa.html');
+      } else if (path === 'shingle-tile-slate' || path === 'shingle-roofing' || path === 'slate-roofing' || path === 'tile-roofing') {
+        setCurrentPath('shingle-tile-slate-roofing-cary-nc-usa.html');
+      } else if (path === 'flat-roofing' || path === 'flat-roof') {
+        setCurrentPath('flat-roofing-services-cary-nc-usa.html');
+      } else if (path === 'metal-roofing' || path === 'metal-roof') {
+        setCurrentPath('metal-roofing-services-cary-nc-usa.html');
+      } else if (path === 'insulation' || path === 'roof-insulation') {
+        setCurrentPath('roof-insulation-services-cary-nc-usa.html');
+      } else if (path === 'flashing-ventilation' || path === 'roof-flashing-ventilation') {
+        setCurrentPath('roof-flashing-ventilation-services-cary-nc-usa.html');
+      } else if (path === 'gutter' || path === 'gutter-services') {
+        setCurrentPath('gutter-services-cary-nc-usa.html');
+      } else if (path === 'waterproofing' || path === 'roof-waterproofing') {
+        setCurrentPath('roof-waterproofing-services-cary-nc-usa.html');
+      } else if (path === 'maintenance' || path === 'roof-maintenance') {
+        setCurrentPath('roof-maintenance-services-cary-nc-usa.html');
+      } else if (path === 'inspection' || path === 'roof-inspection') {
+        setCurrentPath('roof-inspection-services-cary-nc-usa.html');
+      } else if (path === 'replacement' || path === 'roof-replacement') {
+        setCurrentPath('roof-replacement-services-cary-nc-usa.html');
+      } else if (path === 'repair' || path === 'roof-repair') {
+        setCurrentPath('roof-repair-services-cary-nc-usa.html');
+      } else if (path === 'installation' || path === 'roof-installation') {
+        setCurrentPath('roof-installation-services-cary-nc-usa.html');
+      } else {
+        const matched = ALL_SERVICES.find(s => s.slug === path || s.id === path);
+        if (matched) {
+          setCurrentPath(matched.slug);
+        } else {
+          setCurrentPath('home');
+        }
       }
     };
 
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
+    resolvePath();
+
+    // Prevent any '#' from appearing when external or internal hash event fires
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        const hashVal = window.location.hash.replace(/^#\/?/, '').trim();
+        const cleanTarget = window.location.pathname || '/';
+        window.history.replaceState(null, '', cleanTarget);
+        if (hashVal) {
+          const el = document.getElementById(hashVal);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('popstate', resolvePath);
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('popstate', resolvePath);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   // Update document title dynamically based on active page
@@ -91,9 +129,19 @@ export default function App() {
     }
   }, [currentPath]);
 
+  // Navigate using clean HTML5 pushState with NO '#' hash
   const handleNavigate = (path: string) => {
-    setCurrentPath(path);
-    window.location.hash = path === 'home' ? '' : path;
+    const cleanPath = path.replace(/^\//, '').replace(/^#/, '').trim();
+    const resolvedPath = cleanPath || 'home';
+    setCurrentPath(resolvedPath);
+
+    const targetUrl = resolvedPath === 'home' || resolvedPath === 'index.html'
+      ? '/'
+      : `/${resolvedPath}`;
+
+    if (window.location.pathname !== targetUrl || window.location.hash) {
+      window.history.pushState({ path: resolvedPath }, '', targetUrl);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

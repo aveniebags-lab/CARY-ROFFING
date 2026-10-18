@@ -361,13 +361,17 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
                     </p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-white/20">
-                    <a
-                      href="#book"
-                      onClick={onClose}
-                      className="btn btn-primary w-full text-center text-sm font-extrabold block !text-white"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onClose();
+                        const el = document.getElementById('book');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="btn btn-primary w-full text-center text-sm font-extrabold block !text-white cursor-pointer"
                     >
                       Claim Exact Written Quote &amp; Free Inspection →
-                    </a>
+                    </button>
                     <div className="text-center text-[11px] text-white font-medium mt-2">
                       Zero obligation • On-site inspection confirms decking &amp; scope
                     </div>

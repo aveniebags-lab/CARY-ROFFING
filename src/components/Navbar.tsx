@@ -36,19 +36,21 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
   return (
     <header className="navbar">
-      <div className="container nav-container">
+      <div className="nav-container">
         <a 
-          href="index.html" 
-          className="logo"
+          href="/" 
+          className="logo flex-shrink-0 mr-4 xl:mr-8"
           onClick={(e) => handleLinkClick(e, 'home')}
-          title="Best Roofing Services, Cary NC, | CaryRoofing"
+          title="Best Roofing Services, Cary NC | CaryRoofing"
         >
           <img 
             src="/favicon.svg" 
             alt="CaryRoofing - Premier Roofing Services in Cary NC" 
-            className="w-8 h-8 mr-2 inline-block rounded-lg shadow-xs" 
+            className="w-8 h-8 mr-2.5 inline-block rounded-lg shadow-xs flex-shrink-0" 
           />
-          Cary<span className="text-[#F07020]">Roofing</span>
+          <span className="whitespace-nowrap font-extrabold text-xl tracking-tight">
+            Cary<span className="text-[#D9531E]">Roofing</span>
+          </span>
         </a>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} id="navLinks">
@@ -72,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
                   key={service.slug}
                   type="button"
                   onClick={(e) => handleLinkClick(e, service.slug)}
-                  className={`text-left ${currentPath === service.slug ? 'font-bold text-[#F07020]' : ''}`}
+                  className={`text-left ${currentPath === service.slug ? 'font-bold text-[#D9531E]' : ''}`}
                 >
                   {service.navTitle}
                 </button>
@@ -83,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           <button
             type="button"
             onClick={(e) => handleLinkClick(e, 'cary-nc-roofing-calculator.html')}
-            className={`cursor-pointer ${currentPath === 'cary-nc-roofing-calculator.html' ? 'font-bold text-[#F07020]' : ''}`}
+            className={`cursor-pointer ${currentPath === 'cary-nc-roofing-calculator.html' ? 'font-bold text-[#D9531E]' : ''}`}
           >
             Roofing Calculator
           </button>
@@ -91,52 +93,55 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           <button
             type="button"
             onClick={(e) => handleLinkClick(e, 'our-locations')}
-            className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#F07020]' : ''}`}
+            className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#D9531E]' : ''}`}
           >
             Our Locations
           </button>
 
-          <a 
-            href="#recent-projects"
+          <button 
+            type="button" 
             onClick={(e) => scrollToSection(e, 'recent-projects')}
+            className="cursor-pointer hidden lg:inline-flex"
           >
             Recent Projects
-          </a>
+          </button>
 
-          <a 
-            href="#why-us"
+          <button 
+            type="button" 
             onClick={(e) => scrollToSection(e, 'why-us')}
+            className="cursor-pointer hidden xl:inline-flex"
           >
-            Why Work With Us
-          </a>
+            Why Us
+          </button>
 
           <button
             type="button"
             onClick={(e) => handleLinkClick(e, 'privacy-policy')}
-            className={`cursor-pointer ${currentPath === 'privacy-policy' ? 'font-bold text-[#F07020]' : ''}`}
+            className={`cursor-pointer ${mobileMenuOpen ? 'inline-flex' : 'hidden 2xl:inline-flex'} ${currentPath === 'privacy-policy' ? 'font-bold text-[#D9531E]' : ''}`}
           >
             Privacy Policy
           </button>
 
-          <a 
-            href="#book"
+          <button 
+            type="button" 
             onClick={(e) => scrollToSection(e, 'book')}
+            className="cursor-pointer"
           >
-            Contact Us
-          </a>
+            Contact
+          </button>
         </nav>
 
-        <div className="nav-actions">
+        <div className="nav-actions flex-shrink-0">
           <button
             type="button"
             onClick={(e) => scrollToSection(e, 'book')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-extrabold rounded-full bg-[#E8F8F1] text-[#0d684d] border border-[#0d684d]/30 hover:bg-[#0d684d] hover:text-white transition-all cursor-pointer shadow-xs"
+            className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-extrabold rounded-full bg-[#E8F8F1] text-[#0d684d] border border-[#0d684d]/30 hover:bg-[#0d684d] hover:text-white transition-all cursor-pointer shadow-xs"
           >
             <span className="w-2 h-2 rounded-full bg-[#0d684d]"></span>
             Free Inspection
           </button>
 
-          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !text-white font-extrabold">
+          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !text-white font-extrabold shadow-sm">
             Call Us Now
           </a>
 

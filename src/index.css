@@ -104,17 +104,29 @@ h3 {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  gap: clamp(16px, 2vw, 36px);
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 2.5vw, 36px);
+  padding-right: clamp(16px, 2.5vw, 36px);
+  box-sizing: border-box;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: #000000;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   letter-spacing: -0.5px;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  min-width: max-content !important;
+  margin-right: clamp(20px, 2.5vw, 44px) !important;
+  z-index: 10;
 }
 .logo span { color: var(--mouse-orange); }
 .logo-white { color: #ffffff; }
@@ -122,11 +134,13 @@ h3 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: clamp(10px, 1.3vw, 22px);
+  flex-shrink: 1;
+  flex-wrap: nowrap;
 }
 
 .nav-links a, .nav-links button {
-  font-size: 14.5px;
+  font-size: clamp(13px, 0.95vw, 14.5px);
   font-weight: 700;
   color: #000000;
   text-decoration: none;
@@ -137,21 +151,26 @@ h3 {
   border: none;
   cursor: pointer;
   transition: color 0.2s ease;
+  padding: 6px 4px;
+  flex-shrink: 0;
 }
 
 .nav-links a:hover, .nav-links button:hover {
-  color: var(--mouse-orange);
+  color: var(--mouse-orange-text);
 }
 
 .dropdown {
   position: relative;
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
 }
 
 .dropdown-toggle {
   cursor: pointer;
-  padding: 8px 0;
+  padding: 8px 4px;
+  white-space: nowrap;
 }
 
 .dropdown-menu {
@@ -161,7 +180,7 @@ h3 {
   left: 0;
   background-color: #ffffff;
   min-width: 320px;
-  max-height: 440px;
+  max-height: 480px;
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
@@ -198,6 +217,7 @@ h3 {
   align-items: center;
   gap: 12px;
   white-space: nowrap;
+  flex-shrink: 0 !important;
 }
 
 /* BUTTONS */
@@ -847,7 +867,7 @@ h3 {
 }
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
+@media (max-width: 1080px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -860,6 +880,8 @@ h3 {
     border-bottom: 1px solid var(--mouse-border);
     gap: 16px;
     align-items: flex-start;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 999;
   }
   .nav-links.active { display: flex; }
   .mobile-toggle { display: flex; }
