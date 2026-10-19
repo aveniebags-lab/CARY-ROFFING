@@ -6,6 +6,8 @@ import { Footer } from './components/Footer';
 
 const ServicePage = lazy(() => import('./components/ServicePage').then(m => ({ default: m.ServicePage })));
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const TermsOfServicePage = lazy(() => import('./components/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
+const AboutUsPage = lazy(() => import('./components/AboutUsPage').then(m => ({ default: m.AboutUsPage })));
 const OurLocationsPage = lazy(() => import('./components/OurLocationsPage').then(m => ({ default: m.OurLocationsPage })));
 const CalculatorPage = lazy(() => import('./components/CalculatorPage').then(m => ({ default: m.CalculatorPage })));
 const TechnicalPortalDrawer = lazy(() => import('./components/TechnicalPortalDrawer').then(m => ({ default: m.TechnicalPortalDrawer })));
@@ -39,6 +41,12 @@ export default function App() {
         setCurrentPath('cary-nc-roofing-calculator.html');
       } else if (path === 'privacy-policy' || path === 'privacy' || path === 'privacy-policy.html') {
         setCurrentPath('privacy-policy');
+      } else if (path === 'terms-of-service' || path === 'terms' || path === 'terms-of-service.html') {
+        setCurrentPath('terms-of-service.html');
+      } else if (path === 'about-us' || path === 'about' || path === 'about-cary-roofing-contractors.html') {
+        setCurrentPath('about-cary-roofing-contractors.html');
+      } else if (path === 'contact' || path === 'contact-us' || path === 'contact-cary-roofing.html') {
+        setCurrentPath('contact-cary-roofing.html');
       } else if (path === 'our-locations' || path === 'locations' || path === 'service-areas' || path === 'our-locations.html') {
         setCurrentPath('our-locations');
       } else if (path === 'additional' || path === 'additional-roofing' || path === 'specialty' || path === 'ancillary-roofing') {
@@ -120,6 +128,12 @@ export default function App() {
       document.title = 'Cary NC Roofing Calculator | Roof Replacement Cost Guide';
     } else if (currentPath === 'privacy-policy') {
       document.title = 'Privacy Policy | caryncroofing.com - Cary, NC';
+    } else if (currentPath === 'terms-of-service.html') {
+      document.title = 'Terms of Service & Warranty Conditions | caryncroofing.com';
+    } else if (currentPath === 'about-cary-roofing-contractors.html') {
+      document.title = 'About Us & Technical Credentials | Cary Roofing Contractors LLC';
+    } else if (currentPath === 'contact-cary-roofing.html') {
+      document.title = 'Contact Us & Emergency Roof Dispatch | Cary, NC';
     } else if (currentPath === 'our-locations') {
       document.title = 'Roofing Service Locations in Cary, NC & Triangle | caryncroofing.com';
     } else {
@@ -166,9 +180,13 @@ export default function App() {
             <CalculatorPage onNavigate={handleNavigate} />
           ) : currentPath === 'privacy-policy' ? (
             <PrivacyPolicyPage onNavigate={handleNavigate} />
+          ) : currentPath === 'terms-of-service.html' ? (
+            <TermsOfServicePage onNavigate={handleNavigate} />
+          ) : currentPath === 'about-cary-roofing-contractors.html' ? (
+            <AboutUsPage onNavigate={handleNavigate} />
           ) : currentPath === 'our-locations' ? (
             <OurLocationsPage onNavigate={handleNavigate} />
-          ) : currentPath === 'home' || !activeService ? (
+          ) : currentPath === 'home' || currentPath === 'contact-cary-roofing.html' || !activeService ? (
             <HomePage 
               onNavigate={handleNavigate} 
               onOpenEstimator={() => setSeoDrawerOpen(true)}

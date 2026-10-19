@@ -46,22 +46,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
         </div>
 
         <div className="footer-col">
-          <h4>Popular Roofing Services</h4>
+          <h3>Popular Roofing Services</h3>
           <div className="footer-links">
             {ALL_SERVICES.map((s) => (
-              <button 
+              <a 
                 key={s.slug}
-                type="button"
-                onClick={() => onNavigate(s.slug)}
+                href={`/${s.slug}`}
+                onClick={(e) => { e.preventDefault(); onNavigate(s.slug); }}
+                className="text-white/90 hover:text-[#FB923C] text-left text-xs"
               >
                 {s.title}
-              </button>
+              </a>
             ))}
           </div>
         </div>
 
         <div className="footer-col">
-          <h4>Service Areas (Wake County)</h4>
+          <h3>Service Areas (Wake County)</h3>
           <div className="footer-links text-xs">
             <span>Central Cary (27511) – Downtown &amp; Kildaire</span>
             <span>East Cary (27512) – Crossroads &amp; Walnut St</span>
@@ -69,53 +70,80 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <span>South Cary (27518) – Waverly Pl &amp; Lochmere</span>
             <span>West Cary (27519) – Amberly &amp; Carpenter</span>
             <div className="pt-2">
-              <button 
-                type="button"
-                onClick={() => onNavigate('our-locations')}
-                className="text-[#F07020] font-bold hover:underline"
+              <a 
+                href="/our-locations.html"
+                onClick={(e) => { e.preventDefault(); onNavigate('our-locations'); }}
+                className="text-[#FB923C] font-bold hover:underline"
               >
                 View Full Location &amp; Map Directory →
-              </button>
+              </a>
             </div>
           </div>
         </div>
 
         <div className="footer-col">
-          <h4>Get in Touch</h4>
+          <h3>Company, Trust &amp; Contact</h3>
           <div className="footer-links">
-            <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="font-bold text-white hover:text-[#F07020]">
+            <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="font-bold text-white hover:text-[#FB923C]">
               📞 Main Hotline: {COMPANY_DETAILS.mainPhone}
             </a>
-            <span>📍 Hub Address: {COMPANY_DETAILS.address}</span>
+            <span>📍 Headquarters: {COMPANY_DETAILS.address}</span>
             <span>🕒 Hours: {COMPANY_DETAILS.dispatchHours}</span>
-            <button 
-              type="button"
-              onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
-              className="text-[#FB923C] hover:underline text-left text-xs font-bold mt-1"
+            <a 
+              href="/about-cary-roofing-contractors.html"
+              onClick={(e) => { e.preventDefault(); onNavigate('about-cary-roofing-contractors.html'); }}
+              className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
+            >
+              🏢 About Us &amp; Technical Byline
+            </a>
+            <a 
+              href="/contact-cary-roofing.html"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('home');
+                setTimeout(() => {
+                  const el = document.getElementById('book');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
+            >
+              ✉️ Contact &amp; Inspection Intake
+            </a>
+            <a 
+              href="/cary-nc-roofing-calculator.html"
+              onClick={(e) => { e.preventDefault(); onNavigate('cary-nc-roofing-calculator.html'); }}
+              className="text-[#FB923C] hover:underline text-left text-xs font-bold"
             >
               🧮 Cary NC Roofing Calculator
-            </button>
-            <button 
-              type="button"
-              onClick={() => onNavigate('our-locations')}
+            </a>
+            <a 
+              href="/privacy-policy.html"
+              onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              🗺️ View All Cary Service Locations
-            </button>
-            <button 
-              type="button"
-              onClick={() => onNavigate('privacy-policy')}
+              🔒 Privacy Policy
+            </a>
+            <a 
+              href="/terms-of-service.html"
+              onClick={(e) => { e.preventDefault(); onNavigate('terms-of-service.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              🔒 Privacy Policy &amp; Terms
-            </button>
+              📄 Terms of Service
+            </a>
+            <div className="pt-2 text-[11px] text-white/80 border-t border-white/10 space-y-1">
+              <div>Author &amp; Inspector: <strong>Marcus Vance</strong> (NC Licensed)</div>
+              <div>
+                Official Codes: <a href="https://www.carync.gov/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Town of Cary</a> • <a href="https://codes.iccsafe.org/content/NCRC2018/chapter-9-roof-assemblies" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">NCRC Chapter 9</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="container footer-bottom">
-        <p>© 2026 CaryRoofing. All rights reserved.</p>
-        <p>Cary, NC Roofing Experts • Connecting Homeowners With Top-Rated Local Contractors</p>
+        <p>© 2026 CaryRoofing. All rights reserved. Registered North Carolina Roofing Contractors Network.</p>
+        <p>Cary, NC Roofing Experts • 580 New Waverly Pl Ste 216, Cary, NC 27518 • (919) 335-9543</p>
       </div>
     </footer>
   );

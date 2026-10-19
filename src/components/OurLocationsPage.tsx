@@ -255,7 +255,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-[#e8e4df]">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 text-xs font-extrabold bg-[#D9531E] text-white rounded-md !text-white">
+                      <span className="px-2.5 py-0.5 text-xs font-extrabold bg-[#9A3412] text-white rounded-md !text-white shadow-xs">
                         ZIP {loc.zip}
                       </span>
                       <span className="text-xs font-bold text-black uppercase tracking-wider">

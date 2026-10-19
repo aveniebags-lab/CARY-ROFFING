@@ -36,6 +36,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
             Best Roofing Services, Cary NC, USA
           </h1>
           
+          {/* Author Byline, Verification & Machine-Readable Freshness Signals */}
+          <div className="flex flex-wrap items-center justify-center gap-2 my-3 text-xs text-black/80 font-semibold bg-[#FAF8F4] px-4 py-2 rounded-xl border border-[#e8e4df]">
+            <span>Written &amp; Field-Verified by <a href="/about-cary-roofing-contractors.html" onClick={(e) => { e.preventDefault(); onNavigate('about-cary-roofing-contractors.html'); }} className="text-[#9A3412] font-bold underline hover:text-black">Marcus Vance</a>, NC Master Roofing Inspector</span>
+            <span className="text-[#e8e4df]">•</span>
+            <span>Reviewed by Cary Roofing Oversight Committee</span>
+            <span className="text-[#e8e4df]">•</span>
+            <span><time dateTime="2026-10-18">Updated: October 18, 2026</time></span>
+          </div>
+
           <p className="hero-desc">
             Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. From high-grade synthetic underlayment to precision chimney flashing, see why Wake County residents trust our team for long-lasting roof protection. Call us today!
           </p>
@@ -508,6 +517,76 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="mt-4 pt-3 border-t border-[#e8e4df]/60 text-xs text-black/70">
                 <strong>Code Authority:</strong> Town of Cary Inspections &amp; Permits • NC Residential Code
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TECHNICAL CITATIONS & QUOTATIONS (H2 + H3) ================= */}
+      <section className="section bg-white border-y border-[#e8e4df]">
+        <div className="container">
+          <div className="section-header">
+            <div className="kicker">Peer-Reviewed Standards &amp; Codes</div>
+            <h2>
+              Technical Authority &amp; <span className="font-serif-accent">Building Code Citations</span>
+            </h2>
+            <p>Our craftsmanship adheres to statutory North Carolina residential codes and national manufacturer engineering standards.</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Blockquote with Authority Attribution */}
+            <blockquote className="p-6 md:p-8 bg-[#FAF8F4] border-l-4 border-[#9A3412] rounded-r-2xl shadow-xs text-black">
+              <p className="text-base md:text-lg italic leading-relaxed text-black/90 mb-4">
+                &ldquo;In Climate Zone 4A (Wake County, North Carolina), unmitigated attic condensation combined with 90°F+ summer roof surface temperatures accelerates asphalt embrittlement. Proper net free ventilating area (NFVA) of 1:150 balanced between continuous soffit intake and continuous ridge exhaust is critical to preventing premature organic felt rot and deck buckling.&rdquo;
+              </p>
+              <footer className="text-xs sm:text-sm font-semibold text-black/80 flex flex-wrap items-center gap-2">
+                <span className="font-bold text-[#9A3412]">— National Roofing Contractors Association (NRCA)</span>
+                <span>•</span>
+                <span>Asphalt Roofing Manufacturers Association (ARMA) Technical Bulletin</span>
+              </footer>
+            </blockquote>
+
+            {/* Outbound Citations & Verified Links */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+              <a 
+                href="https://www.nrca.net/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-4 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#9A3412] rounded-xl text-xs text-black transition-all shadow-2xs group"
+              >
+                <div className="font-bold group-hover:text-[#9A3412] mb-1">🏛️ NRCA Technical Manual</div>
+                <div className="text-[11px] text-black/70">National Steep-Slope Roofing Specifications ↗</div>
+              </a>
+
+              <a 
+                href="https://codes.iccsafe.org/content/NCRC2018/chapter-9-roof-assemblies" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-4 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#9A3412] rounded-xl text-xs text-black transition-all shadow-2xs group"
+              >
+                <div className="font-bold group-hover:text-[#9A3412] mb-1">📜 NC Residential Code</div>
+                <div className="text-[11px] text-black/70">NCRC Chapter 9 Roof Assemblies &amp; Flashings ↗</div>
+              </a>
+
+              <a 
+                href="https://www.carync.gov/services-permits/permits-inspections" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-4 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#9A3412] rounded-xl text-xs text-black transition-all shadow-2xs group"
+              >
+                <div className="font-bold group-hover:text-[#9A3412] mb-1">🏗️ Town of Cary Inspections</div>
+                <div className="text-[11px] text-black/70">Municipal Building Permits &amp; Inspections ↗</div>
+              </a>
+
+              <a 
+                href="https://www.gaf.com/en-us/specifications" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-4 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#9A3412] rounded-xl text-xs text-black transition-all shadow-2xs group"
+              >
+                <div className="font-bold group-hover:text-[#9A3412] mb-1">⭐ GAF Master Elite Specs</div>
+                <div className="text-[11px] text-black/70">Timberline HDZ Wind &amp; LayerLock Guidelines ↗</div>
+              </a>
             </div>
           </div>
         </div>

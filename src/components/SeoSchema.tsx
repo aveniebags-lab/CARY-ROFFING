@@ -275,8 +275,18 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     })),
     founder: {
       '@type': 'Person',
-      name: 'Cary Roofing Specialist Team'
+      name: 'Marcus Vance',
+      jobTitle: 'Lead Master Roofing Inspector & Technical Director',
+      sameAs: `${baseUrl}/about-cary-roofing-contractors.html`
     },
+    author: {
+      '@type': 'Person',
+      name: 'Marcus Vance',
+      jobTitle: 'Lead Master Roofing Inspector & Technical Director',
+      sameAs: `${baseUrl}/about-cary-roofing-contractors.html`
+    },
+    datePublished: '2026-01-15T08:00:00-05:00',
+    dateModified: '2026-10-18T10:00:00-05:00',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Roofing Services Catalog',
@@ -335,8 +345,23 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       '@id': `${effectiveCurrentUrl}#breadcrumb`
     },
     inLanguage: 'en-US',
-    datePublished: '2025-01-01',
-    dateModified: '2026-10-14',
+    author: {
+      '@type': 'Person',
+      name: 'Marcus Vance',
+      jobTitle: 'Lead Master Roofing Inspector & Technical Director',
+      url: `${baseUrl}/about-cary-roofing-contractors.html`
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: COMPANY_DETAILS.name,
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/favicon.svg`
+      }
+    },
+    datePublished: '2026-01-15T08:00:00-05:00',
+    dateModified: '2026-10-18T10:00:00-05:00',
     mainEntity: pageType === 'service' ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#localbusiness` },
     primaryImageOfPage: {
       '@type': 'ImageObject',

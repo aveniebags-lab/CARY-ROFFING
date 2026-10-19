@@ -2,6 +2,26 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow AI Search and Knowledge Crawlers (GEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# LLM Documentation Standards
+# https://caryncroofing.com/llms.txt
+# https://caryncroofing.com/llms-full.txt
+
 # Sitemaps
 Sitemap: https://caryncroofing.com/sitemap.xml
 

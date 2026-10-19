@@ -4,9 +4,9 @@
   --mouse-bg-hero: #FFFDF9;
   --mouse-bg-alt: #FAF8F4;
   --mouse-navy: #141c27;
-  --mouse-orange: #C2410C;
-  --mouse-orange-text: #B43B06;
-  --mouse-orange-hover: #9A3412;
+  --mouse-orange: #9A3412;
+  --mouse-orange-text: #8A2C0A;
+  --mouse-orange-hover: #7C2D12;
   --mouse-green: #0d684d;
   --mouse-green-bg: #E8F8F1;
   --mouse-muted: #1e293b;
@@ -581,6 +581,7 @@ h3 {
   display: block !important;
 }
 
+.solution-content h3,
 .solution-content h4 {
   font-size: 1.1rem !important;
   font-weight: 800 !important;
@@ -853,7 +854,7 @@ h3 {
   color: #ffffff !important;
 }
 
-/* All orange backgrounds: enforce pure white text */
+/* High Contrast Overrides (WCAG AA/AAA Compliant) */
 .btn-primary,
 .btn-primary *,
 [class*="bg-[#C2410C]"],
@@ -874,6 +875,39 @@ h3 {
 [class*="bg-[#ea580c]"] * {
   color: #ffffff !important;
 }
+
+.btn-primary,
+[class*="bg-[#F07020]"],
+[class*="bg-[#f07020]"],
+[class*="bg-[#D9531E]"],
+[class*="bg-[#d9531e]"] {
+  background-color: #9A3412 !important;
+}
+
+.btn-primary:hover,
+[class*="bg-[#F07020]"]:hover,
+[class*="bg-[#f07020]"]:hover,
+[class*="bg-[#D9531E]"]:hover,
+[class*="bg-[#d9531e]"]:hover {
+  background-color: #7C2D12 !important;
+}
+
+/* Enforce dark forest green for text on light backgrounds */
+:where(body, section, div, span, p):not(.bg-black):not(.bg-slate-900):not([class*="bg-[#0f"]):not([class*="bg-[#14"]):not([class*="bg-[#1e"]) > [class*="text-[#1D9E75]"],
+:where(body, section, div, span, p):not(.bg-black):not(.bg-slate-900):not([class*="bg-[#0f"]):not([class*="bg-[#14"]):not([class*="bg-[#1e"]) [class*="text-[#1d9e75]"],
+[class*="text-[#1D9E75]"],
+[class*="text-[#1d9e75]"] {
+  color: #0d684d !important;
+}
+
+/* Light backgrounds with dark green text */
+[class*="bg-[#0f"] [class*="text-[#1D9E75]"],
+[class*="bg-[#0f"] [class*="text-[#1d9e75]"],
+[class*="bg-[#14"] [class*="text-[#1D9E75]"],
+[class*="bg-[#14"] [class*="text-[#1d9e75]"] {
+  color: #34d399 !important;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1080px) {

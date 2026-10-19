@@ -319,7 +319,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
                     {renderIcon(sol.iconSvg)}
                   </div>
                   <div className="solution-content">
-                    <h4>{sol.title}</h4>
+                    <h3 className="solution-title">{sol.title}</h3>
                     <p>{sol.desc}</p>
                   </div>
                 </div>

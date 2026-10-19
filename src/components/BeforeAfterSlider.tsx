@@ -284,10 +284,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       </div>
 
       {/* Geotag Telemetry & Field Verification Banner */}
-      <div className="bg-[#0f172a] text-white px-4 py-2.5 rounded-b-2xl flex flex-wrap items-center justify-between gap-2 text-xs border-t border-[#F07020]/40 text-left mt-[-2px]">
+      <div className="bg-[#0f172a] text-white px-4 py-2.5 rounded-b-2xl flex flex-wrap items-center justify-between gap-2 text-xs border-t border-[#9A3412]/40 text-left mt-[-2px]">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#1D9E75] animate-ping"></span>
-          <span className="font-bold text-[#F07020]">Field Work Transformation:</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <span className="font-bold text-amber-400">Field Work Transformation:</span>
           <span className="text-white font-medium">{serviceTitle} • Cary, NC</span>
         </div>
         <div className="font-mono text-[11px] text-[#38bdf8] flex items-center gap-2">
@@ -295,7 +295,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           <span>•</span>
           <span>ELEV: {elevation}</span>
           <span>•</span>
-          <span className="text-[#1D9E75]">WAKE COUNTY VERIFIED</span>
+          <span className="text-emerald-400 font-bold">WAKE COUNTY VERIFIED</span>
         </div>
       </div>
 

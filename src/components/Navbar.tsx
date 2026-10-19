@@ -72,38 +72,46 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
             </button>
             <div className="dropdown-menu">
               {ALL_SERVICES.map((service) => (
-                <button
+                <a
                   key={service.slug}
-                  type="button"
+                  href={`/${service.slug}`}
                   onClick={(e) => handleLinkClick(e, service.slug)}
-                  className={`text-left ${currentPath === service.slug ? 'font-bold text-[#D9531E]' : ''}`}
+                  className={`text-left block py-1.5 px-3 rounded hover:bg-black/5 ${currentPath === service.slug ? 'font-bold text-[#9A3412]' : 'text-black'}`}
                 >
                   {service.navTitle}
-                </button>
+                </a>
               ))}
             </div>
           </div>
 
-          <button
-            type="button"
+          <a
+            href="/cary-nc-roofing-calculator.html"
             onClick={(e) => handleLinkClick(e, 'cary-nc-roofing-calculator.html')}
-            className={`cursor-pointer ${currentPath === 'cary-nc-roofing-calculator.html' ? 'font-bold text-[#D9531E]' : ''}`}
+            className={`cursor-pointer ${currentPath === 'cary-nc-roofing-calculator.html' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
             Roofing Calculator
-          </button>
+          </a>
 
-          <button
-            type="button"
+          <a
+            href="/our-locations.html"
             onClick={(e) => handleLinkClick(e, 'our-locations')}
-            className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#D9531E]' : ''}`}
+            className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
             Our Locations
-          </button>
+          </a>
+
+          <a
+            href="/about-cary-roofing-contractors.html"
+            onClick={(e) => handleLinkClick(e, 'about-cary-roofing-contractors.html')}
+            className={`cursor-pointer ${currentPath === 'about-cary-roofing-contractors.html' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
+          >
+            About Us
+          </a>
 
           <button 
             type="button" 
             onClick={(e) => scrollToSection(e, 'recent-projects')}
-            className="cursor-pointer hidden lg:inline-flex"
+            className="cursor-pointer hidden lg:inline-flex text-black"
           >
             Recent Projects
           </button>
@@ -111,26 +119,26 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           <button 
             type="button" 
             onClick={(e) => scrollToSection(e, 'why-us')}
-            className="cursor-pointer hidden xl:inline-flex"
+            className="cursor-pointer hidden xl:inline-flex text-black"
           >
             Why Us
           </button>
 
-          <button
-            type="button"
+          <a
+            href="/privacy-policy.html"
             onClick={(e) => handleLinkClick(e, 'privacy-policy')}
-            className={`cursor-pointer ${mobileMenuOpen ? 'inline-flex' : 'hidden 2xl:inline-flex'} ${currentPath === 'privacy-policy' ? 'font-bold text-[#D9531E]' : ''}`}
+            className={`cursor-pointer ${mobileMenuOpen ? 'inline-flex' : 'hidden 2xl:inline-flex'} ${currentPath === 'privacy-policy' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
             Privacy Policy
-          </button>
+          </a>
 
-          <button 
-            type="button" 
+          <a 
+            href="/contact-cary-roofing.html"
             onClick={(e) => scrollToSection(e, 'book')}
-            className="cursor-pointer"
+            className="cursor-pointer text-black"
           >
             Contact
-          </button>
+          </a>
         </nav>
 
         <div className="nav-actions flex-shrink-0">
