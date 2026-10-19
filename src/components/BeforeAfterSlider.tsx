@@ -69,7 +69,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             onClick={() => setViewMode('split')}
             className={`px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer ${
               viewMode === 'split'
-                ? 'bg-[#F07020] text-white shadow-xs'
+                ? 'bg-[#C2410C] text-white shadow-xs'
                 : 'text-black/80 hover:text-black hover:bg-black/5'
             }`}
             title="Unified 2-portion realistic field jobsite photo"
@@ -103,7 +103,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             onClick={() => setViewMode('after')}
             className={`px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer ${
               viewMode === 'after'
-                ? 'bg-[#1D9E75] text-white shadow-xs'
+                ? 'bg-[#0d684d] text-white shadow-xs'
                 : 'text-black/80 hover:text-black hover:bg-black/5'
             }`}
           >
@@ -148,7 +148,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               src={effectiveSplitSrc}
               alt={afterAlt || `${serviceTitle} in Cary NC - Before Damage and After Completion`}
               className="w-full h-[280px] sm:h-[380px] md:h-[440px] object-cover"
+              width={780}
+              height={440}
               loading="eager"
+              fetchPriority="high"
               referrerPolicy="no-referrer"
             />
 
@@ -158,14 +161,14 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               <span>BEFORE: {beforeLabel}</span>
             </div>
 
-            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#1D9E75]/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold text-white border border-white/20 shadow-md flex items-center gap-1.5">
+            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#0d684d]/95 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold text-white border border-white/20 shadow-md flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-white"></span>
               <span>AFTER: {afterLabel}</span>
             </div>
 
             {/* Center Split Seam Divider Badge */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none hidden sm:flex items-center justify-center">
-              <span className="px-3 py-1 bg-black/75 backdrop-blur-md text-white/95 text-[11px] font-mono tracking-wider uppercase border border-white/30 rounded-full shadow-lg">
+              <span className="px-3 py-1 bg-black/75 backdrop-blur-md text-white text-[11px] font-mono tracking-wider uppercase border border-white/30 rounded-full shadow-lg">
                 ⚡ Jobsite Split Comparison
               </span>
             </div>
@@ -181,6 +184,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 src={afterSrc}
                 alt={afterAlt}
                 className="w-full h-[280px] sm:h-[380px] md:h-[440px] object-cover pointer-events-none"
+                width={780}
+                height={440}
                 loading="eager"
                 referrerPolicy="no-referrer"
               />
@@ -198,6 +203,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 style={{
                   width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%'
                 }}
+                width={780}
+                height={440}
                 loading="eager"
                 referrerPolicy="no-referrer"
               />
@@ -209,7 +216,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 shadow-[0_0_12px_rgba(0,0,0,0.6)]"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-[#141c27] border-2 border-[#F07020] flex items-center justify-center font-bold text-xs shadow-lg transform transition-transform group-hover:scale-110">
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-[#141c27] border-2 border-[#C2410C] flex items-center justify-center font-bold text-xs shadow-lg transform transition-transform group-hover:scale-110">
                 ↔
               </div>
             </div>
@@ -218,11 +225,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             <div className="absolute top-3 left-3 z-10 pointer-events-none bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-white border border-white/20 shadow-md">
               ← {beforeLabel}
             </div>
-            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#1D9E75]/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-white border border-white/20 shadow-md">
+            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#0d684d]/95 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-white border border-white/20 shadow-md">
               {afterLabel} →
             </div>
 
-            <div className="absolute bottom-3 left-3 z-10 pointer-events-none bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white/85 hidden sm:block">
+            <div className="absolute bottom-3 left-3 z-10 pointer-events-none bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white hidden sm:block">
               Drag slider left/right to compare
             </div>
           </>
@@ -235,6 +242,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               src={beforeSrc}
               alt={beforeAlt}
               className="w-full h-[280px] sm:h-[380px] md:h-[440px] object-cover"
+              width={780}
+              height={440}
               loading="eager"
             />
             <div className="absolute top-3 left-3 z-10 pointer-events-none bg-[#b91c1c]/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold text-white border border-white/20 shadow-md">
@@ -250,9 +259,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               src={afterSrc}
               alt={afterAlt}
               className="w-full h-[280px] sm:h-[380px] md:h-[440px] object-cover"
+              width={780}
+              height={440}
               loading="eager"
             />
-            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#1D9E75]/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold text-white border border-white/20 shadow-md">
+            <div className="absolute top-3 right-3 z-10 pointer-events-none bg-[#0d684d]/95 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-bold text-white border border-white/20 shadow-md">
               ✓ Finished Result: {afterLabel}
             </div>
           </div>

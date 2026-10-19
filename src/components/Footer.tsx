@@ -19,8 +19,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
               src="/favicon.svg" 
               alt="CaryRoofing - Premier Roofing Network in Cary NC" 
               className="w-7 h-7 mr-2 inline-block rounded-md shadow-xs" 
+              width={28}
+              height={28}
             />
-            Cary<span className="text-[#F07020]">Roofing</span>
+            Cary<span className="text-[#FB923C]">Roofing</span>
           </div>
           <p className="footer-desc mt-2">
             Premier local roofing network connecting homeowners in Cary, NC and Wake County with pre-screened, insured roofing professionals for high-standard craftsmanship and lifetime protection.

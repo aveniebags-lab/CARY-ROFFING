@@ -47,9 +47,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
             src="/favicon.svg" 
             alt="CaryRoofing - Premier Roofing Services in Cary NC" 
             className="w-8 h-8 mr-2.5 inline-block rounded-lg shadow-xs flex-shrink-0" 
+            width={32}
+            height={32}
           />
           <span className="whitespace-nowrap font-extrabold text-xl tracking-tight">
-            Cary<span className="text-[#D9531E]">Roofing</span>
+            Cary<span className="text-[#C2410C]">Roofing</span>
           </span>
         </a>
 

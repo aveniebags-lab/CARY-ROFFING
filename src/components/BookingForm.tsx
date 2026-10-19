@@ -33,19 +33,19 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialZip = '', servi
   return (
     <section id="book" className="book-section">
       <div className="container container-narrow text-center">
-        <h2>
-          Ready for Fast, Reliable <span className="font-serif-accent">Roofing Help in Cary, NC</span>?
+        <h2 className="!text-white">
+          Ready for Fast, Reliable <span className="font-serif-accent !text-white">Roofing Help in Cary, NC</span>?
         </h2>
-        <p className="book-subtitle">
+        <p className="book-subtitle !text-white">
           Request your free on-site roof inspection or consultation today in Cary, NC.
         </p>
 
         {submitted ? (
-          <div className="bg-white/10 border border-[#1D9E75] rounded-2xl p-8 text-center text-white backdrop-blur-sm animate-fadeIn">
-            <div className="w-16 h-16 bg-[#1D9E75] text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-4 font-bold shadow-lg animate-pulse">
+          <div className="bg-white/10 border border-[#0d684d] rounded-2xl p-8 text-center text-white backdrop-blur-sm animate-fadeIn">
+            <div className="w-16 h-16 bg-[#0d684d] text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-4 font-bold shadow-lg animate-pulse">
               📞
             </div>
-            <div className="inline-block px-3 py-1 bg-[#F07020] text-white font-bold text-xs uppercase tracking-wider rounded-full mb-3">
+            <div className="inline-block px-3 py-1 bg-[#C2410C] text-white font-bold text-xs uppercase tracking-wider rounded-full mb-3">
               Calling Now • Direct Dispatch Line
             </div>
             <h3 className="text-white text-2xl md:text-3xl font-extrabold mb-2">Connecting Your Call Now!</h3>

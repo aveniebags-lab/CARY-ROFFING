@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { ALL_SERVICES, COMPANY_DETAILS, ServiceInfo } from './data/roofingData';
 import { Navbar } from './components/Navbar';
 import { HomePage } from './components/HomePage';
-import { ServicePage } from './components/ServicePage';
-import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
-import { OurLocationsPage } from './components/OurLocationsPage';
-import { CalculatorPage } from './components/CalculatorPage';
 import { Footer } from './components/Footer';
-import { TechnicalPortalDrawer } from './components/TechnicalPortalDrawer';
+
+const ServicePage = lazy(() => import('./components/ServicePage').then(m => ({ default: m.ServicePage })));
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const OurLocationsPage = lazy(() => import('./components/OurLocationsPage').then(m => ({ default: m.OurLocationsPage })));
+const CalculatorPage = lazy(() => import('./components/CalculatorPage').then(m => ({ default: m.CalculatorPage })));
+const TechnicalPortalDrawer = lazy(() => import('./components/TechnicalPortalDrawer').then(m => ({ default: m.TechnicalPortalDrawer })));
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>('home');
@@ -160,24 +161,26 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator' ? (
-          <CalculatorPage onNavigate={handleNavigate} />
-        ) : currentPath === 'privacy-policy' ? (
-          <PrivacyPolicyPage onNavigate={handleNavigate} />
-        ) : currentPath === 'our-locations' ? (
-          <OurLocationsPage onNavigate={handleNavigate} />
-        ) : currentPath === 'home' || !activeService ? (
-          <HomePage 
-            onNavigate={handleNavigate} 
-            onOpenEstimator={() => setSeoDrawerOpen(true)}
-          />
-        ) : (
-          <ServicePage 
-            service={activeService} 
-            onNavigate={handleNavigate}
-            onOpenEstimator={() => setSeoDrawerOpen(true)}
-          />
-        )}
+        <Suspense fallback={<div className="min-h-screen py-20 text-center text-sm font-bold text-black/60">Loading...</div>}>
+          {currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator' ? (
+            <CalculatorPage onNavigate={handleNavigate} />
+          ) : currentPath === 'privacy-policy' ? (
+            <PrivacyPolicyPage onNavigate={handleNavigate} />
+          ) : currentPath === 'our-locations' ? (
+            <OurLocationsPage onNavigate={handleNavigate} />
+          ) : currentPath === 'home' || !activeService ? (
+            <HomePage 
+              onNavigate={handleNavigate} 
+              onOpenEstimator={() => setSeoDrawerOpen(true)}
+            />
+          ) : (
+            <ServicePage 
+              service={activeService} 
+              onNavigate={handleNavigate}
+              onOpenEstimator={() => setSeoDrawerOpen(true)}
+            />
+          )}
+        </Suspense>
       </main>
 
       {/* Footer */}
@@ -217,11 +220,15 @@ export default function App() {
       </div>
 
       {/* Specifications & Dispatch Drawer */}
-      <TechnicalPortalDrawer 
-        isOpen={seoDrawerOpen}
-        onClose={() => setSeoDrawerOpen(false)}
-        currentPageTitle={activeService ? activeService.title : 'Home Page'}
-      />
+      {seoDrawerOpen && (
+        <Suspense fallback={null}>
+          <TechnicalPortalDrawer 
+            isOpen={seoDrawerOpen}
+            onClose={() => setSeoDrawerOpen(false)}
+            currentPageTitle={activeService ? activeService.title : 'Home Page'}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

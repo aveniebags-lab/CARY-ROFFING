@@ -4,9 +4,9 @@
   --mouse-bg-hero: #FFFDF9;
   --mouse-bg-alt: #FAF8F4;
   --mouse-navy: #141c27;
-  --mouse-orange: #D9531E;
+  --mouse-orange: #C2410C;
   --mouse-orange-text: #B43B06;
-  --mouse-orange-hover: #b43b06;
+  --mouse-orange-hover: #9A3412;
   --mouse-green: #0d684d;
   --mouse-green-bg: #E8F8F1;
   --mouse-muted: #1e293b;
@@ -841,7 +841,8 @@ h3 {
   color: #ffffff !important;
 }
 
-.book-section :where(p, span:not(.font-serif-accent), h1, h2, h3, h4, h5, h6, li, label, strong),
+.book-section :where(p, span, h1, h2, h3, h4, h5, h6, li, label, strong),
+.book-section .font-serif-accent,
 .footer :where(p, span, h1, h2, h3, h4, h5, h6, li, label, strong, a, button),
 [class*="bg-[#1e2a3a]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
 [class*="bg-[#141c27]"] :where(p, span:not([class*="bg-"]):not([class*="text-amber"]):not([class*="text-sky"]):not([class*="text-[#38bdf8]"]), h1, h2, h3, h4, h5, h6, li, label, strong),
@@ -855,6 +856,14 @@ h3 {
 /* All orange backgrounds: enforce pure white text */
 .btn-primary,
 .btn-primary *,
+[class*="bg-[#C2410C]"],
+[class*="bg-[#C2410C]"] *,
+[class*="bg-[#c2410c]"],
+[class*="bg-[#c2410c]"] *,
+[class*="bg-[#B43B06]"],
+[class*="bg-[#B43B06]"] *,
+[class*="bg-[#b43b06]"],
+[class*="bg-[#b43b06]"] *,
 [class*="bg-[#F07020]"],
 [class*="bg-[#F07020]"] *,
 [class*="bg-[#D9531E]"],

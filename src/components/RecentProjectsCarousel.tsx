@@ -203,13 +203,13 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
               className={`px-3.5 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
                 currentIndex === idx
                   ? 'bg-[#1e2a3a] text-white shadow-md'
-                  : 'bg-white text-black border border-[#e8e4df] hover:border-[#F07020]'
+                  : 'bg-white text-black border border-[#e8e4df] hover:border-[#C2410C]'
               }`}
             >
               <span>📍</span>
               <span>{proj.neighborhood.split('(')[0].trim()}</span>
               <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono ${
-                currentIndex === idx ? 'bg-[#D9531E] text-white font-bold' : 'bg-[#FAF8F4] text-black font-bold'
+                currentIndex === idx ? 'bg-[#C2410C] text-white font-bold' : 'bg-[#FAF8F4] text-black font-bold'
               }`}>
                 {proj.zip}
               </span>
@@ -225,15 +225,17 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
               src={currentProject.image}
               alt={currentProject.alt}
               className="w-full h-full object-cover min-h-[300px] sm:min-h-[420px] transition-transform duration-700 group-hover:scale-105"
+              width={720}
+              height={420}
               loading="lazy"
               referrerPolicy="no-referrer"
             />
             {/* Top Overlay Badge */}
             <div className="absolute top-4 left-4 bg-[#1e2a3a] px-3.5 py-1.5 rounded-xl text-white text-xs font-bold flex items-center gap-2 shadow-lg border border-white/20">
-              <span className="w-2 h-2 rounded-full bg-[#1D9E75] animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
               <span className="text-white font-bold">{currentProject.neighborhood}</span>
-              <span className="text-[#FB923C]">|</span>
-              <span className="text-[#FB923C] font-extrabold">ZIP {currentProject.zip}</span>
+              <span className="text-[#FDBA74]">|</span>
+              <span className="text-[#FDBA74] font-extrabold">ZIP {currentProject.zip}</span>
             </div>
 
             {/* Bottom Overlay Info Tag */}

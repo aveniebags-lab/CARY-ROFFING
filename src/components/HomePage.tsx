@@ -198,11 +198,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/roof-replacement.webp" 
                   alt="Roof Replacement Cary NC - Jobsite field photo of complete roof replacement and clean tear-off in Cary NC benchmarked against Baker Roofing and Feazel"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0d684d]"></span>
                   <span>GEO: 35.7368° N, -78.7832° W</span>
                 </div>
               </div>
@@ -228,11 +230,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/roof-repair.webp" 
                   alt="Roof Repair Cary NC - Precision field leak detection, pipe collar boot fixes, and storm damage repairs in Cary NC"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0d684d]"></span>
                   <span>GEO: 35.7725° N, -78.7812° W</span>
                 </div>
               </div>
@@ -258,6 +262,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/storm-emergency.webp" 
                   alt="Storm Emergency Roofing Services Cary NC - Real field storm damage repairs, temporary waterproof tarping, and tree limb impact stabilization benchmarked against top Cary roofing contractors"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
@@ -288,11 +294,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/roof-decking.webp" 
                   alt="Roof Installation Services Cary NC - Real photo of new roof decking, synthetic underlayment, and dimensional architectural shingles in Cary NC"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0d684d]"></span>
                   <span>GEO: 35.8010° N, -78.8051° W</span>
                 </div>
               </div>
@@ -318,11 +326,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/metal-roofing.webp" 
                   alt="Metal Roofing Services Cary NC - Real photo of architectural 24-gauge standing seam metal roof installation with concealed clips in Cary NC"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0d684d]"></span>
                   <span>GEO: 35.7368° N, -78.7832° W</span>
                 </div>
               </div>
@@ -348,11 +358,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                   src="/images/gutter-install.webp" 
                   alt="Seamless Gutters Cary NC - Real photo of continuous 6-inch aluminum seamless gutter installation and mobile machine in Cary NC"
                   className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  width={640}
+                  height={192}
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono text-white flex items-center gap-1.5 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0d684d]"></span>
                   <span>GEO: 35.7368° N, -78.7832° W</span>
                 </div>
               </div>
@@ -394,12 +406,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               src="/images/cary-service-map.svg" 
               alt="Cary NC Roofing Service Coverage Map - Dedicated dispatch for zip codes 27511, 27512, 27513, 27518, 27519 with central hub at Waverly Place Cary NC"
               className="w-full h-auto object-cover max-h-[420px]"
+              width={800}
+              height={420}
               loading="lazy"
             />
-            <div className="bg-[#0f172a] text-white px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs border-t border-[#F07020]/40 text-left">
+            <div className="bg-[#0f172a] text-white px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs border-t border-white/20 text-left">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#1D9E75] animate-ping"></span>
-                <span className="font-bold text-[#F07020]">Active GIS Dispatch Radar:</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-ping"></span>
+                <span className="font-bold text-[#FDBA74]">Active GIS Dispatch Radar:</span>
                 <span className="text-white font-medium">Covering 27511, 27512, 27513, 27518, 27519</span>
               </div>
               <div className="font-mono text-[11px] text-[#38bdf8]">
@@ -517,7 +531,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div>
                 <h3 className="text-base font-bold text-black mb-1">Local Cary Specialists</h3>
                 <p className="text-sm">Contractors who understand North Carolina's weather conditions and install roofing systems built to withstand heavy rain, wind, and storm damage.</p>
-                <span className="text-xs font-semibold text-[#1D9E75]">Wake County Rooted Network</span>
+                <span className="text-xs font-bold text-[#0d684d]">Wake County Rooted Network</span>
               </div>
             </div>
 
@@ -526,7 +540,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div>
                 <h3 className="text-base font-bold text-black mb-1">Pre-Screened &amp; Insured</h3>
                 <p className="text-sm">Every referred roofing crew is fully insured and rigorously vetted for local craftsmanship and safety compliance.</p>
-                <span className="text-xs font-semibold text-[#1D9E75]">Verified Local Pros • $2M Liability Protected</span>
+                <span className="text-xs font-bold text-[#0d684d]">Verified Local Pros • $2M Liability Protected</span>
               </div>
             </div>
 
@@ -535,7 +549,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div>
                 <h3 className="text-base font-bold text-black mb-1">Premium Grade Materials</h3>
                 <p className="text-sm">We use top-quality shingles, metal panels, and waterproofing membranes from leading manufacturers for long-lasting performance.</p>
-                <span className="text-xs font-semibold text-[#1D9E75]">GAF Master Elite &amp; CertainTeed</span>
+                <span className="text-xs font-bold text-[#0d684d]">GAF Master Elite &amp; CertainTeed</span>
               </div>
             </div>
           </div>
@@ -555,9 +569,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
 
           <div className="grid grid-3">
             {ALL_SERVICES.map((s) => (
-              <div key={s.slug} className="p-4 bg-white border border-[#e8e4df] rounded-xl hover:border-[#F07020] transition-all flex flex-col justify-between">
+              <div key={s.slug} className="p-4 bg-white border border-[#e8e4df] rounded-xl hover:border-[#C2410C] transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-[#F07020] tracking-wider block mb-1">
+                  <span className="text-[10px] uppercase font-bold text-[#B43B06] tracking-wider block mb-1">
                     {s.category}
                   </span>
                   <h3 className="text-base font-bold text-black mb-1.5">
@@ -570,7 +584,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                 <button
                   type="button"
                   onClick={() => onNavigate(s.slug)}
-                  className="text-xs font-bold text-[#F07020] hover:underline text-left inline-flex items-center gap-1 cursor-pointer"
+                  className="text-xs font-bold text-[#B43B06] hover:underline text-left inline-flex items-center gap-1 cursor-pointer"
                 >
                   View Full Service Guide →
                 </button>
@@ -660,14 +674,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               return (
                 <div 
                   key={loc.zip}
-                  className="bg-white p-5 rounded-2xl border border-[#e8e4df] shadow-xs flex flex-col justify-between hover:border-[#F07020] transition-all"
+                  className="bg-white p-5 rounded-2xl border border-[#e8e4df] shadow-xs flex flex-col justify-between hover:border-[#C2410C] transition-all"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="px-2 py-0.5 rounded text-xs font-extrabold bg-[#F07020] text-white">
+                      <span className="px-2 py-0.5 rounded text-xs font-extrabold bg-[#C2410C] text-white">
                         ZIP {loc.zip}
                       </span>
-                      <span className="text-[10px] text-[#1D9E75] font-bold">● Active 24/7</span>
+                      <span className="text-[10px] text-[#0d684d] font-bold">● Active 24/7</span>
                     </div>
                     <h3 className="text-sm font-bold text-black mb-1">
                       {loc.areaName}
@@ -688,7 +702,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                     </a>
                     <a
                       href={`tel:${loc.phoneRaw}`}
-                      className="w-full py-2 px-2 bg-[#F07020] hover:bg-[#d65f17] text-white text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                      className="w-full py-2 px-2 bg-[#C2410C] hover:bg-[#9A3412] text-white text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
                     >
                       <span>📞 Call {loc.phone}</span>
                     </a>
