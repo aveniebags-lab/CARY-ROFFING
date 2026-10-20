@@ -104,6 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
             href="/about-cary-roofing-contractors.html"
             onClick={(e) => handleLinkClick(e, 'about-cary-roofing-contractors.html')}
             className={`cursor-pointer ${currentPath === 'about-cary-roofing-contractors.html' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
+            rel="author"
           >
             About Us
           </a>

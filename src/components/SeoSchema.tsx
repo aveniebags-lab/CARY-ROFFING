@@ -20,8 +20,9 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
   canonicalUrl,
   image
 }) => {
-  const baseUrl = 'https://www.caryncroofing.com';
-  const effectiveCurrentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : baseUrl);
+  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://caryncroofing.com';
+  const baseUrl = origin.indexOf('caryncroofing.com') !== -1 ? origin : 'https://caryncroofing.com';
+  const effectiveCurrentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href.split('#')[0] : `${baseUrl}/`);
   const pageImage = image || `${baseUrl}/images/hero-roofing.webp`;
 
   // 1. Comprehensive LocalBusiness / RoofingContractor Schema compliant with https://schema.org/LocalBusiness
@@ -524,7 +525,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
 
   const schemaJsonString = JSON.stringify(fullSchema);
 
-  // Sync dynamically to document.head script#app-dynamic-schema for head scrapers & search engine bots
+  // Sync dynamically to document.head script#app-dynamic-schema and sync canonical / og:url
   useEffect(() => {
     if (typeof document !== 'undefined') {
       let headScript = document.getElementById('app-dynamic-schema') as HTMLScriptElement | null;
@@ -535,8 +536,27 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
         document.head.appendChild(headScript);
       }
       headScript.textContent = schemaJsonString;
+
+      // Ensure <link rel="canonical"> accurately references the active page URL
+      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', effectiveCurrentUrl);
+
+      // Ensure og:url and twitter:url match effectiveCurrentUrl
+      let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
+      if (ogUrl) {
+        ogUrl.setAttribute('content', effectiveCurrentUrl);
+      }
+      let twitterUrl = document.querySelector('meta[name="twitter:url"]') as HTMLMetaElement | null;
+      if (twitterUrl) {
+        twitterUrl.setAttribute('content', effectiveCurrentUrl);
+      }
     }
-  }, [schemaJsonString]);
+  }, [schemaJsonString, effectiveCurrentUrl]);
 
   return (
     <script

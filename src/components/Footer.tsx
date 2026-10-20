@@ -93,39 +93,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
               href="/about-cary-roofing-contractors.html"
               onClick={(e) => { e.preventDefault(); onNavigate('about-cary-roofing-contractors.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
+              rel="author"
             >
-              🏢 About Us &amp; Technical Byline
+              About Us
             </a>
             <a 
               href="/contact-cary-roofing.html"
               onClick={(e) => { e.preventDefault(); onNavigate('contact-cary-roofing.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              ✉️ Contact Us &amp; Emergency Dispatch
+              Contact Us
             </a>
             <a 
               href="/cary-nc-roofing-calculator.html"
               onClick={(e) => { e.preventDefault(); onNavigate('cary-nc-roofing-calculator.html'); }}
               className="text-[#FB923C] hover:underline text-left text-xs font-bold"
             >
-              🧮 Cary NC Roofing Calculator
+              Roofing Calculator
             </a>
             <a 
               href="/privacy-policy.html"
               onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              🔒 Privacy Policy
+              Privacy Policy
             </a>
             <a 
               href="/terms-of-service.html"
               onClick={(e) => { e.preventDefault(); onNavigate('terms-of-service.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              📄 Terms of Service
+              Terms of Service
             </a>
             <div className="pt-2 text-[11px] text-white/80 border-t border-white/10 space-y-1">
-              <div>Author &amp; Inspector: <strong>Marcus Vance</strong> (NC Licensed)</div>
+              <div>Author &amp; Inspector: <strong>Marcus Vance</strong> (NC Licensed Master Inspector)</div>
               <div>
                 Official Codes: <a href="https://www.carync.gov/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Town of Cary</a> • <a href="https://codes.iccsafe.org/content/NCRC2018/chapter-9-roof-assemblies" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">NCRC Chapter 9</a>
               </div>
@@ -135,6 +136,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
       </div>
 
       <div className="container footer-bottom">
+        <div className="flex flex-wrap justify-center gap-4 text-xs font-semibold mb-3">
+          <a 
+            href="/about-cary-roofing-contractors.html"
+            onClick={(e) => { e.preventDefault(); onNavigate('about-cary-roofing-contractors.html'); }}
+            className="text-white hover:text-[#FB923C] underline"
+            rel="author"
+          >
+            About Us
+          </a>
+          <span>•</span>
+          <a 
+            href="/contact-cary-roofing.html"
+            onClick={(e) => { e.preventDefault(); onNavigate('contact-cary-roofing.html'); }}
+            className="text-white hover:text-[#FB923C] underline"
+          >
+            Contact Us
+          </a>
+          <span>•</span>
+          <a 
+            href="/privacy-policy.html"
+            onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy'); }}
+            className="text-white/80 hover:text-[#FB923C] underline"
+          >
+            Privacy Policy
+          </a>
+          <span>•</span>
+          <a 
+            href="/terms-of-service.html"
+            onClick={(e) => { e.preventDefault(); onNavigate('terms-of-service.html'); }}
+            className="text-white/80 hover:text-[#FB923C] underline"
+          >
+            Terms of Service
+          </a>
+        </div>
         <p>© 2026 CaryRoofing. All rights reserved. Registered North Carolina Roofing Contractors Network.</p>
         <p>Cary, NC Roofing Experts • 580 New Waverly Pl Ste 216, Cary, NC 27518 • (919) 335-9543</p>
       </div>

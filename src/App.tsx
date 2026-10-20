@@ -44,9 +44,9 @@ export default function App() {
         setCurrentPath('privacy-policy');
       } else if (path === 'terms-of-service' || path === 'terms' || path === 'terms-of-service.html') {
         setCurrentPath('terms-of-service.html');
-      } else if (path === 'about-us' || path === 'about' || path === 'about-cary-roofing-contractors.html') {
+      } else if (path === 'about-us' || path === 'about' || path === 'about.html' || path === 'about-cary-roofing-contractors.html') {
         setCurrentPath('about-cary-roofing-contractors.html');
-      } else if (path === 'contact' || path === 'contact-us' || path === 'contact-cary-roofing.html') {
+      } else if (path === 'contact' || path === 'contact-us' || path === 'contact.html' || path === 'contact-cary-roofing.html') {
         setCurrentPath('contact-cary-roofing.html');
       } else if (path === 'our-locations' || path === 'locations' || path === 'service-areas' || path === 'our-locations.html') {
         setCurrentPath('our-locations');
@@ -131,9 +131,9 @@ export default function App() {
       document.title = 'Privacy Policy | caryncroofing.com - Cary, NC';
     } else if (currentPath === 'terms-of-service.html') {
       document.title = 'Terms of Service & Warranty Conditions | caryncroofing.com';
-    } else if (currentPath === 'about-cary-roofing-contractors.html') {
+    } else if (currentPath === 'about' || currentPath === 'about-cary-roofing-contractors.html') {
       document.title = 'About Us & Technical Credentials | Cary Roofing Contractors LLC';
-    } else if (currentPath === 'contact-cary-roofing.html') {
+    } else if (currentPath === 'contact' || currentPath === 'contact-cary-roofing.html') {
       document.title = 'Contact Us & Emergency Roof Dispatch | Cary, NC';
     } else if (currentPath === 'our-locations') {
       document.title = 'Roofing Service Locations in Cary, NC & Triangle | caryncroofing.com';
@@ -183,11 +183,11 @@ export default function App() {
             <PrivacyPolicyPage onNavigate={handleNavigate} />
           ) : currentPath === 'terms-of-service.html' ? (
             <TermsOfServicePage onNavigate={handleNavigate} />
-          ) : currentPath === 'about-cary-roofing-contractors.html' ? (
+          ) : currentPath === 'about-cary-roofing-contractors.html' || currentPath === 'about' || currentPath === 'about-us' ? (
             <AboutUsPage onNavigate={handleNavigate} />
-          ) : currentPath === 'contact-cary-roofing.html' ? (
+          ) : currentPath === 'contact-cary-roofing.html' || currentPath === 'contact' || currentPath === 'contact-us' ? (
             <ContactUsPage onNavigate={handleNavigate} />
-          ) : currentPath === 'our-locations' ? (
+          ) : currentPath === 'our-locations' || currentPath === 'our-locations.html' ? (
             <OurLocationsPage onNavigate={handleNavigate} />
           ) : currentPath === 'home' || !activeService ? (
             <HomePage 
