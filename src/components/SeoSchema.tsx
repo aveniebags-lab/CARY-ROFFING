@@ -20,7 +20,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
   canonicalUrl,
   image
 }) => {
-  const baseUrl = 'https://caryncroofing.com';
+  const baseUrl = 'https://www.caryncroofing.com';
   const effectiveCurrentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : baseUrl);
   const pageImage = image || `${baseUrl}/images/hero-roofing.webp`;
 
@@ -39,6 +39,17 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       'caryncroofing.com'
     ],
     url: baseUrl,
+    sameAs: [
+      'https://en.wikipedia.org/wiki/Cary,_North_Carolina',
+      'https://www.wikidata.org/wiki/Q54291',
+      'https://en.wikipedia.org/wiki/Wake_County,_North_Carolina',
+      'https://www.wikidata.org/wiki/Q508681',
+      'https://www.bbb.org/us/nc/cary/category/roofing-contractors',
+      'https://www.google.com/maps/place/Cary,+NC',
+      'https://www.facebook.com/caryncroofing',
+      'https://www.yelp.com/biz/cary-roofing-contractors',
+      'https://www.linkedin.com/company/cary-roofing'
+    ],
     logo: {
       '@type': 'ImageObject',
       url: `${baseUrl}/favicon.svg`,
@@ -300,13 +311,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
           areaServed: 'Cary, NC'
         }
       }))
-    },
-    sameAs: [
-      'https://www.google.com/maps/place/Cary,+NC/',
-      'https://www.facebook.com/caryncroofing',
-      'https://www.yelp.com/biz/cary-roofing-cary',
-      'https://www.bbb.org/us/nc/cary/profile/roofing-contractors/cary-roofing'
-    ]
+    }
   };
 
   // 2. WebSite Schema with SearchAction

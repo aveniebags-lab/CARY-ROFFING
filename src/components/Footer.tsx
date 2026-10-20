@@ -98,17 +98,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             </a>
             <a 
               href="/contact-cary-roofing.html"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('home');
-                setTimeout(() => {
-                  const el = document.getElementById('book');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }}
+              onClick={(e) => { e.preventDefault(); onNavigate('contact-cary-roofing.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
-              ✉️ Contact &amp; Inspection Intake
+              ✉️ Contact Us &amp; Emergency Dispatch
             </a>
             <a 
               href="/cary-nc-roofing-calculator.html"

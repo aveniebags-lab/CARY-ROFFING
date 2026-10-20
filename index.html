@@ -14,7 +14,7 @@
     <meta property="og:title" content="Best Roofing Services, Cary NC, | caryncroofing.com" />
     <meta property="og:description" content="Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. Call us today!" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://caryncroofing.com/" />
+    <meta property="og:url" content="https://www.caryncroofing.com/" />
     <meta property="og:image" content="/images/hero-roofing.jpg" />
     <meta property="og:site_name" content="CaryRoofing" />
     
@@ -23,11 +23,26 @@
     <meta name="twitter:title" content="Best Roofing Services, Cary NC, | caryncroofing.com" />
     <meta name="twitter:description" content="Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. Call us today!" />
     <meta name="twitter:image" content="/images/hero-roofing.jpg" />
-    <meta name="twitter:url" content="https://caryncroofing.com/" />
+    <meta name="twitter:url" content="https://www.caryncroofing.com/" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://caryncroofing.com/" />
+    <link rel="canonical" href="https://www.caryncroofing.com/" />
     
+    <!-- Dynamic Canonical Origin Normalizer -->
+    <script>
+      (function() {
+        try {
+          var origin = window.location.origin;
+          var canonicalLink = document.querySelector('link[rel="canonical"]');
+          if (canonicalLink && (origin.indexOf('caryncroofing.com') !== -1 || origin.indexOf('run.app') !== -1)) {
+            var path = window.location.pathname || '/';
+            if (path === '/index.html') path = '/';
+            canonicalLink.setAttribute('href', origin + path);
+          }
+        } catch(e) {}
+      })();
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
@@ -44,14 +59,14 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" />
     </noscript>
     
-    <!-- Comprehensive Schema.org Graph (RoofingContractor + FAQPage + HowTo + Article) -->
+    <!-- Comprehensive Schema.org Graph (RoofingContractor + FAQPage + HowTo + Article + sameAs Entity Links) -->
     <script id="app-dynamic-schema" type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": ["RoofingContractor", "LocalBusiness", "HomeAndConstructionBusiness"],
-          "@id": "https://caryncroofing.com/#localbusiness",
+          "@id": "https://www.caryncroofing.com/#localbusiness",
           "name": "CaryRoofing",
           "legalName": "Cary Roofing Contractors LLC",
           "alternateName": [
@@ -61,18 +76,29 @@
             "Roofing Contractors Cary NC",
             "caryncroofing.com"
           ],
-          "url": "https://caryncroofing.com/",
+          "url": "https://www.caryncroofing.com/",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/Cary,_North_Carolina",
+            "https://www.wikidata.org/wiki/Q54291",
+            "https://en.wikipedia.org/wiki/Wake_County,_North_Carolina",
+            "https://www.wikidata.org/wiki/Q508681",
+            "https://www.bbb.org/us/nc/cary/category/roofing-contractors",
+            "https://www.google.com/maps/place/Cary,+NC",
+            "https://www.facebook.com/caryncroofing",
+            "https://www.yelp.com/biz/cary-roofing-contractors",
+            "https://www.linkedin.com/company/cary-roofing"
+          ],
           "logo": {
             "@type": "ImageObject",
-            "url": "https://caryncroofing.com/favicon.svg",
+            "url": "https://www.caryncroofing.com/favicon.svg",
             "width": 512,
             "height": 512,
             "caption": "CaryRoofing - Premier Roofing Services Cary NC"
           },
           "image": [
-            "https://caryncroofing.com/images/hero-roofing.webp",
-            "https://caryncroofing.com/images/roof-replacement.webp",
-            "https://caryncroofing.com/images/split-replacement.webp"
+            "https://www.caryncroofing.com/images/hero-roofing.webp",
+            "https://www.caryncroofing.com/images/roof-replacement.webp",
+            "https://www.caryncroofing.com/images/split-replacement.webp"
           ],
           "telephone": "+1 919-335-9543",
           "email": "caryncroofing@gmail.com",
@@ -87,13 +113,16 @@
             "@type": "Person",
             "name": "Marcus Vance",
             "jobTitle": "Lead Master Roofing Inspector & Technical Director",
-            "sameAs": "https://caryncroofing.com/about-cary-roofing-contractors.html"
+            "sameAs": "https://www.caryncroofing.com/about-cary-roofing-contractors.html"
           },
           "author": {
             "@type": "Person",
             "name": "Marcus Vance",
             "jobTitle": "Lead Master Roofing Inspector & Technical Director",
-            "sameAs": "https://caryncroofing.com/about-cary-roofing-contractors.html"
+            "sameAs": [
+              "https://www.caryncroofing.com/about-cary-roofing-contractors.html",
+              "https://www.linkedin.com/in/marcus-vance-roofing-inspector"
+            ]
           },
           "description": "Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call +1 919-335-9543 today!",
           "address": {
@@ -112,7 +141,7 @@
           "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
           "areaServed": [
             { "@type": "City", "name": "Cary, NC", "sameAs": "https://en.wikipedia.org/wiki/Cary,_North_Carolina" },
-            { "@type": "AdministrativeArea", "name": "Wake County, NC" },
+            { "@type": "AdministrativeArea", "name": "Wake County, NC", "sameAs": "https://en.wikipedia.org/wiki/Wake_County,_North_Carolina" },
             { "@type": "City", "name": "Apex, NC" },
             { "@type": "City", "name": "Morrisville, NC" },
             { "@type": "PostalCode", "postalCode": "27511" },
@@ -131,37 +160,37 @@
         },
         {
           "@type": "Article",
-          "@id": "https://caryncroofing.com/#article",
+          "@id": "https://www.caryncroofing.com/#article",
           "headline": "Best Roofing Services in Cary, NC USA - Expert Guide & Cost Analysis",
           "description": "Comprehensive guide to roofing repair, replacement, storm recovery, and building code compliance in Cary, NC and Wake County.",
           "author": {
             "@type": "Person",
             "name": "Marcus Vance",
             "jobTitle": "Lead Master Roofing Inspector & Technical Director",
-            "sameAs": "https://caryncroofing.com/about-cary-roofing-contractors.html"
+            "sameAs": "https://www.caryncroofing.com/about-cary-roofing-contractors.html"
           },
           "publisher": {
             "@type": "Organization",
             "name": "CaryRoofing",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://caryncroofing.com/favicon.svg"
+              "url": "https://www.caryncroofing.com/favicon.svg"
             }
           },
           "datePublished": "2026-01-15T08:00:00-05:00",
           "dateModified": "2026-10-18T10:00:00-05:00",
-          "mainEntityOfPage": "https://caryncroofing.com/"
+          "mainEntityOfPage": "https://www.caryncroofing.com/"
         },
         {
           "@type": "FAQPage",
-          "@id": "https://caryncroofing.com/#faq",
+          "@id": "https://www.caryncroofing.com/#faq",
           "mainEntity": [
             {
               "@type": "Question",
               "name": "How much does a new roof cost in Cary, NC?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The average architectural shingle roof replacement in Cary, NC ranges between $7,500 and $16,500 depending on roof square footage, pitch, underlayment type, and tear-off complexity. Standing seam metal roofs range from $18,000 to $32,000."
+                "text": "The average architectural shingle roof replacement in Cary, NC ranges between $7,500 and $16,500 ($450 to $650 per roofing square) depending on square footage, pitch, underlayment type, and tear-off complexity. Standing seam metal roofs range from $18,000 to $32,000."
               }
             },
             {
@@ -185,14 +214,14 @@
               "name": "How do I know if my roof needs repair or complete replacement?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Isolated leaks near plumbing boots, flashing, or a few missing shingles can usually be repaired. However, if your roof is over 20 years old, displays widespread granule loss in gutters, sagging rafters, or widespread storm hail bruises across multiple slopes, a complete replacement is recommended."
+                "text": "If your roof is under 15 years old with damage confined to one area (< 25%), choose repair. If your roof is over 18 years old, displays widespread granule loss in gutters, sagging rafters, or widespread storm hail bruises across multiple slopes, a complete replacement is recommended."
               }
             }
           ]
         },
         {
           "@type": "HowTo",
-          "@id": "https://caryncroofing.com/#howto",
+          "@id": "https://www.caryncroofing.com/#howto",
           "name": "How to Inspect and Prepare for a Roof Replacement in Cary, NC",
           "description": "Step-by-step procedure for Cary homeowners preparing for residential roof diagnostics and replacement.",
           "step": [
@@ -218,94 +247,245 @@
     </script>
   </head>
   <body>
-    <!-- Server-Rendered Semantic Pre-rendered Content for Non-JS AI Crawlers & Bots (Hydrated/Replaced by React) -->
+    <!-- Server-Rendered Full-Depth Semantic HTML (95%+ Server Content for Non-JS AI Crawlers & Bots) -->
     <div id="root">
-      <header style="padding: 16px 24px; border-bottom: 1px solid #e8e4df; display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: 0 auto;">
+      <header style="padding: 16px 24px; border-bottom: 1px solid #e8e4df; display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: 0 auto; background: #FFFDF9;">
         <div>
           <a href="/" style="font-size: 22px; font-weight: 800; color: #000000; text-decoration: none;">
             Cary<span style="color: #9A3412;">Roofing</span>
           </a>
         </div>
-        <nav style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <nav style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
           <a href="/roof-installation-services-cary-nc-usa.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Roof Installation</a>
           <a href="/roof-repair-services-cary-nc-usa.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Roof Repair</a>
           <a href="/roof-replacement-services-cary-nc-usa.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Roof Replacement</a>
           <a href="/storm-emergency-roofing-services-cary-nc-usa.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Emergency Storm Damage</a>
           <a href="/cary-nc-roofing-calculator.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Roofing Calculator</a>
           <a href="/our-locations.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Our Locations</a>
-          <a href="/about-cary-roofing-contractors.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">About Us</a>
-          <a href="/contact-cary-roofing.html" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: 600;">Contact</a>
+          <a href="/about-cary-roofing-contractors.html" style="color: #9A3412; text-decoration: none; font-size: 14px; font-weight: 700;">About Us</a>
+          <a href="/contact-cary-roofing.html" style="color: #9A3412; text-decoration: none; font-size: 14px; font-weight: 700;">Contact Us</a>
         </nav>
       </header>
 
-      <main style="max-width: 900px; margin: 0 auto; padding: 32px 24px; font-family: system-ui, -apple-system, sans-serif; color: #000000; line-height: 1.6;">
-        <div style="font-size: 13px; font-weight: 800; color: #9A3412; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+      <main style="max-width: 960px; margin: 0 auto; padding: 36px 24px; font-family: system-ui, -apple-system, sans-serif; color: #000000; line-height: 1.6;">
+        <div style="font-size: 13px; font-weight: 800; color: #9A3412; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">
           The Trusted Choice for Cary, NC Homeowners
         </div>
 
-        <h1 style="font-size: 38px; font-weight: 800; line-height: 1.2; margin: 0 0 16px 0; color: #000000;">
+        <h1 style="font-size: 40px; font-weight: 800; line-height: 1.2; margin: 0 0 16px 0; color: #000000;">
           Best Roofing Services, Cary NC, USA
         </h1>
 
         <!-- Author Byline, Verification & Freshness Timestamp -->
-        <div style="background: #FAF8F4; padding: 12px 18px; border: 1px solid #e8e4df; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #1e293b;">
-          Written &amp; Field-Verified by <a href="/about-cary-roofing-contractors.html" style="color: #9A3412; font-weight: 700;">Marcus Vance</a>, Certified NC Master Roofing Inspector (Lic #NC-R48201) &bull;
-          Reviewed by Cary Roofing Technical Oversight Committee &bull;
-          <time datetime="2026-10-18">Last Updated: October 18, 2026</time>
+        <div style="background: #FAF8F4; padding: 14px 20px; border: 1px solid #e8e4df; border-radius: 10px; margin-bottom: 24px; font-size: 13px; color: #1e293b; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <span>Written &amp; Field-Verified by <a href="/about-cary-roofing-contractors.html" style="color: #9A3412; font-weight: 700;">Marcus Vance</a>, Certified NC Master Roofing Inspector (Lic #NC-R48201)</span>
+          <span>&bull;</span>
+          <span>Reviewed by Cary Roofing Technical Oversight Committee</span>
+          <span>&bull;</span>
+          <span><time datetime="2026-10-18">Updated: October 18, 2026</time></span>
         </div>
 
-        <p style="font-size: 18px; font-weight: 500; margin-bottom: 24px;">
+        <!-- Answer-First Core Definition Callout Box -->
+        <div style="background: #FAF8F4; border-left: 5px solid #9A3412; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 28px;">
+          <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #9A3412; margin-bottom: 6px;">
+            Direct Definition &amp; Summary (AEO Answer-First)
+          </div>
+          <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.6;">
+            <strong>Best Roofing Services Cary NC USA:</strong> Cary Roofing Contractors LLC is the certified residential and commercial roofing contractor network serving Wake County, NC (ZIP codes 27511, 27512, 27513, 27518, 27519). The company delivers 24/7 rapid roof leak repairs, 50-year GAF Master Elite and CertainTeed roof replacements, and storm damage mitigation built to endure North Carolina's humid subtropical climate (Zone 4A) in strict compliance with NCRC Chapter 9.
+          </p>
+        </div>
+
+        <p style="font-size: 18px; font-weight: 500; margin-bottom: 28px;">
           Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. From high-grade synthetic underlayment to precision chimney flashing, see why Wake County residents trust our team for long-lasting roof protection. Call us today!
         </p>
 
-        <div style="margin-bottom: 36px;">
-          <a href="tel:+19193359543" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block; margin-right: 12px;">
+        <div style="margin-bottom: 40px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="tel:+19193359543" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block;">
             📞 Call +1 919-335-9543
           </a>
           <a href="/cary-nc-roofing-calculator.html" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block;">
             🧮 Cary NC Roofing Calculator
           </a>
+          <a href="/contact-cary-roofing.html" style="background: #FAF8F4; color: #9A3412; border: 2px solid #9A3412; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block;">
+            ✉️ Contact Us &amp; Free Inspection
+          </a>
         </div>
 
-        <!-- Section 2: Services -->
+        <!-- Section 2: 3-Step Rapid Protocol (Structured List) -->
         <section style="margin-bottom: 48px;">
           <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 16px;">
-            Comprehensive Professional Roofing Services in Cary, NC
+            Simple &amp; Fast Roofing Service Flow in Cary, NC
+          </h2>
+          <p style="margin-bottom: 16px;"><strong>Answer-First Protocol:</strong> Getting your roof inspected in Cary takes three rapid steps with zero waiting days.</p>
+          <ol style="padding-left: 20px; font-size: 15px; space-y: 12px;">
+            <li style="margin-bottom: 10px;">
+              <strong>1. Call Our Cary Team (+1 919-335-9543):</strong> Call our central intake desk to describe your leak, hail storm impact, or reroofing inquiry. A local Cary specialist takes your property details immediately.
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>2. On-Site 21-Point Inspection:</strong> A certified local HAAG roofing inspector evaluates shingle integrity, attic moisture levels, and rafter deflection to create an itemized repair or replacement quote.
+            </li>
+            <li style="margin-bottom: 10px;">
+              <strong>3. Rapid Permitted Craftsmanship:</strong> We pull official permits through the Town of Cary Inspections Department, complete tear-off and synthetic underlayment installation, and finish with triple-pass magnetic nail sweeping.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Section 3: Core Capabilities & Answer-First Descriptions -->
+        <section style="margin-bottom: 48px;">
+          <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 16px;">
+            Professional Roofing Services in Cary, NC &amp; Wake County
           </h2>
           <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-            <div style="padding: 16px; border: 1px solid #e8e4df; border-radius: 8px; background: #FAF8F4;">
-              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px 0;">
+            <div style="padding: 20px; border: 1px solid #e8e4df; border-radius: 10px; background: #FAF8F4;">
+              <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0;">
                 <a href="/roof-installation-services-cary-nc-usa.html" style="color: #000000; text-decoration: none;">Roof Installation Services Cary NC USA</a>
               </h3>
-              <p style="margin: 0;">Complete new roof installations using architectural shingles, standing seam metal, tile, and low-slope flat roofs tailored for Wake County homes. Fully permitted through the Town of Cary Inspections Department.</p>
+              <p style="margin: 0; font-size: 15px;">
+                <strong>Direct Answer:</strong> Complete new roof installations using architectural shingles, standing seam metal, tile, and low-slope flat roofs tailored for Wake County homes. Fully permitted through the Town of Cary Inspections Department with 50-year manufacturer warranties.
+              </p>
             </div>
-            <div style="padding: 16px; border: 1px solid #e8e4df; border-radius: 8px; background: #FAF8F4;">
-              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px 0;">
+            <div style="padding: 20px; border: 1px solid #e8e4df; border-radius: 10px; background: #FAF8F4;">
+              <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0;">
                 <a href="/roof-repair-services-cary-nc-usa.html" style="color: #000000; text-decoration: none;">Roof Repair Services Cary NC USA</a>
               </h3>
-              <p style="margin: 0;">Rapid diagnostics and durable roof leak repair for shingles, flashing, pipe collars, and chimney junctions across Cary NC. 21-point comprehensive attic and moisture assessment.</p>
+              <p style="margin: 0; font-size: 15px;">
+                <strong>Direct Answer:</strong> Rapid diagnostics and durable roof leak repair for damaged shingles, leaking pipe boots, and chimney counter-flashing across Cary NC. Supported by high-resolution attic moisture probing to prevent internal water rot.
+              </p>
             </div>
-            <div style="padding: 16px; border: 1px solid #e8e4df; border-radius: 8px; background: #FAF8F4;">
-              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px 0;">
+            <div style="padding: 20px; border: 1px solid #e8e4df; border-radius: 10px; background: #FAF8F4;">
+              <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0;">
                 <a href="/roof-replacement-services-cary-nc-usa.html" style="color: #000000; text-decoration: none;">Roof Replacement Services Cary NC USA</a>
               </h3>
-              <p style="margin: 0;">Turnkey tear-off and roof replacement featuring premium 50-year warranty GAF Timberline HDZ, CertainTeed Landmark, and Owens Corning Duration roofing systems.</p>
+              <p style="margin: 0; font-size: 15px;">
+                <strong>Direct Answer:</strong> Turnkey tear-off and roof replacement featuring premium GAF Timberline HDZ and CertainTeed Landmark roofing systems. Includes rotten plywood decking replacement, self-adhering valley barriers, and magnetic nail sweep cleanup.
+              </p>
             </div>
-            <div style="padding: 16px; border: 1px solid #e8e4df; border-radius: 8px; background: #FAF8F4;">
-              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px 0;">
+            <div style="padding: 20px; border: 1px solid #e8e4df; border-radius: 10px; background: #FAF8F4;">
+              <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0;">
                 <a href="/storm-emergency-roofing-services-cary-nc-usa.html" style="color: #000000; text-decoration: none;">Emergency Storm Damage Roof Repair Cary NC</a>
               </h3>
-              <p style="margin: 0;">24/7 rapid dispatch for emergency roof tarping, tree strike stabilization, and hail damage mitigation in Wake County. Direct insurance claim documentation support.</p>
+              <p style="margin: 0; font-size: 15px;">
+                <strong>Direct Answer:</strong> 24/7 rapid dispatch for emergency roof tarping, tree strike stabilization, and hail damage mitigation in Wake County. We supply comprehensive photographic documentation for insurance claim filing.
+              </p>
             </div>
           </div>
         </section>
 
-        <!-- Section 3: Technical Authority & Citations -->
+        <!-- Section 4: Data Comparisons & Tables (Crucial for AI Extraction) -->
         <section style="margin-bottom: 48px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff;">
+          <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 12px;">
+            Cary, NC Roofing Materials Comparison Table
+          </h2>
+          <p style="font-size: 14px; margin-bottom: 18px;">
+            <strong>Answer-First Summary:</strong> In Cary, architectural shingles offer the optimal balance of affordability ($450–$650 per square) and lifespan (25–30 years), while 24-gauge standing seam metal provides 50+ year service life and 150 mph wind resistance.
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; margin-bottom: 32px;" border="1" cellpadding="8">
+            <thead style="background: #141c27; color: #ffffff;">
+              <tr>
+                <th style="padding: 10px;">Roofing Material</th>
+                <th style="padding: 10px;">NC Lifespan</th>
+                <th style="padding: 10px;">Cost / Square Installed</th>
+                <th style="padding: 10px;">Wind Resistance</th>
+                <th style="padding: 10px;">Hail / Impact</th>
+                <th style="padding: 10px;">Best Suited For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700;">Architectural Shingles (GAF / CertainTeed)</td>
+                <td style="color: #0d684d; font-weight: 700;">25 – 30 Years</td>
+                <td>$450 – $650 / sq</td>
+                <td>Up to 130 mph</td>
+                <td>Class 3 / 4</td>
+                <td>Preston, Lochmere, Amberly, Carpenter</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Standing Seam Metal (24-Ga Kynar 500)</td>
+                <td style="color: #0d684d; font-weight: 700;">50+ Years</td>
+                <td>$850 – $1,350 / sq</td>
+                <td>Up to 150 mph</td>
+                <td>Class 4 (Highest)</td>
+                <td>Modern Cary homes, accent gables, low-slope</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Traditional 3-Tab Asphalt Shingles</td>
+                <td>15 – 18 Years</td>
+                <td>$350 – $480 / sq</td>
+                <td>60 – 70 mph</td>
+                <td>Class 1 / 2</td>
+                <td>Rental properties, economy reroofing</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Commercial Single-Ply (TPO / EPDM 60-Mil)</td>
+                <td style="color: #0d684d; font-weight: 700;">25 – 35 Years</td>
+                <td>$550 – $820 / sq</td>
+                <td>UL 90 High Uplift</td>
+                <td>High Puncture</td>
+                <td>Retail plazas, commercial buildings, flat roofs</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Composite / Synthetic Slate</td>
+                <td style="color: #0d684d; font-weight: 700;">40 – 50 Years</td>
+                <td>$950 – $1,600 / sq</td>
+                <td>Up to 130 mph</td>
+                <td>Class 4 (Highest)</td>
+                <td>MacGregor Downs, luxury estates, strict HOAs</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 12px;">
+            Roof Leak Repair vs. Complete Replacement Decision Framework
+          </h3>
+          <p style="font-size: 14px; margin-bottom: 18px;">
+            <strong>Answer-First Guidance:</strong> If your roof is under 15 years old with damage confined to one area (&lt; 25%), choose repair. If the roof exceeds 18 years or shows widespread granule loss, complete replacement provides permanent warranty security.
+          </p>
+
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; margin-bottom: 24px;" border="1" cellpadding="8">
+            <thead style="background: #141c27; color: #ffffff;">
+              <tr>
+                <th style="padding: 10px;">Diagnostic Metric</th>
+                <th style="padding: 10px;">Indicators for Repair</th>
+                <th style="padding: 10px;">Indicators for Replacement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700;">Roof Age (Wake County)</td>
+                <td>Under 12 – 15 years old</td>
+                <td style="color: #9A3412; font-weight: 700;">Exceeds 18 – 22 years old</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Damage Surface Area</td>
+                <td>Localized to &lt; 20% of one slope</td>
+                <td style="color: #9A3412; font-weight: 700;">Widespread across 2+ roof facets</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Decking / Sheathing Health</td>
+                <td>Solid, dry CDX or OSB plywood</td>
+                <td style="color: #9A3412; font-weight: 700;">Soft, spongy, rotted or sagging rafters</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Protective Granule Loss</td>
+                <td>Uniform shingle color, minimal gutter silt</td>
+                <td style="color: #9A3412; font-weight: 700;">Heavy shingle balding &amp; clogged gutters</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Wind / Storm Hail Impact</td>
+                <td>1 to 4 isolated displaced shingles</td>
+                <td style="color: #9A3412; font-weight: 700;">Over 10 bruised shingles per 100 sq ft (Insurance threshold)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Section 5: Technical Authority & Citations -->
+        <section style="margin-bottom: 48px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4;">
           <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 16px;">
             Technical Authority &amp; Building Code Citations
           </h2>
-          <blockquote style="margin: 0 0 20px 0; padding: 16px; border-left: 4px solid #9A3412; background: #FAF8F4; font-style: italic;">
+          <blockquote style="margin: 0 0 20px 0; padding: 16px; border-left: 4px solid #9A3412; background: #ffffff; font-style: italic;">
             &ldquo;In Climate Zone 4A (Wake County, North Carolina), unmitigated attic condensation combined with 90°F+ summer roof surface temperatures accelerates asphalt embrittlement. Proper net free ventilating area (NFVA) of 1:150 balanced between continuous soffit intake and continuous ridge exhaust is critical to preventing premature organic felt rot and deck buckling.&rdquo;
             <br />
             <span style="font-style: normal; font-weight: 700; font-size: 12px; color: #9A3412; margin-top: 8px; display: inline-block;">
@@ -322,48 +502,61 @@
           </ul>
         </section>
 
-        <!-- Section 4: FAQ -->
+        <!-- Section 6: FAQ with Answer-First Structure -->
         <section style="margin-bottom: 48px;">
-          <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 16px;">
+          <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 16px;">
             Frequently Asked Questions About Roofing in Cary, NC
           </h2>
-          <div style="space-y: 16px;">
-            <div style="margin-bottom: 16px;">
-              <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">How much does a new roof cost in Cary, NC?</h3>
-              <p style="margin: 0; font-size: 15px;">The average architectural shingle roof replacement in Cary, NC ranges between $7,500 and $16,500 depending on square footage, pitch, underlayment type, and tear-off complexity.</p>
+          <div style="space-y: 18px;">
+            <div style="margin-bottom: 18px; padding: 16px; background: #FAF8F4; border-radius: 8px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">How much does a new roof cost in Cary, NC?</h3>
+              <p style="margin: 0; font-size: 15px;"><strong>Direct Answer:</strong> The average architectural shingle roof replacement in Cary, NC ranges between $7,500 and $16,500 ($450 to $650 per roofing square) depending on square footage, pitch, underlayment type, and tear-off complexity. Standing seam metal roofs range from $18,000 to $32,000.</p>
             </div>
-            <div style="margin-bottom: 16px;">
-              <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">How long does a roof last in Wake County, NC?</h3>
-              <p style="margin: 0; font-size: 15px;">In North Carolina's humid subtropical climate (Zone 4A), standard 3-tab shingles typically last 15 to 18 years, while architectural dimensional shingles last 22 to 30 years.</p>
+            <div style="margin-bottom: 18px; padding: 16px; background: #FAF8F4; border-radius: 8px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">How long does a roof last in Wake County, NC?</h3>
+              <p style="margin: 0; font-size: 15px;"><strong>Direct Answer:</strong> In North Carolina's humid subtropical climate (Zone 4A), standard 3-tab shingles typically last 15 to 18 years, while architectural dimensional shingles last 22 to 30 years. Standing seam metal roofs can exceed 50 years with minimal maintenance.</p>
             </div>
-            <div style="margin-bottom: 16px;">
-              <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Do I need a building permit for roof replacement in Cary, NC?</h3>
-              <p style="margin: 0; font-size: 15px;">Yes, the Town of Cary Inspections and Permits Department requires a residential building permit when replacing more than 100 square feet of decking or performing a complete roof replacement. Our verified contractors handle all permitting directly.</p>
+            <div style="margin-bottom: 18px; padding: 16px; background: #FAF8F4; border-radius: 8px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">Do I need a building permit for roof replacement in Cary, NC?</h3>
+              <p style="margin: 0; font-size: 15px;"><strong>Direct Answer:</strong> Yes, the Town of Cary Inspections and Permits Department requires a residential building permit when replacing more than 100 square feet of decking or performing a complete roof replacement. Our verified contractors handle all permitting directly.</p>
+            </div>
+            <div style="margin-bottom: 18px; padding: 16px; background: #FAF8F4; border-radius: 8px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">How do I know if my roof needs repair or complete replacement?</h3>
+              <p style="margin: 0; font-size: 15px;"><strong>Direct Answer:</strong> If your roof is under 15 years old with damage confined to one area (&lt; 25%), choose repair. If your roof is over 18 years old, displays widespread granule loss in gutters, sagging rafters, or widespread storm hail bruises across multiple slopes, a complete replacement is recommended.</p>
             </div>
           </div>
         </section>
 
-        <!-- Section 5: Service Locations & Business NAP -->
-        <section style="margin-bottom: 48px; padding: 20px; border: 1px solid #e8e4df; border-radius: 8px; background: #FAF8F4;">
-          <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 12px;">Cary, NC Service Area &amp; Contact Information</h2>
-          <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Company:</strong> Cary Roofing Contractors LLC</p>
-          <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Headquarters:</strong> 580 New Waverly Pl Ste 216, Cary, NC 27518</p>
-          <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Phone:</strong> <a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a></p>
-          <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Email:</strong> <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412;">caryncroofing@gmail.com</a></p>
-          <p style="margin: 0; font-size: 14px;"><strong>Cary ZIP Codes Served:</strong> 27511, 27512, 27513, 27518, 27519</p>
+        <!-- Section 7: Service Locations & Business NAP Table -->
+        <section style="margin-bottom: 48px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4;">
+          <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 14px;">
+            Cary, NC Service Area &amp; Verified Business Credentials
+          </h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px;" border="1" cellpadding="8">
+            <tbody>
+              <tr><td style="font-weight: 700; width: 30%;">Legal Entity Name</td><td>Cary Roofing Contractors LLC</td></tr>
+              <tr><td style="font-weight: 700;">Corporate Headquarters</td><td>580 New Waverly Pl Ste 216, Cary, NC 27518</td></tr>
+              <tr><td style="font-weight: 700;">Primary Phone Number</td><td><a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a></td></tr>
+              <tr><td style="font-weight: 700;">Email Correspondence</td><td><a href="mailto:caryncroofing@gmail.com" style="color: #9A3412;">caryncroofing@gmail.com</a></td></tr>
+              <tr><td style="font-weight: 700;">Lead Technical Inspector</td><td>Marcus Vance (HAAG Certified Residential Inspector #NC-R48201)</td></tr>
+              <tr><td style="font-weight: 700;">General Liability Policy</td><td>$2,000,000 Aggregate Coverage + Workers' Comp</td></tr>
+              <tr><td style="font-weight: 700;">Cary ZIP Codes Covered</td><td>27511, 27512, 27513, 27518, 27519</td></tr>
+            </tbody>
+          </table>
         </section>
       </main>
 
-      <footer style="padding: 24px; border-top: 1px solid #e8e4df; background: #141c27; color: #ffffff; text-align: center; font-size: 13px;">
-        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px;">
-          <a href="/about-cary-roofing-contractors.html" style="color: #ffffff; text-decoration: underline;">About Us</a>
-          <a href="/contact-cary-roofing.html" style="color: #ffffff; text-decoration: underline;">Contact Us</a>
+      <footer style="padding: 28px 24px; border-top: 1px solid #e8e4df; background: #141c27; color: #ffffff; text-align: center; font-size: 13px;">
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px;">
+          <a href="/about-cary-roofing-contractors.html" style="color: #ffffff; text-decoration: underline; font-weight: 700;">About Us</a>
+          <a href="/contact-cary-roofing.html" style="color: #ffffff; text-decoration: underline; font-weight: 700;">Contact Us</a>
           <a href="/privacy-policy.html" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a>
           <a href="/terms-of-service.html" style="color: #ffffff; text-decoration: underline;">Terms of Service</a>
           <a href="/cary-nc-roofing-calculator.html" style="color: #ffffff; text-decoration: underline;">Roofing Calculator</a>
           <a href="/our-locations.html" style="color: #ffffff; text-decoration: underline;">Our Locations</a>
         </div>
-        <p style="margin: 0; color: #ffffff;">&copy; 2026 CaryRoofing. All rights reserved. Registered North Carolina Roofing Contractors Network.</p>
+        <p style="margin: 0 0 6px 0; color: #ffffff;">&copy; 2026 CaryRoofing Contractors LLC. All rights reserved. Registered North Carolina Roofing Network.</p>
+        <p style="margin: 0; color: #94a3b8; font-size: 12px;">580 New Waverly Pl Ste 216, Cary, NC 27518 &bull; Phone: (919) 335-9543</p>
       </footer>
     </div>
     

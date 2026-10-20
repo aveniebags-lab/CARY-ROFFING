@@ -134,10 +134,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
           <a 
             href="/contact-cary-roofing.html"
-            onClick={(e) => scrollToSection(e, 'book')}
-            className="cursor-pointer text-black"
+            onClick={(e) => handleLinkClick(e, 'contact-cary-roofing.html')}
+            className={`cursor-pointer ${currentPath === 'contact-cary-roofing.html' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
-            Contact
+            Contact Us
           </a>
         </nav>
 

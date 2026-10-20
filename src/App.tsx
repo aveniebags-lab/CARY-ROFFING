@@ -8,6 +8,7 @@ const ServicePage = lazy(() => import('./components/ServicePage').then(m => ({ d
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
 const TermsOfServicePage = lazy(() => import('./components/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
 const AboutUsPage = lazy(() => import('./components/AboutUsPage').then(m => ({ default: m.AboutUsPage })));
+const ContactUsPage = lazy(() => import('./components/ContactUsPage').then(m => ({ default: m.ContactUsPage })));
 const OurLocationsPage = lazy(() => import('./components/OurLocationsPage').then(m => ({ default: m.OurLocationsPage })));
 const CalculatorPage = lazy(() => import('./components/CalculatorPage').then(m => ({ default: m.CalculatorPage })));
 const TechnicalPortalDrawer = lazy(() => import('./components/TechnicalPortalDrawer').then(m => ({ default: m.TechnicalPortalDrawer })));
@@ -184,9 +185,11 @@ export default function App() {
             <TermsOfServicePage onNavigate={handleNavigate} />
           ) : currentPath === 'about-cary-roofing-contractors.html' ? (
             <AboutUsPage onNavigate={handleNavigate} />
+          ) : currentPath === 'contact-cary-roofing.html' ? (
+            <ContactUsPage onNavigate={handleNavigate} />
           ) : currentPath === 'our-locations' ? (
             <OurLocationsPage onNavigate={handleNavigate} />
-          ) : currentPath === 'home' || currentPath === 'contact-cary-roofing.html' || !activeService ? (
+          ) : currentPath === 'home' || !activeService ? (
             <HomePage 
               onNavigate={handleNavigate} 
               onOpenEstimator={() => setSeoDrawerOpen(true)}
