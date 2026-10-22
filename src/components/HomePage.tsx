@@ -77,13 +77,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
 
           <div className="hero-cta-group">
             <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
-              <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary btn-lg">
+              <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary btn-lg !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-md">
                 Call {COMPANY_DETAILS.mainPhone}
               </a>
               <button
                 type="button"
                 onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
-                className="btn btn-secondary !mt-0 !py-3.5 !px-6 border-2 border-black/20 hover:border-[#F07020] text-black font-bold flex items-center gap-1.5 cursor-pointer shadow-xs"
+                className="btn btn-primary btn-lg !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold flex items-center gap-1.5 cursor-pointer shadow-md"
               >
                 <span>🧮</span>
                 <span>Cary NC Roofing Calculator</span>
@@ -647,13 +647,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                 </div>
                 
                 <div className="btn-group">
-                  <a href={`tel:${item.phoneRaw}`} className="btn btn-primary w-full">
+                  <a href={`tel:${item.phoneRaw}`} className="btn btn-primary w-full !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm">
                     📞 Call {item.phone}
                   </a>
                   <button 
                     type="button"
                     onClick={() => onNavigate('our-locations')}
-                    className="btn btn-secondary w-full"
+                    className="btn btn-primary w-full !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
                   >
                     View Zip Details →
                   </button>
@@ -970,13 +970,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
                       href={mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-1.5 px-2 bg-[#FAF8F4] hover:bg-[#FAF8F4]/80 border border-[#e8e4df] text-black text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors"
+                      className="w-full py-2 px-2 bg-[#9A3412] hover:bg-[#7C2D12] text-white text-center text-xs font-extrabold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
                     >
                       <span>📍 Google Maps Pin ↗</span>
                     </a>
                     <a
                       href={`tel:${loc.phoneRaw}`}
-                      className="w-full py-2 px-2 bg-[#C2410C] hover:bg-[#9A3412] text-white text-center text-xs font-bold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
+                      className="w-full py-2 px-2 bg-[#9A3412] hover:bg-[#7C2D12] text-white text-center text-xs font-extrabold rounded-lg flex items-center justify-center gap-1 transition-colors shadow-2xs"
                     >
                       <span>📞 Call {loc.phone}</span>
                     </a>

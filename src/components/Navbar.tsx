@@ -146,13 +146,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
           <button
             type="button"
             onClick={(e) => scrollToSection(e, 'book')}
-            className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-extrabold rounded-full bg-[#E8F8F1] text-[#0d684d] border border-[#0d684d]/30 hover:bg-[#0d684d] hover:text-white transition-all cursor-pointer shadow-xs"
+            className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-extrabold rounded-full bg-[#9A3412] hover:bg-[#7C2D12] text-white border border-white/20 transition-all cursor-pointer shadow-xs"
           >
-            <span className="w-2 h-2 rounded-full bg-[#0d684d]"></span>
+            <span className="w-2 h-2 rounded-full bg-white"></span>
             Free Inspection
           </button>
 
-          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !text-white font-extrabold shadow-sm">
+          <a href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`} className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm">
             Call Us Now
           </a>
 

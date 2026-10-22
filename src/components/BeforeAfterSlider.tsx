@@ -69,7 +69,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             onClick={() => setViewMode('split')}
             className={`px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer ${
               viewMode === 'split'
-                ? 'bg-[#C2410C] text-white shadow-xs'
+                ? 'bg-[#9A3412] text-white shadow-xs'
                 : 'text-black/80 hover:text-black hover:bg-black/5'
             }`}
             title="Unified 2-portion realistic field jobsite photo"
@@ -385,7 +385,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               <button
                 type="button"
                 onClick={() => setIsZoomOpen(false)}
-                className="px-4 py-1.5 bg-[#D9531E] text-white rounded-lg font-bold hover:bg-[#b43b06] cursor-pointer !text-white"
+                className="px-4 py-1.5 bg-[#9A3412] hover:bg-[#7C2D12] text-white rounded-lg font-extrabold cursor-pointer !text-white shadow-xs"
               >
                 Close Inspection
               </button>

@@ -320,7 +320,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
                 href={googleMapsPlaceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-black font-extrabold rounded-xl border border-[#e8e4df] transition-colors"
+                className="py-2.5 px-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-xl transition-colors shadow-xs"
               >
                 Google Maps Pin ↗
               </a>
@@ -330,7 +330,7 @@ export const GoogleServiceAreaMap: React.FC = () => {
                   const el = document.getElementById('book');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-[#B43B06] font-extrabold rounded-xl border border-[#e8e4df] transition-colors cursor-pointer"
+                className="py-2.5 px-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-xl transition-colors cursor-pointer shadow-xs"
               >
                 Book Inspection →
               </button>

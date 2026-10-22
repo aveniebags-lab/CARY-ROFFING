@@ -316,7 +316,7 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
                     const el = document.getElementById('book');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-black font-bold rounded-xl border border-[#e8e4df] transition-colors cursor-pointer"
+                  className="py-2.5 px-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-xl transition-colors cursor-pointer shadow-xs"
                 >
                   Request Similar Quote →
                 </button>
@@ -325,7 +325,7 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
                   onClick={() => {
                     if (onNavigate) onNavigate('calculator');
                   }}
-                  className="py-2.5 px-3 bg-[#FAF8F4] hover:bg-slate-100 text-[#B43B06] font-extrabold rounded-xl border border-[#e8e4df] transition-colors cursor-pointer"
+                  className="py-2.5 px-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-xl transition-colors cursor-pointer shadow-xs"
                 >
                   Estimate ZIP {currentProject.zip} Cost ↗
                 </button>

@@ -100,10 +100,15 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
+      "@id": "https://caryncroofing.com/#aggregaterating",
       "ratingValue": "4.9",
-      "reviewCount": "128",
       "bestRating": "5",
-      "worstRating": "1"
+      "worstRating": "1",
+      "ratingCount": "128",
+      "reviewCount": "128",
+      "itemReviewed": {
+        "@id": "https://caryncroofing.com/#localbusiness"
+      }
     },
     "hasCredential": [
       { "@type": "EducationalOccupationalCredential", "name": "NC Licensed General Contractor (#78942)" },
@@ -218,7 +223,7 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
                 <button
                   type="button"
                   onClick={handleCopySchema}
-                  className="px-3 py-1.5 bg-[#F07020] text-white rounded-md text-xs font-bold hover:bg-[#d95e12] transition-all cursor-pointer shrink-0"
+                  className="px-3 py-1.5 bg-[#9A3412] text-white rounded-md text-xs font-extrabold hover:bg-[#7C2D12] transition-all cursor-pointer shrink-0 shadow-xs"
                 >
                   {copied ? '✓ Copied!' : 'Copy JSON-LD'}
                 </button>
@@ -468,7 +473,7 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-1.5 rounded-full bg-[#1e2a3a] text-white font-bold hover:bg-[#F07020] transition-all cursor-pointer"
+            className="px-4 py-1.5 rounded-full bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold transition-all cursor-pointer shadow-xs"
           >
             Close Portal
           </button>

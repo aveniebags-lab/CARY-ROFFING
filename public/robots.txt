@@ -1,6 +1,9 @@
 # robots.txt for caryncroofing.com - Cary NC Roofing Services
 User-agent: *
 Allow: /
+Disallow: /*?page_id=*
+Disallow: /*?p=*
+Disallow: /index.html
 
 # Explicitly allow AI Search and Knowledge Crawlers (GEO Optimization)
 User-agent: GPTBot

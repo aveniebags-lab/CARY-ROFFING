@@ -385,13 +385,13 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                         href={loc.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full py-2 bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
+                        className="w-full py-2 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
                       >
                         <span>🗺️ Open Pin in Google Maps ↗</span>
                       </a>
                       <a
                         href={`tel:${loc.phoneRaw}`}
-                        className="w-full py-2 bg-[#F07020] text-white font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 hover:bg-[#d65f17] shadow-2xs"
+                        className="w-full py-2 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
                       >
                         <span>📞 Dial {loc.phone}</span>
                       </a>
@@ -401,7 +401,7 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
                           const bookEl = document.getElementById('book');
                           if (bookEl) bookEl.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="w-full py-2 bg-[#FAF8F4] border border-[#e8e4df] hover:border-[#1D9E75] text-[#1D9E75] font-bold text-xs rounded-lg transition-colors cursor-pointer text-center"
+                        className="w-full py-2 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold text-xs rounded-lg transition-colors cursor-pointer text-center shadow-2xs"
                       >
                         Free On-Site Inspection in {loc.zip}
                       </button>

@@ -28,17 +28,33 @@
     <!-- Canonical URL (Aligned with caryncroofing.com canonical) -->
     <link id="canonical-url" rel="canonical" href="https://caryncroofing.com/" />
     
-    <!-- Dynamic Canonical Origin Normalizer -->
+    <!-- Dynamic Canonical & Legacy WordPress URL Normalizer -->
     <script>
       (function() {
         try {
+          var search = window.location.search || '';
+          // Immediately intercept and clean legacy WordPress URLs (e.g. ?page_id=14, ?p=14)
+          if (search && (search.indexOf('page_id=') !== -1 || search.indexOf('p=') !== -1 || search.indexOf('page_id') !== -1)) {
+            if (window.history && window.history.replaceState) {
+              var cleanPath = window.location.pathname || '/';
+              if (cleanPath === '/index.html') cleanPath = '/';
+              window.history.replaceState(null, '', cleanPath);
+            }
+          }
+          // Redirect www.caryncroofing.com to caryncroofing.com if accessed on custom domain
+          if (window.location.hostname === 'www.caryncroofing.com') {
+            var targetPath = window.location.pathname || '/';
+            if (targetPath === '/index.html') targetPath = '/';
+            window.location.replace('https://caryncroofing.com' + targetPath);
+            return;
+          }
           var origin = window.location.origin;
           var canonicalLink = document.getElementById('canonical-url') || document.querySelector('link[rel="canonical"]');
           if (canonicalLink && origin) {
             var path = window.location.pathname || '/';
             if (path === '/index.html') path = '/';
-            // Align canonical with the active origin during testing or live deployment
-            canonicalLink.setAttribute('href', origin + path);
+            // Align canonical with the clean active origin
+            canonicalLink.setAttribute('href', (origin.indexOf('caryncroofing.com') !== -1 ? 'https://caryncroofing.com' : origin) + path);
           }
         } catch(e) {}
       })();
@@ -156,10 +172,15 @@
           ],
           "aggregateRating": {
             "@type": "AggregateRating",
+            "@id": "https://caryncroofing.com/#aggregaterating",
             "ratingValue": "4.9",
-            "reviewCount": "128",
             "bestRating": "5",
-            "worstRating": "1"
+            "worstRating": "1",
+            "ratingCount": "128",
+            "reviewCount": "128",
+            "itemReviewed": {
+              "@id": "https://caryncroofing.com/#localbusiness"
+            }
           }
         },
         {
@@ -308,13 +329,13 @@
           <a href="tel:+19193359543" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block;">
             📞 Call +1 919-335-9543
           </a>
-          <a href="/cary-nc-roofing-calculator.html" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block;">
+          <a href="/cary-nc-roofing-calculator.html" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block;">
             🧮 Cary NC Roofing Calculator
           </a>
-          <a href="/contact-cary-roofing.html" style="background: #FAF8F4; color: #9A3412; border: 2px solid #9A3412; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block;">
+          <a href="/contact-cary-roofing.html" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block;">
             ✉️ Contact Us &amp; Free Inspection
           </a>
-          <a href="/about-cary-roofing-contractors.html" rel="author" style="background: #FAF8F4; color: #000000; border: 1px solid #e8e4df; padding: 12px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block;">
+          <a href="/about-cary-roofing-contractors.html" rel="author" style="background: #9A3412; color: #ffffff; padding: 14px 24px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block;">
             🏢 About Us &amp; License Info
           </a>
         </div>
@@ -719,10 +740,10 @@
             <a href="tel:+19193359543" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">
               📞 Call Central Hotline: +1 919-335-9543
             </a>
-            <a href="/contact-cary-roofing.html" style="background: #141c27; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">
+            <a href="/contact-cary-roofing.html" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">
               ✉️ Open Online Contact Form
             </a>
-            <a href="/about-cary-roofing-contractors.html" rel="author" style="background: #FAF8F4; color: #000000; border: 1px solid #e8e4df; padding: 14px 24px; border-radius: 8px; font-weight: 700; text-decoration: none;">
+            <a href="/about-cary-roofing-contractors.html" rel="author" style="background: #9A3412; color: #ffffff; padding: 14px 24px; border-radius: 8px; font-weight: 800; text-decoration: none;">
               🏢 Read About Our Company
             </a>
           </div>

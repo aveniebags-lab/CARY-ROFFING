@@ -239,7 +239,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
                   ></iframe>
                 </div>
                 <div className="cta-notice">Serving {item.zip} Residents Now</div>
-                <a href={`tel:${item.phoneRaw}`} className="btn btn-primary w-full">
+                <a href={`tel:${item.phoneRaw}`} className="btn btn-primary w-full !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm">
                   📞 Call {item.phone}
                 </a>
               </div>
@@ -251,7 +251,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
               <button
                 type="button"
                 onClick={onOpenEstimator}
-                className="btn btn-secondary !border-2 !border-[#F07020] !text-[#F07020] hover:!bg-[#FFF3EB] !font-bold"
+                className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white !font-extrabold shadow-md"
               >
                 ⚡ Calculate Estimated Roof Cost for Cary, NC
               </button>
@@ -441,14 +441,14 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
             <button
               type="button"
               onClick={() => onNavigate('home')}
-              className="btn btn-secondary !mt-0 font-bold"
+              className="btn btn-primary !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
             >
               ← Back to Main Homepage
             </button>
             <button
               type="button"
               onClick={() => onNavigate('our-locations')}
-              className="btn btn-secondary !mt-0 font-bold"
+              className="btn btn-primary !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
             >
               View All Service Locations →
             </button>

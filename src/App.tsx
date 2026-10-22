@@ -30,11 +30,21 @@ export default function App() {
         window.history.replaceState({ path: rawHash }, '', cleanTarget);
       }
 
+      // Detect and eliminate legacy WordPress query parameters (e.g., ?page_id=14, ?p=14)
+      if (window.location.search && (window.location.search.includes('page_id') || window.location.search.includes('p='))) {
+        const cleanTarget = window.location.pathname === '/index.html' || !window.location.pathname ? '/' : window.location.pathname;
+        window.history.replaceState({ path: 'home' }, '', cleanTarget);
+      }
+
       // Extract clean pathname (e.g. /roof-installation-services-cary-nc-usa.html -> roof-installation-services-cary-nc-usa.html)
-      const pathname = window.location.pathname.replace(/^\//, '').trim();
+      const rawPathname = window.location.pathname.replace(/^\//, '').trim();
+      const pathname = rawPathname === 'index.html' ? '' : rawPathname;
       const path = pathname || rawHash;
 
       if (!path || path === 'home' || path === 'index.html') {
+        if (window.location.pathname === '/index.html') {
+          window.history.replaceState({ path: 'home' }, '', '/');
+        }
         setCurrentPath('home');
       } else if (ALL_SERVICES.some(s => s.slug === path)) {
         setCurrentPath(path);
@@ -227,13 +237,13 @@ export default function App() {
               const bookEl = document.getElementById('book');
               if (bookEl) bookEl.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-3 py-2 text-xs font-bold rounded-full bg-white/15 text-white border border-white/30"
+            className="px-3 py-2 text-xs font-extrabold rounded-full bg-[#9A3412] hover:bg-[#7C2D12] text-white border border-white/20 shadow-xs"
           >
             Inspection
           </button>
           <a
             href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-            className="btn btn-primary !py-2 !px-4 !text-xs font-extrabold !text-white shadow-md"
+            className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !py-2 !px-4 !text-xs font-extrabold !text-white shadow-md"
           >
             Call Now
           </a>

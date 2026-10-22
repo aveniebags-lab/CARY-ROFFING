@@ -172,7 +172,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => onNavigate('cary-nc-roofing-calculator.html')}
-                className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold rounded-lg transition-colors cursor-pointer"
+                className="px-6 py-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-lg transition-colors cursor-pointer shadow-md"
               >
                 🧮 Use Roofing Cost Calculator
               </button>

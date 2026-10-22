@@ -151,55 +151,16 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
+      '@id': `${baseUrl}/#aggregaterating`,
       ratingValue: '4.9',
-      reviewCount: '128',
       bestRating: '5',
-      worstRating: '1'
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
-        },
-        author: {
-          '@type': 'Person',
-          name: 'David Miller'
-        },
-        datePublished: '2026-03-12',
-        reviewBody: 'Outstanding roof replacement in Preston, Cary. Handled full tear-off and installed brand new GAF Timberline HDZ architectural shingles with flawless magnetic nail sweeps.'
-      },
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Sarah Jenkins'
-        },
-        datePublished: '2026-04-05',
-        reviewBody: 'Emergency chimney flashing and roof leak repair in Lochmere. Prompt same-day dispatch and watertight copper counter-flashing that held up beautifully during intense NC storms.'
-      },
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
-        },
-        author: {
-          '@type': 'Person',
-          name: 'Michael Thompson'
-        },
-        datePublished: '2026-04-18',
-        reviewBody: 'Installed seamless 6-inch K-style aluminum gutters and leaf guards in Amberly, West Cary. Clean installation, accurate pitch, and excellent drainage.'
+      worstRating: '1',
+      ratingCount: '128',
+      reviewCount: '128',
+      itemReviewed: {
+        '@id': `${baseUrl}/#localbusiness`
       }
-    ],
+    },
     knowsAbout: [
       'Residential Roof Replacement',
       'Emergency Roof Leak Repair',
@@ -558,10 +519,8 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     }
   }, [schemaJsonString, effectiveCurrentUrl]);
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: schemaJsonString }}
-    />
-  );
+  // All Schema.org definitions are synchronized cleanly to document.head #app-dynamic-schema.
+  // Returning null prevents duplicate JSON-LD scripts in the rendered DOM, resolving
+  // Google Search Console's "Review has multiple aggregate ratings" error.
+  return null;
 };

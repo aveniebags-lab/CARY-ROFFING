@@ -68,7 +68,7 @@ export const RoofReplacementEditorialGuide: React.FC<RoofReplacementEditorialGui
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-              className="btn btn-primary !py-2.5 !px-5 !text-xs font-bold"
+              className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !py-2.5 !px-5 !text-xs font-extrabold !text-white shadow-sm"
             >
               📞 Call for Free Roof Inspection: {COMPANY_DETAILS.mainPhone}
             </a>
@@ -76,7 +76,7 @@ export const RoofReplacementEditorialGuide: React.FC<RoofReplacementEditorialGui
               <button
                 type="button"
                 onClick={onOpenEstimator}
-                className="px-4 py-2.5 bg-white border border-[#e8e4df] hover:border-[#F07020] text-black font-bold text-xs rounded-xl transition-all cursor-pointer shadow-xs"
+                className="px-4 py-2.5 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold text-xs rounded-xl transition-all cursor-pointer shadow-sm"
               >
                 Estimate Cary Replacement Cost →
               </button>
@@ -481,7 +481,7 @@ export const RoofReplacementEditorialGuide: React.FC<RoofReplacementEditorialGui
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <a
               href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-              className="btn btn-primary !py-3 !px-6 !text-sm font-extrabold text-center !text-white shadow-md"
+              className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !py-3 !px-6 !text-sm font-extrabold text-center !text-white shadow-md"
               style={{ color: '#ffffff' }}
             >
               📞 Call Cary Dispatch Hotline: {COMPANY_DETAILS.mainPhone}
@@ -492,7 +492,7 @@ export const RoofReplacementEditorialGuide: React.FC<RoofReplacementEditorialGui
                 const el = document.getElementById('book');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="btn btn-secondary !mt-0 !bg-white/10 !text-white hover:!bg-white/20 !border-white/20 !text-sm font-bold text-center cursor-pointer"
+              className="btn btn-primary !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white !py-3 !px-6 !text-sm font-extrabold text-center cursor-pointer shadow-md"
               style={{ color: '#ffffff' }}
             >
               Request Free On-Site Inspection &amp; Estimate →

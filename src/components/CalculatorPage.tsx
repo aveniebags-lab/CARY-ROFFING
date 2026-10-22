@@ -231,8 +231,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                         onClick={() => setHouseSqFt(size)}
                         className={`px-2.5 py-1 text-xs rounded-lg font-bold border transition-all cursor-pointer ${
                           houseSqFt === size
-                            ? 'bg-[#D9531E] text-white border-[#D9531E] !text-white'
-                            : 'bg-[#FAF8F4] text-black border-[#e8e4df] hover:border-[#D9531E]'
+                            ? 'bg-[#9A3412] text-white border-[#9A3412] !text-white'
+                            : 'bg-[#FAF8F4] text-black border-[#e8e4df] hover:border-[#9A3412]'
                         }`}
                       >
                         {size === 1700 ? '1,700 (Cary Avg)' : `${size.toLocaleString()} sq ft`}
@@ -462,7 +462,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                 <div className="space-y-3">
                   <a
                     href={`tel:${activeZip.phoneRaw}`}
-                    className="w-full btn btn-primary !py-3.5 !text-sm font-extrabold flex items-center justify-center gap-2 shadow-md !text-white"
+                    className="w-full btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !py-3.5 !text-sm font-extrabold flex items-center justify-center gap-2 shadow-md !text-white"
                   >
                     <span>📞 Call Local Hub: {activeZip.phone}</span>
                   </a>
@@ -472,7 +472,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                       const el = document.getElementById('book');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full py-3 bg-white border border-[#e8e4df] hover:border-[#D9531E] text-black font-extrabold text-xs rounded-xl transition-all cursor-pointer shadow-xs"
+                    className="w-full py-3.5 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold text-sm rounded-xl transition-all cursor-pointer shadow-md"
                   >
                     Lock In Quote &amp; Book Free On-Site Inspection →
                   </button>
@@ -762,7 +762,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={`tel:${COMPANY_DETAILS.mainPhoneRaw}`}
-                    className="btn btn-primary !py-3 !px-6 !text-sm font-bold text-center !text-white"
+                    className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !py-3 !px-6 !text-sm font-bold text-center !text-white shadow-md"
                     style={{ color: '#ffffff' }}
                   >
                     📞 Call Main Hotline: {COMPANY_DETAILS.mainPhone}
@@ -773,7 +773,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
                       const bookEl = document.getElementById('book');
                       if (bookEl) bookEl.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="btn btn-secondary !mt-0 !bg-white/10 !text-white hover:!bg-white/20 !border-white/20 !text-sm font-bold text-center cursor-pointer"
+                    className="btn btn-primary !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white !py-3 !px-6 !text-sm font-bold text-center cursor-pointer shadow-md"
                     style={{ color: '#ffffff' }}
                   >
                     Request Free 30-Min On-Site Quote →

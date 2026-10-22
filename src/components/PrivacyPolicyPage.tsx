@@ -187,14 +187,14 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             <button
               type="button"
               onClick={() => onNavigate('home')}
-              className="btn btn-primary"
+              className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
             >
               Return to Homepage
             </button>
             <button
               type="button"
               onClick={() => onNavigate('our-locations')}
-              className="btn btn-secondary border-2 border-black/20 text-black font-bold"
+              className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
             >
               View Our Service Locations
             </button>
