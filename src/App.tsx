@@ -42,9 +42,8 @@ export default function App() {
       const path = pathname || rawHash;
 
       if (!path || path === 'home' || path === 'index.html') {
-        if (window.location.pathname.includes('index.html')) {
-          const cleanPath = window.location.pathname.replace(/\/index\.html\/?$/, '') || '/';
-          window.history.replaceState({ path: 'home' }, '', cleanPath);
+        if (window.location.pathname === '/index.html') {
+          window.history.replaceState({ path: 'home' }, '', '/');
         }
         setCurrentPath('home');
       } else if (ALL_SERVICES.some(s => s.slug === path)) {
