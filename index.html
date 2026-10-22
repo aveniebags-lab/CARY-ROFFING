@@ -28,33 +28,48 @@
     <!-- Canonical URL (Aligned with caryncroofing.com canonical) -->
     <link id="canonical-url" rel="canonical" href="https://caryncroofing.com/" />
     
-    <!-- Dynamic Canonical & Legacy WordPress URL Normalizer -->
+    <!-- Unified Single Canonical URL & Permanent /index.html Normalizer -->
     <script>
       (function() {
         try {
+          var path = window.location.pathname || '/';
+          var isIndexHtml = (path === '/index.html' || path.indexOf('/index.html') !== -1);
           var search = window.location.search || '';
-          // Immediately intercept and clean legacy WordPress URLs (e.g. ?page_id=14, ?p=14)
-          if (search && (search.indexOf('page_id=') !== -1 || search.indexOf('p=') !== -1 || search.indexOf('page_id') !== -1)) {
-            if (window.history && window.history.replaceState) {
-              var cleanPath = window.location.pathname || '/';
-              if (cleanPath === '/index.html') cleanPath = '/';
-              window.history.replaceState(null, '', cleanPath);
+          var hasPageId = search && (search.indexOf('page_id') !== -1 || search.indexOf('p=') !== -1);
+          var isWww = (window.location.hostname === 'www.caryncroofing.com');
+          var isCustomDomain = (isWww || window.location.hostname === 'caryncroofing.com');
+
+          // Strict Single URL Unification for caryncroofing.com:
+          // Unifies https://www.caryncroofing.com/index.html, https://caryncroofing.com/index.html,
+          // and https://www.caryncroofing.com/ into a single authoritative URL: https://caryncroofing.com/
+          if (isCustomDomain) {
+            var cleanPath = path.replace(/\/index\.html\/?$/, '') || '/';
+            var cleanSearch = hasPageId ? '' : search;
+            var targetCanonicalUrl = 'https://caryncroofing.com' + cleanPath + cleanSearch;
+            
+            if (isWww || isIndexHtml || hasPageId) {
+              window.location.replace(targetCanonicalUrl);
+              return;
+            }
+          } else {
+            // Local & preview environment URL normalization
+            if (isIndexHtml || hasPageId) {
+              var devCleanPath = path.replace(/\/index\.html\/?$/, '') || '/';
+              var devCleanSearch = hasPageId ? '' : search;
+              if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, '', devCleanPath + devCleanSearch);
+              }
             }
           }
-          // Redirect www.caryncroofing.com to caryncroofing.com if accessed on custom domain
-          if (window.location.hostname === 'www.caryncroofing.com') {
-            var targetPath = window.location.pathname || '/';
-            if (targetPath === '/index.html') targetPath = '/';
-            window.location.replace('https://caryncroofing.com' + targetPath);
-            return;
-          }
-          var origin = window.location.origin;
+
           var canonicalLink = document.getElementById('canonical-url') || document.querySelector('link[rel="canonical"]');
-          if (canonicalLink && origin) {
-            var path = window.location.pathname || '/';
-            if (path === '/index.html') path = '/';
-            // Align canonical with the clean active origin
-            canonicalLink.setAttribute('href', (origin.indexOf('caryncroofing.com') !== -1 ? 'https://caryncroofing.com' : origin) + path);
+          if (canonicalLink) {
+            var origin = window.location.origin;
+            var normPath = (window.location.pathname || '/').replace(/\/index\.html\/?$/, '') || '/';
+            var targetOrigin = (origin && origin.indexOf('caryncroofing.com') !== -1)
+              ? 'https://caryncroofing.com'
+              : (origin || 'https://caryncroofing.com');
+            canonicalLink.setAttribute('href', targetOrigin + normPath);
           }
         } catch(e) {}
       })();
