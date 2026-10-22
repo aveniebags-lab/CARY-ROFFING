@@ -28,33 +28,24 @@
     <!-- Canonical URL (Aligned with caryncroofing.com canonical) -->
     <link id="canonical-url" rel="canonical" href="https://caryncroofing.com/" />
     
-    <!-- Dynamic Canonical & Legacy WordPress URL Normalizer -->
+    <!-- Dynamic Canonical Origin Normalizer -->
     <script>
       (function() {
         try {
-          var search = window.location.search || '';
-          // Immediately intercept and clean legacy WordPress URLs (e.g. ?page_id=14, ?p=14)
-          if (search && (search.indexOf('page_id=') !== -1 || search.indexOf('p=') !== -1 || search.indexOf('page_id') !== -1)) {
-            if (window.history && window.history.replaceState) {
-              var cleanPath = window.location.pathname || '/';
-              if (cleanPath === '/index.html') cleanPath = '/';
-              window.history.replaceState(null, '', cleanPath);
-            }
-          }
-          // Redirect www.caryncroofing.com to caryncroofing.com if accessed on custom domain
-          if (window.location.hostname === 'www.caryncroofing.com') {
-            var targetPath = window.location.pathname || '/';
-            if (targetPath === '/index.html') targetPath = '/';
-            window.location.replace('https://caryncroofing.com' + targetPath);
-            return;
-          }
           var origin = window.location.origin;
           var canonicalLink = document.getElementById('canonical-url') || document.querySelector('link[rel="canonical"]');
           if (canonicalLink && origin) {
             var path = window.location.pathname || '/';
             if (path === '/index.html') path = '/';
-            // Align canonical with the clean active origin
-            canonicalLink.setAttribute('href', (origin.indexOf('caryncroofing.com') !== -1 ? 'https://caryncroofing.com' : origin) + path);
+            canonicalLink.setAttribute('href', origin + path);
+          }
+          // Safely strip legacy ?page_id= from address bar if present
+          if (window.location.search && window.location.search.indexOf('page_id=') !== -1) {
+            if (window.history && window.history.replaceState) {
+              var cleanPath = window.location.pathname || '/';
+              if (cleanPath === '/index.html') cleanPath = '/';
+              window.history.replaceState(null, '', cleanPath);
+            }
           }
         } catch(e) {}
       })();

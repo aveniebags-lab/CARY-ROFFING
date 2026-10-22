@@ -21,19 +21,23 @@ export default function App() {
   useEffect(() => {
     const resolvePath = () => {
       let rawHash = '';
-      // If legacy '#' sign is present in URL, strip it immediately from the address bar
+      // If legacy '#' sign is present in URL, strip it safely from the address bar
       if (window.location.hash) {
         rawHash = window.location.hash.replace(/^#\/?/, '').trim();
         const cleanTarget = rawHash && rawHash !== 'home' && rawHash !== 'index.html'
           ? `/${rawHash}`
           : '/';
-        window.history.replaceState({ path: rawHash }, '', cleanTarget);
+        try {
+          window.history.replaceState({ path: rawHash }, '', cleanTarget);
+        } catch (_) {}
       }
 
-      // Detect and eliminate legacy WordPress query parameters (e.g., ?page_id=14, ?p=14)
-      if (window.location.search && (window.location.search.includes('page_id') || window.location.search.includes('p='))) {
+      // Detect and eliminate legacy WordPress query parameter ?page_id=14 safely
+      if (window.location.search && window.location.search.includes('page_id=')) {
         const cleanTarget = window.location.pathname === '/index.html' || !window.location.pathname ? '/' : window.location.pathname;
-        window.history.replaceState({ path: 'home' }, '', cleanTarget);
+        try {
+          window.history.replaceState({ path: 'home' }, '', cleanTarget);
+        } catch (_) {}
       }
 
       // Extract clean pathname (e.g. /roof-installation-services-cary-nc-usa.html -> roof-installation-services-cary-nc-usa.html)
@@ -43,7 +47,9 @@ export default function App() {
 
       if (!path || path === 'home' || path === 'index.html') {
         if (window.location.pathname === '/index.html') {
-          window.history.replaceState({ path: 'home' }, '', '/');
+          try {
+            window.history.replaceState({ path: 'home' }, '', '/');
+          } catch (_) {}
         }
         setCurrentPath('home');
       } else if (ALL_SERVICES.some(s => s.slug === path)) {
@@ -115,7 +121,9 @@ export default function App() {
       if (window.location.hash) {
         const hashVal = window.location.hash.replace(/^#\/?/, '').trim();
         const cleanTarget = window.location.pathname || '/';
-        window.history.replaceState(null, '', cleanTarget);
+        try {
+          window.history.replaceState(null, '', cleanTarget);
+        } catch (_) {}
         if (hashVal) {
           const el = document.getElementById(hashVal);
           if (el) el.scrollIntoView({ behavior: 'smooth' });

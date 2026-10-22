@@ -488,35 +488,37 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
 
   // Sync dynamically to document.head script#app-dynamic-schema and sync canonical / og:url
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      let headScript = document.getElementById('app-dynamic-schema') as HTMLScriptElement | null;
-      if (!headScript) {
-        headScript = document.createElement('script');
-        headScript.id = 'app-dynamic-schema';
-        headScript.type = 'application/ld+json';
-        document.head.appendChild(headScript);
-      }
-      headScript.textContent = schemaJsonString;
+    try {
+      if (typeof document !== 'undefined') {
+        let headScript = document.getElementById('app-dynamic-schema') as HTMLScriptElement | null;
+        if (!headScript) {
+          headScript = document.createElement('script');
+          headScript.id = 'app-dynamic-schema';
+          headScript.type = 'application/ld+json';
+          document.head.appendChild(headScript);
+        }
+        headScript.textContent = schemaJsonString;
 
-      // Ensure <link rel="canonical"> accurately references the active page URL
-      let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-      if (!canonicalLink) {
-        canonicalLink = document.createElement('link');
-        canonicalLink.rel = 'canonical';
-        document.head.appendChild(canonicalLink);
-      }
-      canonicalLink.setAttribute('href', effectiveCurrentUrl);
+        // Ensure <link rel="canonical"> accurately references the active page URL
+        let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+        if (!canonicalLink) {
+          canonicalLink = document.createElement('link');
+          canonicalLink.rel = 'canonical';
+          document.head.appendChild(canonicalLink);
+        }
+        canonicalLink.setAttribute('href', effectiveCurrentUrl);
 
-      // Ensure og:url and twitter:url match effectiveCurrentUrl
-      let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
-      if (ogUrl) {
-        ogUrl.setAttribute('content', effectiveCurrentUrl);
+        // Ensure og:url and twitter:url match effectiveCurrentUrl
+        let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
+        if (ogUrl) {
+          ogUrl.setAttribute('content', effectiveCurrentUrl);
+        }
+        let twitterUrl = document.querySelector('meta[name="twitter:url"]') as HTMLMetaElement | null;
+        if (twitterUrl) {
+          twitterUrl.setAttribute('content', effectiveCurrentUrl);
+        }
       }
-      let twitterUrl = document.querySelector('meta[name="twitter:url"]') as HTMLMetaElement | null;
-      if (twitterUrl) {
-        twitterUrl.setAttribute('content', effectiveCurrentUrl);
-      }
-    }
+    } catch (_) {}
   }, [schemaJsonString, effectiveCurrentUrl]);
 
   // All Schema.org definitions are synchronized cleanly to document.head #app-dynamic-schema.

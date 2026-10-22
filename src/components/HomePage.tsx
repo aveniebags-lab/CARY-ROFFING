@@ -24,7 +24,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
         faqs={homeFaqs}
         pageTitle="Best Roofing Services Cary NC USA | CaryRoofing"
         pageDescription="Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair & roof replacement. Call us today!"
-        canonicalUrl="https://caryncroofing.com"
+        canonicalUrl="https://caryncroofing.com/"
       />
       {/* ================= SECTION 1: HERO (EXACTLY ONE H1) ================= */}
       <section className="hero-section">
