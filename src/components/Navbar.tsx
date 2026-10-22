@@ -71,6 +71,13 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
               Our Services ▾
             </button>
             <div className="dropdown-menu">
+              <a
+                href="/Why%20More%20Homeowners%20Are%20Choosing%20Standing%20Seam%20Metal%20Roof.html"
+                onClick={(e) => handleLinkClick(e, 'Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
+                className={`text-left block py-1.5 px-3 rounded hover:bg-black/5 ${currentPath.includes('Standing Seam') || currentPath.includes('standing-seam') ? 'font-bold text-[#9A3412]' : 'text-black font-semibold'}`}
+              >
+                Standing Seam Metal Roof
+              </a>
               {ALL_SERVICES.map((service) => (
                 <a
                   key={service.slug}

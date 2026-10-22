@@ -11,6 +11,7 @@ const AboutUsPage = lazy(() => import('./components/AboutUsPage').then(m => ({ d
 const ContactUsPage = lazy(() => import('./components/ContactUsPage').then(m => ({ default: m.ContactUsPage })));
 const OurLocationsPage = lazy(() => import('./components/OurLocationsPage').then(m => ({ default: m.OurLocationsPage })));
 const CalculatorPage = lazy(() => import('./components/CalculatorPage').then(m => ({ default: m.CalculatorPage })));
+const StandingSeamMetalRoofPage = lazy(() => import('./components/StandingSeamMetalRoofPage').then(m => ({ default: m.StandingSeamMetalRoofPage })));
 const TechnicalPortalDrawer = lazy(() => import('./components/TechnicalPortalDrawer').then(m => ({ default: m.TechnicalPortalDrawer })));
 
 export default function App() {
@@ -45,6 +46,13 @@ export default function App() {
       const pathname = rawPathname === 'index.html' ? '' : rawPathname;
       const path = pathname || rawHash;
 
+      let decodedPath = '';
+      try {
+        decodedPath = decodeURIComponent(path).toLowerCase();
+      } catch (_) {
+        decodedPath = path.toLowerCase();
+      }
+
       if (!path || path === 'home' || path === 'index.html') {
         if (window.location.pathname === '/index.html') {
           try {
@@ -54,6 +62,15 @@ export default function App() {
         setCurrentPath('home');
       } else if (ALL_SERVICES.some(s => s.slug === path)) {
         setCurrentPath(path);
+      } else if (
+        path === 'standing-seam-metal-roof' || 
+        path === 'standing-seam-metal-roof.html' || 
+        path === 'standing-seam' || 
+        decodedPath.includes('why more homeowners are choosing standing seam metal roof') ||
+        decodedPath.includes('why-more-homeowners-are-choosing-standing-seam-metal-roof') ||
+        decodedPath.includes('standing-seam')
+      ) {
+        setCurrentPath('Why More Homeowners Are Choosing Standing Seam Metal Roof.html');
       } else if (path === 'calculator' || path === 'cary-nc-roofing-calculator.html' || path === 'roofing-calculator' || path === 'roofing-calculator.html') {
         setCurrentPath('cary-nc-roofing-calculator.html');
       } else if (path === 'privacy-policy' || path === 'privacy' || path === 'privacy-policy.html') {
@@ -143,6 +160,13 @@ export default function App() {
   useEffect(() => {
     if (currentPath === 'home' || currentPath === 'index.html') {
       document.title = 'Best Roofing Services, Cary NC, | caryncroofing.com';
+    } else if (
+      currentPath === 'standing-seam-metal-roof' || 
+      currentPath === 'standing-seam-metal-roof.html' ||
+      currentPath.includes('Standing Seam') ||
+      currentPath.includes('standing-seam')
+    ) {
+      document.title = 'Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA | CaryRoofing';
     } else if (currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator') {
       document.title = 'Cary NC Roofing Calculator | Roof Replacement Cost Guide';
     } else if (currentPath === 'privacy-policy') {
@@ -171,10 +195,14 @@ export default function App() {
 
     const targetUrl = resolvedPath === 'home' || resolvedPath === 'index.html'
       ? '/'
-      : `/${resolvedPath}`;
+      : resolvedPath.includes(' ')
+        ? `/${encodeURIComponent(resolvedPath)}`
+        : `/${resolvedPath}`;
 
-    if (window.location.pathname !== targetUrl || window.location.hash) {
-      window.history.pushState({ path: resolvedPath }, '', targetUrl);
+    if (window.location.pathname !== targetUrl && decodeURIComponent(window.location.pathname) !== `/${resolvedPath}`) {
+      try {
+        window.history.pushState({ path: resolvedPath }, '', targetUrl);
+      } catch (_) {}
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -195,7 +223,12 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1">
         <Suspense fallback={<div className="min-h-screen py-20 text-center text-sm font-bold text-black/60">Loading...</div>}>
-          {currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator' ? (
+          {currentPath === 'standing-seam-metal-roof' || 
+           currentPath === 'standing-seam-metal-roof.html' || 
+           currentPath.includes('Standing Seam') || 
+           currentPath.includes('standing-seam') ? (
+            <StandingSeamMetalRoofPage onNavigate={handleNavigate} />
+          ) : currentPath === 'cary-nc-roofing-calculator.html' || currentPath === 'calculator' ? (
             <CalculatorPage onNavigate={handleNavigate} />
           ) : currentPath === 'privacy-policy' ? (
             <PrivacyPolicyPage onNavigate={handleNavigate} />

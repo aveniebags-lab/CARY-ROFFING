@@ -48,6 +48,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
         <div className="footer-col">
           <h3>Popular Roofing Services</h3>
           <div className="footer-links">
+            <a 
+              href="/Why%20More%20Homeowners%20Are%20Choosing%20Standing%20Seam%20Metal%20Roof.html"
+              onClick={(e) => { e.preventDefault(); onNavigate('Why More Homeowners Are Choosing Standing Seam Metal Roof.html'); }}
+              className="text-[#FB923C] font-bold hover:underline text-left text-xs"
+            >
+              Standing Seam Metal Roof Guide
+            </a>
             {ALL_SERVICES.map((s) => (
               <a 
                 key={s.slug}

@@ -361,13 +361,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="mt-2 text-xs text-black font-bold">
                 ✓ Non-Combustible Class A Fire • ✓ Zero Exposed Screw Holes
               </div>
-              <button 
-                type="button"
-                onClick={() => onNavigate('metal-roofing-services-cary-nc-usa.html')}
-                className="link-arrow mt-4"
-              >
-                Explore Metal Roofing →
-              </button>
+              <div className="flex flex-col gap-2 mt-4">
+                <button 
+                  type="button"
+                  onClick={() => onNavigate('Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
+                  className="text-xs font-bold text-[#9A3412] hover:underline text-left cursor-pointer flex items-center gap-1"
+                >
+                  📖 In-Depth Guide: Why Choose Standing Seam Metal Roof →
+                </button>
+                <button 
+                  type="button"
+                  onClick={() => onNavigate('metal-roofing-services-cary-nc-usa.html')}
+                  className="link-arrow"
+                >
+                  Explore Metal Roofing →
+                </button>
+              </div>
             </div>
 
             {/* Service 6: Seamless Gutters & Drainage */}

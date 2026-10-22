@@ -205,6 +205,32 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
         </div>
       </section>
 
+      {/* Contextual Internal Link Banner to Standing Seam Guide */}
+      {(service.id === 'metal-roofing' || service.id === 'roof-replacement' || service.id === 'roof-installation') && (
+        <div className="container max-w-4xl mx-auto my-6 px-4">
+          <div className="p-4 sm:p-5 bg-[#FAF8F4] border-2 border-[#9A3412] rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+            <div className="text-left">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#9A3412] block">
+                Featured Architectural Guide
+              </span>
+              <strong className="text-base text-[#141c27] block">
+                Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA
+              </strong>
+              <p className="text-xs text-[#475569] mt-0.5">
+                Explore concealed clips, 50+ year longevity, weather protection, and colors.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => onNavigate('Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
+              className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white text-xs font-extrabold px-5 py-2.5 rounded-full shrink-0 cursor-pointer shadow-xs"
+            >
+              Read Full Guide →
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* ================= SECTION 1: ZIP CODE DISPATCH (H2) ================= */}
       <section id="dispatch" className="section">
         <div className="container">
