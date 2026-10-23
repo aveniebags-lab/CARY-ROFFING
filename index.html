@@ -66,9 +66,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" />
-    </noscript>
+    <!-- Critical Above-The-Fold Styles for Instant Initial Paint & Zero LCP Render Delay -->
+    <style id="critical-above-the-fold">
+      :root {
+        --mouse-bg-hero: #FFFDF9;
+        --mouse-bg-alt: #FAF8F4;
+        --mouse-orange: #9A3412;
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html {
+        font-family: var(--font-sans);
+        background-color: #FFFDF9;
+        color: #000000;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFFDF9;
+        color: #000000;
+        line-height: 1.6;
+        font-family: var(--font-sans);
+      }
+      .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+      @media (min-width: 640px) {
+        .sm\:text-base { font-size: 1rem; line-height: 1.5rem; }
+        .sm\:p-5 { padding: 1.25rem; }
+      }
+      .font-semibold { font-weight: 600; }
+      .font-extrabold { font-weight: 800; }
+      .text-black { color: #000000; }
+      .leading-relaxed { line-height: 1.625; }
+      .bg-\[\#FAF8F4\] { background-color: #FAF8F4; }
+      .border-l-4 { border-left-width: 4px; border-left-style: solid; }
+      .border-\[\#9A3412\] { border-color: #9A3412; }
+      .rounded-r-xl { border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
+      .text-left { text-align: left; }
+      .shadow-xs { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+      .text-xs { font-size: 0.75rem; line-height: 1rem; }
+      .uppercase { text-transform: uppercase; }
+      .tracking-widest { letter-spacing: 0.1em; }
+      .text-\[\#9A3412\] { color: #9A3412; }
+      .block { display: block; }
+      .mb-1 { margin-bottom: 0.25rem; }
+      .my-5 { margin-top: 1.25rem; margin-bottom: 1.25rem; }
+      .p-4 { padding: 1rem; }
+      .hero-title { font-size: clamp(32px, 5vw, 50px); font-weight: 800; line-height: 1.25; margin: 0 0 16px 0; color: #000000; }
+      .kicker { font-size: 13px; font-weight: 800; color: #9A3412; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+      .container { width: 100%; max-width: 1180px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+      .container-medium { max-width: 880px; }
+    </style>
     
     <!-- Comprehensive Schema.org Graph (RoofingContractor + FAQPage + HowTo + Article + sameAs Entity Links) -->
     <script id="app-dynamic-schema" type="application/ld+json">
@@ -303,13 +351,13 @@
           <span><time datetime="2026-10-18">Updated: October 18, 2026</time></span>
         </div>
 
-        <!-- Answer-First Core Definition Callout Box -->
-        <div style="background: #FAF8F4; border-left: 5px solid #9A3412; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 28px;">
-          <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #9A3412; margin-bottom: 6px;">
+        <!-- Answer-First Core Definition Callout Box (Optimized for AI Engines & Instant LCP Paint) -->
+        <div class="my-5 p-4 sm:p-5 bg-[#FAF8F4] border-l-4 border-[#9A3412] rounded-r-xl text-left shadow-xs" style="background: #FAF8F4; border-left: 5px solid #9A3412; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 28px;">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#9A3412] block mb-1" style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #9A3412; margin-bottom: 6px; display: block;">
             Direct Definition &amp; Summary (AEO Answer-First)
-          </div>
-          <p style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.6;">
-            <strong>Best Roofing Services Cary NC USA:</strong> Cary Roofing Contractors LLC is the certified residential and commercial roofing contractor network serving Wake County, NC (ZIP codes 27511, 27512, 27513, 27518, 27519). The company delivers 24/7 rapid roof leak repairs, 50-year GAF Master Elite and CertainTeed roof replacements, and storm damage mitigation built to endure North Carolina's humid subtropical climate (Zone 4A) in strict compliance with NCRC Chapter 9.
+          </span>
+          <p class="text-sm sm:text-base font-semibold text-black leading-relaxed" style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.6; color: #000000;">
+            <strong>Best Roofing Services Cary NC USA:</strong> Cary Roofing Contractors LLC is the certified residential and commercial roofing network serving Wake County, NC (ZIP codes 27511, 27512, 27513, 27518, 27519). The company delivers 24/7 rapid roof leak repairs, 50-year GAF Master Elite &amp; CertainTeed roof replacements, and storm damage mitigation built to endure North Carolina's humid subtropical climate (Zone 4A) in strict compliance with NCRC Chapter 9.
           </p>
         </div>
 

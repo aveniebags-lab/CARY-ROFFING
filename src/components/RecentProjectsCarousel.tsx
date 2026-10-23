@@ -170,12 +170,12 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
           </div>
 
           {/* Carousel Arrows */}
-          <div className="flex items-center gap-2 self-start md:self-auto">
+          <div className="flex items-center gap-3 self-start md:self-auto">
             <button
               type="button"
               onClick={handlePrev}
               aria-label="Previous Project"
-              className="w-11 h-11 rounded-full bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-extrabold text-lg flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-full bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-extrabold text-lg flex items-center justify-center transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9531E]"
             >
               ←
             </button>
@@ -186,7 +186,7 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
               type="button"
               onClick={handleNext}
               aria-label="Next Project"
-              className="w-11 h-11 rounded-full bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-extrabold text-lg flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-full bg-white border border-[#e8e4df] hover:border-[#F07020] hover:text-[#F07020] text-black font-extrabold text-lg flex items-center justify-center transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9531E]"
             >
               →
             </button>
@@ -335,17 +335,21 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
         </div>
 
         {/* Dots Pagination */}
-        <div className="flex items-center justify-center gap-2 mt-6">
+        <div className="flex items-center justify-center gap-1 mt-6">
           {projects.map((_, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => handleSelect(idx)}
               aria-label={`Go to project ${idx + 1}`}
-              className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                currentIndex === idx ? 'w-8 bg-[#D9531E]' : 'w-2.5 bg-[#e8e4df] hover:bg-black/50'
-              }`}
-            />
+              className="min-w-[48px] min-h-[48px] flex items-center justify-center p-2 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9531E]"
+            >
+              <span
+                className={`h-2.5 rounded-full transition-all block ${
+                  currentIndex === idx ? 'w-8 bg-[#D9531E]' : 'w-2.5 bg-[#e8e4df] hover:bg-black/50'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
