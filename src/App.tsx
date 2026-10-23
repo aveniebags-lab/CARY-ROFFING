@@ -63,14 +63,16 @@ export default function App() {
       } else if (ALL_SERVICES.some(s => s.slug === path)) {
         setCurrentPath(path);
       } else if (
+        path === 'Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof' ||
+        path === 'Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof.html' ||
         path === 'standing-seam-metal-roof' || 
         path === 'standing-seam-metal-roof.html' || 
         path === 'standing-seam' || 
-        decodedPath.includes('why more homeowners are choosing standing seam metal roof') ||
         decodedPath.includes('why-more-homeowners-are-choosing-standing-seam-metal-roof') ||
+        decodedPath.includes('why more homeowners are choosing standing seam metal roof') ||
         decodedPath.includes('standing-seam')
       ) {
-        setCurrentPath('Why More Homeowners Are Choosing Standing Seam Metal Roof.html');
+        setCurrentPath('Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof');
       } else if (path === 'calculator' || path === 'cary-nc-roofing-calculator.html' || path === 'roofing-calculator' || path === 'roofing-calculator.html') {
         setCurrentPath('cary-nc-roofing-calculator.html');
       } else if (path === 'privacy-policy' || path === 'privacy' || path === 'privacy-policy.html') {
@@ -161,8 +163,10 @@ export default function App() {
     if (currentPath === 'home' || currentPath === 'index.html') {
       document.title = 'Best Roofing Services, Cary NC, | caryncroofing.com';
     } else if (
+      currentPath === 'Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof' ||
       currentPath === 'standing-seam-metal-roof' || 
       currentPath === 'standing-seam-metal-roof.html' ||
+      currentPath.includes('Standing-Seam') ||
       currentPath.includes('Standing Seam') ||
       currentPath.includes('standing-seam')
     ) {
@@ -223,8 +227,10 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1">
         <Suspense fallback={<div className="min-h-screen py-20 text-center text-sm font-bold text-black/60">Loading...</div>}>
-          {currentPath === 'standing-seam-metal-roof' || 
+          {currentPath === 'Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof' ||
+           currentPath === 'standing-seam-metal-roof' || 
            currentPath === 'standing-seam-metal-roof.html' || 
+           currentPath.includes('Standing-Seam') ||
            currentPath.includes('Standing Seam') || 
            currentPath.includes('standing-seam') ? (
             <StandingSeamMetalRoofPage onNavigate={handleNavigate} />

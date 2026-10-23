@@ -222,7 +222,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
             </div>
             <button
               type="button"
-              onClick={() => onNavigate('Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
+              onClick={() => onNavigate('Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof')}
               className="btn btn-primary !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white text-xs font-extrabold px-5 py-2.5 rounded-full shrink-0 cursor-pointer shadow-xs"
             >
               Read Full Guide →

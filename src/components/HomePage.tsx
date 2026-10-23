@@ -364,7 +364,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEstimator 
               <div className="flex flex-col gap-2 mt-4">
                 <button 
                   type="button"
-                  onClick={() => onNavigate('Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
+                  onClick={() => onNavigate('Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof')}
                   className="text-xs font-bold text-[#9A3412] hover:underline text-left cursor-pointer flex items-center gap-1"
                 >
                   📖 In-Depth Guide: Why Choose Standing Seam Metal Roof →
