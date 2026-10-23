@@ -146,6 +146,54 @@ export const StandingSeamMetalRoofPage: React.FC<StandingSeamMetalRoofPageProps>
       {/* Main Content Container */}
       <main className="container max-w-5xl pt-10 space-y-14">
 
+        {/* ================= LOCATION ZIP CODES & DIRECT MOBILE NUMBERS ================= */}
+        <section id="dispatch" className="section bg-white rounded-2xl border border-[#e8e4df] p-6 sm:p-10 shadow-xs">
+          <div className="section-header text-center mb-8">
+            <div className="kicker text-[#9A3412] font-bold uppercase tracking-wider text-xs mb-2">Local Cary Dispatch Routing</div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#141c27]">
+              Fast Wake County Dispatch <br />
+              <span className="font-serif-accent text-[#9A3412]">Select Zip Code &amp; Call Now</span>
+            </h2>
+            <p className="mt-2 text-black font-medium text-sm sm:text-base max-w-2xl mx-auto">
+              Click your local zip code below to view covered neighborhoods, embedded map location, and connect directly with our active Cary, NC standing seam metal roof dispatch line.
+            </p>
+          </div>
+
+          <div className="grid grid-3 mb-2 gap-6">
+            {CARY_ZIP_CODES.map((item) => (
+              <div className="card bg-[#FAF8F4] border border-[#e8e4df] rounded-xl p-5 flex flex-col justify-between" key={item.zip}>
+                <div>
+                  <div className="kicker text-xs font-bold text-[#9A3412] uppercase mb-1">ZIP {item.zip}</div>
+                  <h3 className="text-lg font-bold text-[#141c27] mb-2">{item.areaName}</h3>
+                  <div className="card-list text-xs text-[#1e293b] space-y-1 mb-3">
+                    <p className="font-semibold text-black">Key Neighborhoods &amp; Landmarks:</p>
+                    {item.neighborhoods.slice(0, 3).map((n, i) => (
+                      <p key={i}>• {n}</p>
+                    ))}
+                    <p className="text-[#64748b]">📍 {item.landmarks[0]}</p>
+                  </div>
+                </div>
+                <div>
+                  <div className="map-container mb-3 rounded-lg overflow-hidden border border-[#e8e4df] h-36">
+                    <iframe 
+                      title={`Map ${item.zip} - Standing Seam Metal Roof`}
+                      src={`https://maps.google.com/maps?q=${item.lat},${item.lng}&z=13&output=embed`}
+                      loading="lazy"
+                      className="w-full h-full border-0"
+                    ></iframe>
+                  </div>
+                  <div className="cta-notice text-[11px] font-bold text-[#0d684d] mb-2 text-center bg-[#E8F8F1] py-1 rounded">
+                    Serving {item.zip} Residents Now
+                  </div>
+                  <a href={`tel:${item.phoneRaw}`} className="btn btn-primary w-full !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm py-2.5 text-sm flex items-center justify-center gap-1.5 rounded-lg">
+                    📞 Call {item.phone}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* SECTION 1: WHAT IS A STANDING SEAM METAL ROOF */}
         <section className="bg-white rounded-2xl border border-[#e8e4df] p-6 sm:p-10 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

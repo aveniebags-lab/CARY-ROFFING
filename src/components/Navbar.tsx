@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
                 onClick={(e) => handleLinkClick(e, 'Why More Homeowners Are Choosing Standing Seam Metal Roof.html')}
                 className={`text-left block py-1.5 px-3 rounded hover:bg-black/5 ${currentPath.includes('Standing Seam') || currentPath.includes('standing-seam') ? 'font-bold text-[#9A3412]' : 'text-black font-semibold'}`}
               >
-                Standing Seam Metal Roof
+                Standing Seam Metal Roof Cary NC USA
               </a>
               {ALL_SERVICES.map((service) => (
                 <a
