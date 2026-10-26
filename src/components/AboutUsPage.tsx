@@ -14,7 +14,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         pageType="privacy"
         pageTitle="About Us & Technical Credentials | Cary Roofing Contractors LLC"
         pageDescription="Learn about Cary Roofing Contractors LLC: our certified roofing inspectors, 15+ years in Wake County, HAAG certifications, and high-standard roofing craft."
-        canonicalUrl="https://caryncroofing.com/about-cary-roofing-contractors.html"
+        canonicalUrl="https://www.caryncroofing.com/about-cary-roofing-contractors.html"
       />
 
       {/* Breadcrumb Navigation */}

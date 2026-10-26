@@ -138,8 +138,8 @@ export const OurLocationsPage: React.FC<OurLocationsPageProps> = ({ onNavigate }
         ]}
         pageTitle="Roofing Service Locations in Cary, NC & Triangle | caryncroofing.com"
         pageDescription="Local roofing coverage for all Cary, NC zip codes (27511, 27512, 27513, 27518, 27519). Same-day dispatch and free on-site roof inspections."
-        canonicalUrl="https://caryncroofing.com/our-locations"
-        image="https://caryncroofing.com/images/cary-service-map.svg"
+        canonicalUrl="https://www.caryncroofing.com/our-locations.html"
+        image="https://www.caryncroofing.com/images/cary-service-map.svg"
       />
 
       {/* Breadcrumbs for Hierarchy & Internal Linking */}

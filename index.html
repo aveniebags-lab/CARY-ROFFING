@@ -10,23 +10,23 @@
     <meta name="msvalidate.01" content="D30ABA023D9D295C3FA77C72B89D6575" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
-    <!-- OpenGraph Social Cards (Consistent with caryncroofing.com) -->
+    <!-- OpenGraph Social Cards (Consistent with www.caryncroofing.com) -->
     <meta property="og:title" content="Best Roofing Services, Cary NC, | caryncroofing.com" />
     <meta property="og:description" content="Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. Call us today!" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://caryncroofing.com/" />
-    <meta property="og:image" content="https://caryncroofing.com/images/hero-roofing.jpg" />
+    <meta property="og:url" content="https://www.caryncroofing.com/" />
+    <meta property="og:image" content="https://www.caryncroofing.com/images/hero-roofing.webp" />
     <meta property="og:site_name" content="CaryRoofing" />
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Best Roofing Services, Cary NC, | caryncroofing.com" />
     <meta name="twitter:description" content="Looking for the best roofing services in Cary, NC? As top roofing contractors in Cary, NC, we offer expert roof repair &amp; roof replacement. Call us today!" />
-    <meta name="twitter:image" content="https://caryncroofing.com/images/hero-roofing.jpg" />
-    <meta name="twitter:url" content="https://caryncroofing.com/" />
+    <meta name="twitter:image" content="https://www.caryncroofing.com/images/hero-roofing.webp" />
+    <meta name="twitter:url" content="https://www.caryncroofing.com/" />
 
-    <!-- Canonical URL (Aligned with caryncroofing.com canonical) -->
-    <link id="canonical-url" rel="canonical" href="https://caryncroofing.com/" />
+    <!-- Canonical URL (Aligned with www.caryncroofing.com canonical) -->
+    <link id="canonical-url" rel="canonical" href="https://www.caryncroofing.com/" />
     
     <!-- Dynamic Canonical Origin Normalizer -->
     <script>
@@ -34,10 +34,16 @@
         try {
           var origin = window.location.origin;
           var canonicalLink = document.getElementById('canonical-url') || document.querySelector('link[rel="canonical"]');
-          if (canonicalLink && origin) {
-            var path = window.location.pathname || '/';
-            if (path === '/index.html') path = '/';
-            canonicalLink.setAttribute('href', origin + path);
+          if (canonicalLink && origin && origin.indexOf('caryncroofing.com') !== -1) {
+            var existingHref = canonicalLink.getAttribute('href') || '';
+            var canonicalPath = '/';
+            try {
+              canonicalPath = new URL(existingHref, origin).pathname || '/';
+            } catch (_) {
+              canonicalPath = window.location.pathname || '/';
+            }
+            if (canonicalPath === '/index.html') canonicalPath = '/';
+            canonicalLink.setAttribute('href', origin + canonicalPath);
           }
           // Safely strip legacy ?page_id= from address bar if present
           if (window.location.search && window.location.search.indexOf('page_id=') !== -1) {
@@ -312,7 +318,7 @@
   </head>
   <body>
     <!-- Full-Depth Server-Rendered Semantic HTML (95%+ Server Content for Non-JS AI Crawlers, GPTBot, ClaudeBot, PerplexityBot) -->
-    <div id="root">
+    <div id="root"><!--STATIC_ROOT_START-->
       <header style="padding: 16px 24px; border-bottom: 1px solid #e8e4df; display: flex; justify-content: space-between; align-items: center; max-width: 1440px; margin: 0 auto; background: #FFFDF9;">
         <div>
           <a href="/" style="font-size: 22px; font-weight: 800; color: #000000; text-decoration: none;">
@@ -803,7 +809,7 @@
         <p style="margin: 0 0 6px 0; color: #ffffff;">&copy; 2026 CaryRoofing Contractors LLC. All rights reserved. Registered North Carolina Roofing Network.</p>
         <p style="margin: 0; color: #94a3b8; font-size: 12px;">580 New Waverly Pl Ste 216, Cary, NC 27518 &bull; Phone: (919) 335-9543</p>
       </footer>
-    </div>
+      <!--STATIC_ROOT_END--></div>
     
     <script type="module" src="/src/main.tsx"></script>
     <div style="display:none" aria-hidden="true">Verification: eb17c229a54193f9</div>

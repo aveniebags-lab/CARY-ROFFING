@@ -14,7 +14,7 @@ export const TermsOfServicePage: React.FC<TermsOfServicePageProps> = ({ onNaviga
         pageType="privacy"
         pageTitle="Terms of Service & Warranty Conditions | caryncroofing.com - Cary, NC"
         pageDescription="Terms of Service, contractor referral standards, estimate guidelines, and warranty terms for caryncroofing in Cary, NC and Wake County."
-        canonicalUrl="https://caryncroofing.com/terms-of-service.html"
+        canonicalUrl="https://www.caryncroofing.com/terms-of-service.html"
       />
 
       {/* Breadcrumbs */}

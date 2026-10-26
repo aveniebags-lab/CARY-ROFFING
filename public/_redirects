@@ -1,0 +1,2 @@
+# Static pre-rendered HTML files in dist/ are served first with 200 OK; SPA fallback for any clean URLs
+/* /index.html 200

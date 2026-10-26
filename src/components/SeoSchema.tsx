@@ -20,10 +20,15 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
   canonicalUrl,
   image
 }) => {
-  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://caryncroofing.com';
-  const baseUrl = origin.indexOf('caryncroofing.com') !== -1 ? origin : 'https://caryncroofing.com';
-  const effectiveCurrentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href.split('#')[0] : `${baseUrl}/`);
-  const pageImage = image || `${baseUrl}/images/hero-roofing.webp`;
+  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://www.caryncroofing.com';
+  const baseUrl = origin.indexOf('caryncroofing.com') !== -1 ? origin : 'https://www.caryncroofing.com';
+  const normalizedCanonical = canonicalUrl
+    ? canonicalUrl.replace(/^https?:\/\/(www\.)?caryncroofing\.com/i, baseUrl)
+    : undefined;
+  const effectiveCurrentUrl = normalizedCanonical || (typeof window !== 'undefined' ? window.location.href.split('#')[0] : `${baseUrl}/`);
+  const pageImage = image
+    ? image.replace(/^https?:\/\/(www\.)?caryncroofing\.com/i, baseUrl)
+    : `${baseUrl}/images/hero-roofing.webp`;
 
   // 1. Comprehensive LocalBusiness / RoofingContractor Schema compliant with https://schema.org/LocalBusiness
   const businessSchema = {
@@ -223,7 +228,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       '@type': ['RoofingContractor', 'LocalBusiness'],
       name: `CaryRoofing - ${z.areaName} (ZIP ${z.zip})`,
       telephone: z.phone,
-      url: `${baseUrl}/our-locations`,
+      url: `${baseUrl}/our-locations.html`,
       address: {
         '@type': 'PostalAddress',
         streetAddress: z.landmarks[0] || COMPANY_DETAILS.address,
@@ -370,14 +375,20 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       '@type': 'ListItem',
       position: 2,
       name: 'Our Locations',
-      item: `${baseUrl}/our-locations`
+      item: `${baseUrl}/our-locations.html`
     });
   } else if (pageType === 'privacy') {
     breadcrumbElements.push({
       '@type': 'ListItem',
       position: 2,
-      name: 'Privacy Policy',
-      item: `${baseUrl}/privacy-policy`
+      name: pageTitle?.includes('Terms')
+        ? 'Terms of Service'
+        : pageTitle?.includes('About')
+          ? 'About Us'
+          : pageTitle?.includes('Contact')
+            ? 'Contact Us'
+            : 'Privacy Policy',
+      item: effectiveCurrentUrl
     });
   } else if (pageType === 'calculator') {
     breadcrumbElements.push({
@@ -417,7 +428,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
         }))
       ],
       image: `${baseUrl}${service.splitImage || service.localImage}`,
-      termsOfService: `${baseUrl}/privacy-policy`,
+      termsOfService: `${baseUrl}/terms-of-service.html`,
       offers: {
         '@type': 'Offer',
         priceCurrency: 'USD',
@@ -517,9 +528,29 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
         if (twitterUrl) {
           twitterUrl.setAttribute('content', effectiveCurrentUrl);
         }
+        if (pageTitle) {
+          const ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+          const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+          if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
+        }
+        if (pageDescription) {
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) metaDesc.setAttribute('content', pageDescription);
+          const ogDesc = document.querySelector('meta[property="og:description"]');
+          if (ogDesc) ogDesc.setAttribute('content', pageDescription);
+          const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+          if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
+        }
+        if (pageImage) {
+          const ogImg = document.querySelector('meta[property="og:image"]');
+          if (ogImg) ogImg.setAttribute('content', pageImage);
+          const twitterImg = document.querySelector('meta[name="twitter:image"]');
+          if (twitterImg) twitterImg.setAttribute('content', pageImage);
+        }
       }
     } catch (_) {}
-  }, [schemaJsonString, effectiveCurrentUrl]);
+  }, [schemaJsonString, effectiveCurrentUrl, pageTitle, pageDescription, pageImage]);
 
   // All Schema.org definitions are synchronized cleanly to document.head #app-dynamic-schema.
   // Returning null prevents duplicate JSON-LD scripts in the rendered DOM, resolving

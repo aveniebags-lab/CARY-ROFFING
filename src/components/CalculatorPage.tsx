@@ -145,7 +145,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ onNavigate }) =>
         faqs={calculatorFaqs}
         pageTitle="Cary NC Roofing Calculator | Roof Replacement Cost Guide"
         pageDescription="Calculate realistic roof replacement costs for your Cary, NC home by ZIP code. Accurate pricing for 27511, 27512, 27513, 27518, 27519 with Wake County permit rules."
-        canonicalUrl="https://caryncroofing.com/cary-nc-roofing-calculator.html"
+        canonicalUrl="https://www.caryncroofing.com/cary-nc-roofing-calculator.html"
       />
 
       {/* Structured Breadcrumbs */}

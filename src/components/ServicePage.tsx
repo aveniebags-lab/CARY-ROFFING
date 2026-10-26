@@ -146,8 +146,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
         faqs={service.faqs ? service.faqs.map(f => ({ question: f.q, answer: f.a })) : []}
         pageTitle={`${service.title} | caryncroofing.com`}
         pageDescription={service.heroDesc || service.shortDesc}
-        canonicalUrl={`https://caryncroofing.com/${service.slug}`}
-        image={`https://caryncroofing.com${service.splitImage || service.localImage}`}
+        canonicalUrl={`https://www.caryncroofing.com/${service.slug}`}
+        image={`https://www.caryncroofing.com${service.splitImage || service.localImage}`}
       />
 
       {/* Breadcrumbs for Structured SEO Navigation & Internal Linking */}

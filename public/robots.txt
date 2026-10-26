@@ -22,11 +22,12 @@ User-agent: Applebot-Extended
 Allow: /
 
 # LLM Documentation Standards
-# https://caryncroofing.com/llms.txt
-# https://caryncroofing.com/llms-full.txt
+# https://www.caryncroofing.com/llms.txt
+# https://www.caryncroofing.com/llms-full.txt
 
 # Sitemaps
-Sitemap: https://caryncroofing.com/sitemap.xml
+Sitemap: https://www.caryncroofing.com/sitemap.xml
 
 # Host
-Host: https://caryncroofing.com
+Host: https://www.caryncroofing.com
+

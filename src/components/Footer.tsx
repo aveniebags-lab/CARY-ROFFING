@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             <div className="pt-2">
               <a 
                 href="/our-locations.html"
-                onClick={(e) => { e.preventDefault(); onNavigate('our-locations'); }}
+                onClick={(e) => { e.preventDefault(); onNavigate('our-locations.html'); }}
                 className="text-[#FB923C] font-bold hover:underline"
               >
                 View Full Location &amp; Map Directory →
@@ -120,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
             </a>
             <a 
               href="/privacy-policy.html"
-              onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy'); }}
+              onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy.html'); }}
               className="text-white hover:text-[#FB923C] text-left text-xs font-semibold"
             >
               Privacy Policy
@@ -163,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSeoDrawer }) =
           <span>•</span>
           <a 
             href="/privacy-policy.html"
-            onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy'); }}
+            onClick={(e) => { e.preventDefault(); onNavigate('privacy-policy.html'); }}
             className="text-white/80 hover:text-[#FB923C] underline"
           >
             Privacy Policy

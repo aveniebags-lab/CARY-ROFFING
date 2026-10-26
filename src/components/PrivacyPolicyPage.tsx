@@ -14,7 +14,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
         pageType="privacy"
         pageTitle="Privacy Policy & Data Protection | caryncroofing.com - Cary, NC"
         pageDescription="Privacy Policy and customer data protection standards for caryncroofing in Cary, NC and Wake County. Strict no-sale of personal information."
-        canonicalUrl="https://caryncroofing.com/privacy-policy"
+        canonicalUrl="https://www.caryncroofing.com/privacy-policy.html"
       />
 
       {/* Breadcrumbs for Hierarchy & Internal Linking */}

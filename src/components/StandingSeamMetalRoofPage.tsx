@@ -45,8 +45,8 @@ export const StandingSeamMetalRoofPage: React.FC<StandingSeamMetalRoofPageProps>
         faqs={faqs.map(f => ({ question: f.q, answer: f.a }))}
         pageTitle="Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA | CaryRoofing"
         pageDescription="Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA: concealed fasteners, 50+ year durability, energy savings, modern aesthetics, cost analysis, and local Cary NC installation."
-        canonicalUrl="https://caryncroofing.com/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof"
-        image="https://caryncroofing.com/images/standing-seam-metal-roof-cary-nc.webp"
+        canonicalUrl="https://www.caryncroofing.com/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof"
+        image="https://www.caryncroofing.com/images/standing-seam-metal-roof-cary-nc.webp"
       />
 
       {/* Breadcrumb Navigation */}

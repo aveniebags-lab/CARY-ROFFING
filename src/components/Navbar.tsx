@@ -101,8 +101,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
           <a
             href="/our-locations.html"
-            onClick={(e) => handleLinkClick(e, 'our-locations')}
-            className={`cursor-pointer ${currentPath === 'our-locations' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
+            onClick={(e) => handleLinkClick(e, 'our-locations.html')}
+            className={`cursor-pointer ${currentPath === 'our-locations.html' || currentPath === 'our-locations' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
             Our Locations
           </a>
@@ -134,8 +134,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
           <a
             href="/privacy-policy.html"
-            onClick={(e) => handleLinkClick(e, 'privacy-policy')}
-            className={`cursor-pointer ${mobileMenuOpen ? 'inline-flex' : 'hidden 2xl:inline-flex'} ${currentPath === 'privacy-policy' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
+            onClick={(e) => handleLinkClick(e, 'privacy-policy.html')}
+            className={`cursor-pointer ${mobileMenuOpen ? 'inline-flex' : 'hidden 2xl:inline-flex'} ${currentPath === 'privacy-policy.html' || currentPath === 'privacy-policy' ? 'font-bold text-[#9A3412]' : 'text-black'}`}
           >
             Privacy Policy
           </a>
