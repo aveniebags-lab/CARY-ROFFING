@@ -43,15 +43,15 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
 
   const generatedSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "RoofingContractor", "HomeAndConstructionBusiness"],
-    "@id": "https://caryncroofing.com/#localbusiness",
+    "@type": "RoofingContractor",
+    "@id": "https://www.caryncroofing.com/#localbusiness",
     "name": "CaryRoofing",
     "legalName": "Cary Roofing Contractors LLC",
     "alternateName": ["Cary Roofing", "CaryRoofing", "Cary NC Roofing", "Roofing Cary NC", "caryncroofing.com"],
-    "url": "https://caryncroofing.com",
+    "url": "https://www.caryncroofing.com/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://caryncroofing.com/favicon.svg",
+      "url": "https://www.caryncroofing.com/favicon.svg",
       "width": 512,
       "height": 512,
       "caption": "CaryRoofing - Premier Roofing Services Cary NC"
@@ -75,11 +75,9 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 35.7368,
-      "longitude": -78.7832,
-      "elevation": "418 FT"
+      "longitude": -78.7832
     },
-    "hasMap": "https://www.google.com/maps/place/Cary,+NC/",
-    "map": "https://www.google.com/maps/place/Cary,+NC/",
+    "hasMap": "https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518",
     "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
     "openingHoursSpecification": [
       {
@@ -93,22 +91,24 @@ export const TechnicalPortalDrawer: React.FC<TechnicalPortalDrawerProps> = ({
       { "@type": "City", "name": "Cary, NC" },
       { "@type": "AdministrativeArea", "name": "Wake County, NC" },
       ...CARY_ZIP_CODES.map(z => ({
-        "@type": "PostalCode",
-        "postalCode": z.zip,
-        "name": z.areaName
+        "@type": "Place",
+        "name": `${z.areaName} (${z.zip})`,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cary",
+          "addressRegion": "NC",
+          "postalCode": z.zip,
+          "addressCountry": "US"
+        }
       }))
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "@id": "https://caryncroofing.com/#aggregaterating",
       "ratingValue": "4.9",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "128",
-      "reviewCount": "128",
-      "itemReviewed": {
-        "@id": "https://caryncroofing.com/#localbusiness"
-      }
+      "reviewCount": "128"
     },
     "hasCredential": [
       { "@type": "EducationalOccupationalCredential", "name": "NC Licensed General Contractor (#78942)" },

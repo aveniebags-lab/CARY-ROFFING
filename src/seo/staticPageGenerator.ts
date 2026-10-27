@@ -95,7 +95,7 @@ function renderZipDispatchSection(): string {
 
 function buildBaseBusinessGraphNode(description: string) {
   return {
-    '@type': ['RoofingContractor', 'LocalBusiness', 'HomeAndConstructionBusiness'],
+    '@type': 'RoofingContractor',
     '@id': `${SITE_ORIGIN}/#localbusiness`,
     name: COMPANY_DETAILS.name,
     legalName: 'Cary Roofing Contractors LLC',
@@ -131,13 +131,11 @@ function buildBaseBusinessGraphNode(description: string) {
     openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59',
     aggregateRating: {
       '@type': 'AggregateRating',
-      '@id': `${SITE_ORIGIN}/#aggregaterating`,
       ratingValue: '4.9',
       bestRating: '5',
       worstRating: '1',
       ratingCount: '128',
       reviewCount: '128',
-      itemReviewed: { '@id': `${SITE_ORIGIN}/#localbusiness` },
     },
   };
 }
@@ -195,13 +193,16 @@ function buildSchemaGraph(params: {
       inLanguage: 'en-US',
     },
     {
-      '@type': params.isService ? 'ItemPage' : 'WebPage',
+      '@type': params.isService && params.service ? 'ItemPage' : 'WebPage',
       '@id': `${params.canonicalUrl}#webpage`,
       url: params.canonicalUrl,
       name: params.title,
       description: params.description,
       isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
       breadcrumb: { '@id': `${params.canonicalUrl}#breadcrumb` },
+      mainEntity: params.isService && params.service
+        ? { '@id': `${params.canonicalUrl}#service` }
+        : { '@id': `${SITE_ORIGIN}/#localbusiness` },
       inLanguage: 'en-US',
       datePublished: '2026-01-15T08:00:00-05:00',
       dateModified: '2026-10-25T10:00:00-05:00',

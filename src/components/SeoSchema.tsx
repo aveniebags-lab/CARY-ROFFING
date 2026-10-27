@@ -21,7 +21,10 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
   image
 }) => {
   const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://www.caryncroofing.com';
-  const baseUrl = origin.indexOf('caryncroofing.com') !== -1 ? origin : 'https://www.caryncroofing.com';
+  const baseUrl =
+    origin.indexOf('caryncroofing.com') !== -1
+      ? origin.replace(/^https?:\/\/caryncroofing\.com$/i, 'https://www.caryncroofing.com')
+      : 'https://www.caryncroofing.com';
   const normalizedCanonical = canonicalUrl
     ? canonicalUrl.replace(/^https?:\/\/(www\.)?caryncroofing\.com/i, baseUrl)
     : undefined;
@@ -30,9 +33,9 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     ? image.replace(/^https?:\/\/(www\.)?caryncroofing\.com/i, baseUrl)
     : `${baseUrl}/images/hero-roofing.webp`;
 
-  // 1. Comprehensive LocalBusiness / RoofingContractor Schema compliant with https://schema.org/LocalBusiness
+  // 1. Comprehensive LocalBusiness / RoofingContractor Schema compliant with https://schema.org/RoofingContractor
   const businessSchema = {
-    '@type': ['LocalBusiness', 'RoofingContractor', 'HomeAndConstructionBusiness'],
+    '@type': 'RoofingContractor',
     '@id': `${baseUrl}/#localbusiness`,
     name: COMPANY_DETAILS.name,
     legalName: `${COMPANY_DETAILS.name} LLC`,
@@ -91,11 +94,9 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     geo: {
       '@type': 'GeoCoordinates',
       latitude: 35.7368,
-      longitude: -78.7832,
-      elevation: '418 FT'
+      longitude: -78.7832
     },
     hasMap: 'https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518',
-    map: 'https://www.google.com/maps/place/580+New+Waverly+Pl+Ste+216,+Cary,+NC+27518',
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {
@@ -138,11 +139,15 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       { '@type': 'City', name: 'Morrisville, NC' },
       { '@type': 'City', name: 'Holly Springs, NC' },
       ...CARY_ZIP_CODES.map((z) => ({
-        '@type': 'PostalCode',
-        postalCode: z.zip,
-        addressLocality: z.areaName,
-        addressRegion: 'NC',
-        addressCountry: 'US'
+        '@type': 'Place',
+        name: `${z.areaName} (${z.zip})`,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Cary',
+          addressRegion: 'NC',
+          postalCode: z.zip,
+          addressCountry: 'US'
+        }
       })),
       {
         '@type': 'GeoCircle',
@@ -156,15 +161,11 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
-      '@id': `${baseUrl}/#aggregaterating`,
       ratingValue: '4.9',
       bestRating: '5',
       worstRating: '1',
       ratingCount: '128',
-      reviewCount: '128',
-      itemReviewed: {
-        '@id': `${baseUrl}/#localbusiness`
-      }
+      reviewCount: '128'
     },
     knowsAbout: [
       'Residential Roof Replacement',
@@ -215,17 +216,21 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
         telephone: z.phone,
         contactType: `local roofing dispatch - ZIP ${z.zip} (${z.areaName})`,
         areaServed: {
-          '@type': 'PostalCode',
-          postalCode: z.zip,
-          addressLocality: z.areaName,
-          addressRegion: 'NC',
-          addressCountry: 'US'
+          '@type': 'Place',
+          name: `${z.areaName} (${z.zip})`,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Cary',
+            addressRegion: 'NC',
+            postalCode: z.zip,
+            addressCountry: 'US'
+          }
         },
         availableLanguage: ['English', 'Spanish']
       }))
     ],
     department: CARY_ZIP_CODES.map((z) => ({
-      '@type': ['RoofingContractor', 'LocalBusiness'],
+      '@type': 'RoofingContractor',
       name: `CaryRoofing - ${z.areaName} (ZIP ${z.zip})`,
       telephone: z.phone,
       url: `${baseUrl}/our-locations.html`,
@@ -257,14 +262,6 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       jobTitle: 'Lead Master Roofing Inspector & Technical Director',
       sameAs: `${baseUrl}/about-cary-roofing-contractors.html`
     },
-    author: {
-      '@type': 'Person',
-      name: 'Marcus Vance',
-      jobTitle: 'Lead Master Roofing Inspector & Technical Director',
-      sameAs: `${baseUrl}/about-cary-roofing-contractors.html`
-    },
-    datePublished: '2026-01-15T08:00:00-05:00',
-    dateModified: '2026-10-18T10:00:00-05:00',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Roofing Services Catalog',
@@ -305,7 +302,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
 
   // 3. WebPage / ItemPage Schema
   const webPageSchema = {
-    '@type': pageType === 'service' ? 'ItemPage' : 'WebPage',
+    '@type': pageType === 'service' && service ? 'ItemPage' : 'WebPage',
     '@id': `${effectiveCurrentUrl}#webpage`,
     url: effectiveCurrentUrl,
     name: pageTitle || `${COMPANY_DETAILS.name} - Best Roofing Services Cary NC`,
@@ -333,8 +330,8 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       }
     },
     datePublished: '2026-01-15T08:00:00-05:00',
-    dateModified: '2026-10-18T10:00:00-05:00',
-    mainEntity: pageType === 'service' ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#localbusiness` },
+    dateModified: '2026-10-25T10:00:00-05:00',
+    mainEntity: pageType === 'service' && service ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#localbusiness` },
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: pageImage,
@@ -421,10 +418,15 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
         { '@type': 'City', name: 'Cary, NC' },
         { '@type': 'AdministrativeArea', name: 'Wake County, NC' },
         ...CARY_ZIP_CODES.map((z) => ({
-          '@type': 'PostalCode',
-          postalCode: z.zip,
-          addressLocality: z.areaName,
-          addressRegion: 'NC'
+          '@type': 'Place',
+          name: `${z.areaName} (${z.zip})`,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Cary',
+            addressRegion: 'NC',
+            postalCode: z.zip,
+            addressCountry: 'US'
+          }
         }))
       ],
       image: `${baseUrl}${service.splitImage || service.localImage}`,
