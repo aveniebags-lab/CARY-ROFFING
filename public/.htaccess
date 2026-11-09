@@ -1,8 +1,33 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # 1. Permanent 301 Redirect: Strip /index.html to prevent duplicate indexing
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+  RewriteRule ^index\.html$ https://www.caryncroofing.com/ [R=301,L]
+
+  # 2. Permanent 301 Redirects for Legacy / Alias URLs
+  RewriteRule ^contact/?$ /contact-cary-roofing.html [R=301,L]
+  RewriteRule ^contact-us/?$ /contact-cary-roofing.html [R=301,L]
+  RewriteRule ^about/?$ /about-cary-roofing-contractors.html [R=301,L]
+  RewriteRule ^about-us/?$ /about-cary-roofing-contractors.html [R=301,L]
+  RewriteRule ^calculator/?$ /cary-nc-roofing-calculator.html [R=301,L]
+  RewriteRule ^roofing-calculator(\.html)?$ /cary-nc-roofing-calculator.html [R=301,L]
+  RewriteRule ^locations/?$ /our-locations.html [R=301,L]
+  RewriteRule ^service-areas/?$ /our-locations.html [R=301,L]
+  RewriteRule ^standing-seam(-metal-roof)?(\.html)?$ /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof [R=301,L]
+  RewriteRule ^Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof\.html$ /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof [R=301,L]
+  RewriteRule ^roof-maintenance-services-cary-nc-usa(\.html)?$ /roof-inspection-services-cary-nc-usa.html [R=301,L]
+  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+
+  # 3. Serve existing pre-rendered static files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 4. Fallback to /index.html for client-side SPA routing
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Custom Error 404 Handler
+ErrorDocument 404 /404.html

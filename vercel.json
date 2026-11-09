@@ -1,9 +1,101 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact-cary-roofing.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact-cary-roofing.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-cary-roofing-contractors.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about-cary-roofing-contractors.html",
+      "permanent": true
+    },
+    {
+      "source": "/calculator",
+      "destination": "/cary-nc-roofing-calculator.html",
+      "permanent": true
+    },
+    {
+      "source": "/roofing-calculator",
+      "destination": "/cary-nc-roofing-calculator.html",
+      "permanent": true
+    },
+    {
+      "source": "/roofing-calculator.html",
+      "destination": "/cary-nc-roofing-calculator.html",
+      "permanent": true
+    },
+    {
+      "source": "/locations",
+      "destination": "/our-locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/our-locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/standing-seam",
+      "destination": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof",
+      "permanent": true
+    },
+    {
+      "source": "/standing-seam-metal-roof",
+      "destination": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof",
+      "permanent": true
+    },
+    {
+      "source": "/standing-seam-metal-roof.html",
+      "destination": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof",
+      "permanent": true
+    },
+    {
+      "source": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof.html",
+      "destination": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof",
+      "permanent": true
+    },
+    {
+      "source": "/why-more-homeowners-are-choosing-standing-seam-metal-roof",
+      "destination": "/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof",
+      "permanent": true
+    },
+    {
+      "source": "/roof-maintenance-services-cary-nc-usa.html",
+      "destination": "/roof-inspection-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-maintenance-services-cary-nc-usa",
+      "destination": "/roof-inspection-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/((?!assets/|images/|favicon\\.svg|robots\\.txt|sitemap\\.xml|llms.*\\.txt|yandex_.*\\.html).*)",
+      "source": "/((?!assets/|images/|favicon\\.svg|robots\\.txt|sitemap\\.xml|llms.*\\.txt|yandex_.*\\.html|.*\\.html).*)",
       "destination": "/index.html"
     }
   ]

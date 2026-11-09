@@ -752,6 +752,61 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
       ${renderSharedFooter()}`,
   };
 
+  // 8. Custom 404 Page (404.html) with auto-redirect for legacy URLs and full directory links
+  const notFoundDescriptor: PageSeoDescriptor = {
+    canonicalSlug: '404.html',
+    outputFiles: ['404.html'],
+    aliases: ['404', '404.html', 'not-found'],
+    title: 'Page Not Found (404) | Cary Roofing Contractors LLC',
+    description:
+      'The requested page was not found. Explore all certified Cary, NC roofing services, free 21-point roof inspection scheduling, and 24/7 Wake County emergency dispatch.',
+    ogImage: `${SITE_ORIGIN}/images/hero-roofing.webp`,
+    breadcrumbLabel: '404 Not Found',
+    schemaJson: buildSchemaGraph({
+      canonicalUrl: `${SITE_ORIGIN}/404.html`,
+      title: 'Page Not Found (404) | Cary Roofing Contractors LLC',
+      description: 'The requested page was not found. Explore Cary, NC roofing services.',
+      ogImage: `${SITE_ORIGIN}/images/hero-roofing.webp`,
+      breadcrumbLabel: '404 Not Found',
+    }),
+    bodyHtml: `
+      ${renderSharedHeader()}
+      <nav aria-label="Breadcrumb" style="background: #FAF8F4; border-bottom: 1px solid #e8e4df; padding: 10px 24px; font-size: 12px; font-weight: 600;">
+        <div style="max-width: 1100px; margin: 0 auto;"><a href="/" style="color: #000000; text-decoration: none;">Home</a> / <span style="color: #9A3412; font-weight: 700;">404 - Page Not Found</span></div>
+      </nav>
+      <main style="max-width: 1100px; margin: 0 auto; padding: 48px 24px; color: #000000; line-height: 1.6; text-align: center;">
+        <div class="kicker" style="color: #9A3412; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">HTTP ERROR 404</div>
+        <h1 style="font-size: 42px; font-weight: 800; margin: 0 0 16px 0;">Looking for Cary Roofing Services?</h1>
+        <p style="font-size: 18px; max-width: 700px; margin: 0 auto 28px auto; color: #334155;">
+          The specific link you requested has moved or is no longer at this address. Use the directory below to find certified roof replacement, repair, inspection, and calculator tools across Cary, NC.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px;">
+          <a href="/" style="background: #9A3412; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">Return to Home</a>
+          <a href="/contact-cary-roofing.html" style="background: #141c27; color: #ffffff; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">Contact 24/7 Hotline</a>
+          <a href="/cary-nc-roofing-calculator.html" style="background: #FAF8F4; color: #9A3412; border: 1px solid #9A3412; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none;">Cary NC Roofing Calculator</a>
+        </div>
+        <section style="text-align: left; background: #ffffff; border: 1px solid #e8e4df; border-radius: 12px; padding: 28px; margin-bottom: 32px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 16px 0;">All Cary, NC Roofing Services &amp; Guides</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; font-size: 14px;">
+            <a href="/roof-installation-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Roof Installation Services</a>
+            <a href="/roof-repair-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Roof Repair Services</a>
+            <a href="/roof-replacement-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Roof Replacement Services</a>
+            <a href="/storm-emergency-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Emergency Storm Damage</a>
+            <a href="/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof" style="color: #9A3412; font-weight: 700; text-decoration: none;">Standing Seam Metal Roof Guide</a>
+            <a href="/metal-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Metal Roofing Services</a>
+            <a href="/roof-inspection-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Roof Inspection Services</a>
+            <a href="/shingle-tile-slate-roofing-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Shingle, Tile &amp; Slate</a>
+            <a href="/commercial-industrial-roofing-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Commercial &amp; Industrial</a>
+            <a href="/flat-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Flat Roofing (TPO/EPDM)</a>
+            <a href="/gutter-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Seamless Gutters</a>
+            <a href="/our-locations.html" style="color: #9A3412; font-weight: 700; text-decoration: none;">Our Locations (All Cary ZIPs)</a>
+          </div>
+        </section>
+        ${renderZipDispatchSection()}
+      </main>
+      ${renderSharedFooter()}`,
+  };
+
   return [
     ...serviceDescriptors,
     contactDescriptor,
@@ -761,6 +816,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
     privacyDescriptor,
     termsDescriptor,
     standingDescriptor,
+    notFoundDescriptor,
   ];
 }
 
@@ -775,6 +831,14 @@ export function renderStaticPageHtml(baseHtmlTemplate: string, page: PageSeoDesc
 
   // 1. Replace <title>
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${safeTitle}</title>`);
+
+  // For 404 error page, instruct search engines not to index the 404 URL itself while following directory links
+  if (page.canonicalSlug === '404.html') {
+    html = html.replace(
+      /<title>[\s\S]*?<\/title>/i,
+      `<title>${safeTitle}</title>\n    <meta name="robots" content="noindex, follow" />`
+    );
+  }
 
   // 2. Replace <meta name="description">
   html = html.replace(

@@ -1,2 +1,22 @@
-# Static pre-rendered HTML files in dist/ are served first with 200 OK; SPA fallback for any clean URLs
+# Permanent 301 Redirects for Canonical & Legacy Aliases
+/index.html / 301!
+/contact /contact-cary-roofing.html 301
+/contact-us /contact-cary-roofing.html 301
+/about /about-cary-roofing-contractors.html 301
+/about-us /about-cary-roofing-contractors.html 301
+/calculator /cary-nc-roofing-calculator.html 301
+/roofing-calculator /cary-nc-roofing-calculator.html 301
+/roofing-calculator.html /cary-nc-roofing-calculator.html 301
+/locations /our-locations.html 301
+/service-areas /our-locations.html 301
+/standing-seam /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof 301
+/standing-seam-metal-roof /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof 301
+/standing-seam-metal-roof.html /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof 301
+/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof.html /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof 301
+/why-more-homeowners-are-choosing-standing-seam-metal-roof /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof 301
+/roof-maintenance-services-cary-nc-usa.html /roof-inspection-services-cary-nc-usa.html 301
+/roof-maintenance-services-cary-nc-usa /roof-inspection-services-cary-nc-usa.html 301
+/sitemap_index.xml /sitemap.xml 301
+
+# Static pre-rendered HTML files in dist/ are served first; SPA fallback for any clean URLs
 /* /index.html 200
