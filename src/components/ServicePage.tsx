@@ -473,7 +473,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({ service, onNavigate, o
             </button>
             <button
               type="button"
-              onClick={() => onNavigate('our-locations')}
+              onClick={() => onNavigate('our-locations.html')}
               className="btn btn-primary !mt-0 !bg-[#9A3412] hover:!bg-[#7C2D12] !text-white font-extrabold shadow-sm"
             >
               View All Service Locations →

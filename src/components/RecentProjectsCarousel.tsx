@@ -323,7 +323,7 @@ export const RecentProjectsCarousel: React.FC<RecentProjectsCarouselProps> = ({ 
                 <button
                   type="button"
                   onClick={() => {
-                    if (onNavigate) onNavigate('calculator');
+                    if (onNavigate) onNavigate('cary-nc-roofing-calculator.html');
                   }}
                   className="py-2.5 px-3 bg-[#9A3412] hover:bg-[#7C2D12] text-white font-extrabold rounded-xl transition-colors cursor-pointer shadow-xs"
                 >

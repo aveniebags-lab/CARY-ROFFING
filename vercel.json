@@ -18,12 +18,32 @@
       "permanent": true
     },
     {
+      "source": "/contact.html",
+      "destination": "/contact-cary-roofing.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-cary-roofing",
+      "destination": "/contact-cary-roofing.html",
+      "permanent": true
+    },
+    {
       "source": "/about",
       "destination": "/about-cary-roofing-contractors.html",
       "permanent": true
     },
     {
       "source": "/about-us",
+      "destination": "/about-cary-roofing-contractors.html",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about-cary-roofing-contractors.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-cary-roofing-contractors",
       "destination": "/about-cary-roofing-contractors.html",
       "permanent": true
     },
@@ -43,6 +63,11 @@
       "permanent": true
     },
     {
+      "source": "/cary-nc-roofing-calculator",
+      "destination": "/cary-nc-roofing-calculator.html",
+      "permanent": true
+    },
+    {
       "source": "/locations",
       "destination": "/our-locations.html",
       "permanent": true
@@ -50,6 +75,31 @@
     {
       "source": "/service-areas",
       "destination": "/our-locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-locations",
+      "destination": "/our-locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-of-service.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-of-service.html",
       "permanent": true
     },
     {
@@ -78,6 +128,96 @@
       "permanent": true
     },
     {
+      "source": "/roof-installation-services-cary-nc-usa",
+      "destination": "/roof-installation-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-repair-services-cary-nc-usa",
+      "destination": "/roof-repair-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-replacement-services-cary-nc-usa",
+      "destination": "/roof-replacement-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-inspection-services-cary-nc-usa",
+      "destination": "/roof-inspection-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/storm-emergency-roofing-services-cary-nc-usa",
+      "destination": "/storm-emergency-roofing-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/metal-roofing-services-cary-nc-usa",
+      "destination": "/metal-roofing-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/flat-roofing-services-cary-nc-usa",
+      "destination": "/flat-roofing-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/gutter-services-cary-nc-usa",
+      "destination": "/gutter-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-waterproofing-services-cary-nc-usa",
+      "destination": "/roof-waterproofing-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-flashing-ventilation-services-cary-nc-usa",
+      "destination": "/roof-flashing-ventilation-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-insulation-services-cary-nc-usa",
+      "destination": "/roof-insulation-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/shingle-tile-slate-roofing-cary-nc-usa",
+      "destination": "/shingle-tile-slate-roofing-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-coating-restoration-cary-nc-usa",
+      "destination": "/roof-coating-restoration-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/skylight-roof-window-services-cary-nc-usa",
+      "destination": "/skylight-roof-window-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/chimney-roof-edge-services-cary-nc-usa",
+      "destination": "/chimney-roof-edge-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/roof-structure-carpentry-cary-nc-usa",
+      "destination": "/roof-structure-carpentry-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-industrial-roofing-cary-nc-usa",
+      "destination": "/commercial-industrial-roofing-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
+      "source": "/additional-roofing-services-cary-nc-usa",
+      "destination": "/additional-roofing-services-cary-nc-usa.html",
+      "permanent": true
+    },
+    {
       "source": "/roof-maintenance-services-cary-nc-usa.html",
       "destination": "/roof-inspection-services-cary-nc-usa.html",
       "permanent": true
@@ -91,12 +231,6 @@
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!assets/|images/|favicon\\.svg|robots\\.txt|sitemap\\.xml|llms.*\\.txt|yandex_.*\\.html|.*\\.html).*)",
-      "destination": "/index.html"
     }
   ]
 }

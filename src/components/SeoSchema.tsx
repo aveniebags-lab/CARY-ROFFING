@@ -330,7 +330,7 @@ export const SeoSchema: React.FC<SeoSchemaProps> = ({
       }
     },
     datePublished: '2026-01-15T08:00:00-05:00',
-    dateModified: '2026-10-25T10:00:00-05:00',
+    dateModified: '2026-11-12T10:00:00-05:00',
     mainEntity: pageType === 'service' && service ? { '@id': `${effectiveCurrentUrl}#service` } : { '@id': `${baseUrl}/#localbusiness` },
     primaryImageOfPage: {
       '@type': 'ImageObject',

@@ -1049,7 +1049,7 @@ export const StandingSeamMetalRoofPage: React.FC<StandingSeamMetalRoofPageProps>
 
             <button
               type="button"
-              onClick={() => onNavigate('our-locations')}
+              onClick={() => onNavigate('our-locations.html')}
               className="p-4 rounded-xl border border-[#e8e4df] bg-[#FAF8F4] hover:border-[#9A3412] transition-colors text-left cursor-pointer group"
             >
               <div className="text-xs font-bold text-[#9A3412] uppercase tracking-wide mb-1">Local Service Areas</div>

@@ -6,17 +6,17 @@
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
   RewriteRule ^index\.html$ https://www.caryncroofing.com/ [R=301,L]
 
-  # 2. Permanent 301 Redirects for Legacy / Alias URLs
-  RewriteRule ^contact/?$ /contact-cary-roofing.html [R=301,L]
-  RewriteRule ^contact-us/?$ /contact-cary-roofing.html [R=301,L]
-  RewriteRule ^about/?$ /about-cary-roofing-contractors.html [R=301,L]
-  RewriteRule ^about-us/?$ /about-cary-roofing-contractors.html [R=301,L]
-  RewriteRule ^calculator/?$ /cary-nc-roofing-calculator.html [R=301,L]
-  RewriteRule ^roofing-calculator(\.html)?$ /cary-nc-roofing-calculator.html [R=301,L]
-  RewriteRule ^locations/?$ /our-locations.html [R=301,L]
-  RewriteRule ^service-areas/?$ /our-locations.html [R=301,L]
+  # 2. Permanent 301 Redirects for Legacy / Alias / Extensionless URLs
+  RewriteRule ^(contact|contact-us|contact\.html|contact-cary-roofing)/?$ /contact-cary-roofing.html [R=301,L]
+  RewriteRule ^(about|about-us|about\.html|about-cary-roofing-contractors)/?$ /about-cary-roofing-contractors.html [R=301,L]
+  RewriteRule ^(calculator|roofing-calculator|roofing-calculator\.html|cary-nc-roofing-calculator)/?$ /cary-nc-roofing-calculator.html [R=301,L]
+  RewriteRule ^(locations|service-areas|our-locations)/?$ /our-locations.html [R=301,L]
+  RewriteRule ^(privacy|privacy-policy)/?$ /privacy-policy.html [R=301,L]
+  RewriteRule ^(terms|terms-of-service)/?$ /terms-of-service.html [R=301,L]
+  RewriteRule ^([a-z0-9-]+-cary-nc-usa)/?$ /$1.html [R=301,L]
   RewriteRule ^standing-seam(-metal-roof)?(\.html)?$ /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof [R=301,L]
   RewriteRule ^Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof\.html$ /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof [R=301,L]
+  RewriteRule ^why-more-homeowners-are-choosing-standing-seam-metal-roof/?$ /Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof [R=301,L]
   RewriteRule ^roof-maintenance-services-cary-nc-usa(\.html)?$ /roof-inspection-services-cary-nc-usa.html [R=301,L]
   RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
 
@@ -24,9 +24,6 @@
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
-
-  # 4. Fallback to /index.html for client-side SPA routing
-  RewriteRule . /index.html [L]
 </IfModule>
 
 # Custom Error 404 Handler

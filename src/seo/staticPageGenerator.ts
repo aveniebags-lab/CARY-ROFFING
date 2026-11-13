@@ -205,7 +205,7 @@ function buildSchemaGraph(params: {
         : { '@id': `${SITE_ORIGIN}/#localbusiness` },
       inLanguage: 'en-US',
       datePublished: '2026-01-15T08:00:00-05:00',
-      dateModified: '2026-10-25T10:00:00-05:00',
+      dateModified: '2026-11-12T10:00:00-05:00',
       author: {
         '@type': 'Person',
         name: 'Marcus Vance',
@@ -357,15 +357,11 @@ function buildServicePageDescriptor(service: ServiceInfo): PageSeoDescriptor {
       </main>
       ${renderSharedFooter()}`;
 
-  const outputFiles = [service.slug, `${slugNoExt}/index.html`];
+  // Emit ONLY the canonical .html file in dist/ so extensionless duplicates never serve 200 OK
+  const outputFiles = [service.slug];
   const aliases = [service.slug, slugNoExt, service.id];
 
-  // Legacy roof-maintenance-services-cary-nc-usa.html maps cleanly to roof-inspection-services-cary-nc-usa.html
   if (service.slug === 'roof-inspection-services-cary-nc-usa.html') {
-    outputFiles.push(
-      'roof-maintenance-services-cary-nc-usa.html',
-      'roof-maintenance-services-cary-nc-usa/index.html'
-    );
     aliases.push('roof-maintenance-services-cary-nc-usa.html', 'roof-maintenance-services-cary-nc-usa');
   }
 
@@ -401,12 +397,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
     'Contact Cary Roofing Contractors LLC. 24/7 emergency dispatch, free 21-point on-site roof inspections across Cary, NC (27511, 27512, 27513, 27518, 27519). Call +1 919-335-9543.';
   const contactDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'contact-cary-roofing.html',
-    outputFiles: [
-      'contact-cary-roofing.html',
-      'contact-cary-roofing/index.html',
-      'contact.html',
-      'contact/index.html',
-    ],
+    outputFiles: ['contact-cary-roofing.html'],
     aliases: ['contact-cary-roofing.html', 'contact-cary-roofing', 'contact', 'contact-us', 'contact.html'],
     title: contactTitle,
     description: contactDesc,
@@ -429,16 +420,26 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">Contact Cary Roofing Contractors LLC</h1>
         <div style="background: #FAF8F4; border-left: 5px solid #9A3412; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 24px;">
           <p style="margin: 0; font-size: 16px; font-weight: 600;">
-            <strong>How to contact Cary Roofing in Wake County:</strong> Homeowners and commercial property managers in Cary, NC can reach our central dispatch hotline 24/7 at <a href="tel:+19193359543" style="color: #9A3412; font-weight: 800;">+1 919-335-9543</a>, email <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412; font-weight: 700;">caryncroofing@gmail.com</a>, or visit our headquarters at 580 New Waverly Pl Ste 216, Cary, NC 27518 for rapid emergency roof tarping and free 21-point inspections.
+            <strong>How to contact Cary Roofing in Wake County:</strong> Homeowners and commercial property managers in Cary, NC can reach our central dispatch hotline 24 hours a day, 7 days a week at <a href="tel:+19193359543" style="color: #9A3412; font-weight: 800;">+1 919-335-9543</a>, email <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412; font-weight: 700;">caryncroofing@gmail.com</a>, or visit our headquarters at 580 New Waverly Pl Ste 216, Cary, NC 27518 for rapid emergency roof tarping and free 21-point inspections.
           </p>
         </div>
         <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 28px;">
           <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 12px 0;">Headquarters &amp; Direct Dispatch Information</h2>
           <ul style="padding-left: 20px; font-size: 15px; line-height: 1.8;">
-            <li><strong>Corporate Headquarters:</strong> 580 New Waverly Pl Ste 216, Cary, NC 27518</li>
+            <li><strong>Corporate Headquarters:</strong> 580 New Waverly Pl Ste 216, Cary, NC 27518 (Near Lochmere &amp; Regency)</li>
             <li><strong>24/7 Central Intake Hotline:</strong> <a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a></li>
-            <li><strong>Email Dispatch:</strong> <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412;">caryncroofing@gmail.com</a></li>
+            <li><strong>Email Dispatch:</strong> <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412;">caryncroofing@gmail.com</a> (Under 2-hour response)</li>
             <li><strong>Operating Hours:</strong> Rapid Local Service (Mon &ndash; Sun 7:00 AM &ndash; 9:00 PM) &amp; 24/7 Storm Emergency Tarping</li>
+            <li><strong>Coverage Guarantee:</strong> All 5 Town of Cary ZIP codes (27511, 27512, 27513, 27518, 27519), Apex, Morrisville, and Holly Springs.</li>
+          </ul>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 28px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 12px 0;">Popular Roofing Services You Can Schedule</h2>
+          <ul style="padding-left: 20px; font-size: 14px; line-height: 1.8;">
+            <li><a href="/roof-repair-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Emergency &amp; Active Leak Roof Repair Services</a></li>
+            <li><a href="/roof-replacement-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Full Architectural Shingle &amp; Metal Roof Replacement</a></li>
+            <li><a href="/storm-emergency-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">24/7 Storm Damage &amp; Waterproof Emergency Tarping</a></li>
+            <li><a href="/cary-nc-roofing-calculator.html" style="color: #9A3412; font-weight: 700;">Cary NC Instant Roof Replacement Cost Calculator</a></li>
           </ul>
         </section>
         ${renderZipDispatchSection()}
@@ -453,12 +454,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
     'Learn about Cary Roofing Contractors LLC: certified HAAG roofing inspectors led by Marcus Vance, 15+ years in Wake County, NCRC Chapter 9 compliance, and $2M liability protection.';
   const aboutDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'about-cary-roofing-contractors.html',
-    outputFiles: [
-      'about-cary-roofing-contractors.html',
-      'about-cary-roofing-contractors/index.html',
-      'about.html',
-      'about/index.html',
-    ],
+    outputFiles: ['about-cary-roofing-contractors.html'],
     aliases: ['about-cary-roofing-contractors.html', 'about-cary-roofing-contractors', 'about', 'about-us', 'about.html'],
     title: aboutTitle,
     description: aboutDesc,
@@ -480,16 +476,48 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
         <div class="kicker">ABOUT CARYROOFING</div>
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">About Cary Roofing Contractors LLC</h1>
         <p style="font-size: 17px; font-weight: 500; margin-bottom: 24px;">
-          Founded with a commitment to engineering precision and homeowner transparency, Cary Roofing connects Wake County families and commercial building managers with the highest standard of roofing craftsmanship, GAF Master Elite installations, and rapid storm leak defense.
+          Founded with a commitment to engineering precision and homeowner transparency, Cary Roofing connects Wake County families and commercial building managers with the highest standard of roofing craftsmanship, GAF Master Elite installations, HAAG certified inspectors, and $2M comprehensive liability protection.
         </p>
-        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 28px;">
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 24px;">
           <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 10px 0;">Lead Technical Author &amp; Chief Inspector: Marcus Vance</h2>
           <p style="font-size: 15px; margin: 0 0 12px 0;">
             <strong>Credentials:</strong> License #NC-R48201 &bull; HAAG Certified Residential Inspector &bull; CertainTeed Master Shingle Applicator
           </p>
-          <p style="font-size: 15px; margin: 0;">
+          <p style="font-size: 15px; margin: 0 0 12px 0;">
             Marcus Vance has directed residential roof diagnostic operations, structural deck evaluations, and emergency storm response in Cary and Wake County for over 15 years, overseeing more than 2,800 roof installations across Preston, Lochmere, Kildaire Farms, and Amberly in strict compliance with Chapter 9 of the North Carolina Residential Building Code.
           </p>
+          <p style="font-size: 15px; margin: 0;">
+            His field investigations focus on forensic leak detection, micro-fractured shingle analysis from hail impact, and balancing attic net free ventilating area (NFVA) to prevent thermal degradation during humid North Carolina summers.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 24px;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 14px 0;">Our Craftsmanship &amp; Material Standards</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">50-Year Non-Prorated Warranties</h3>
+              <p style="margin: 0; font-size: 14px;">Premium GAF Timberline HDZ and CertainTeed Landmark dimensional shingles with lifetime manufacturer coverage and 25-year workmanship guarantees.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Full Ice &amp; Water Valley Protection</h3>
+              <p style="margin: 0; font-size: 14px;">Self-adhering modified bitumen underlayment installed in all valleys, pipe boots, rake edges, and chimney saddles prevents wind-driven rain intrusion.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Magnetic Jobsite Cleanup</h3>
+              <p style="margin: 0; font-size: 14px;">Every replacement finishes with a triple-pass heavy industrial magnetic sweep of your driveway, lawn, flowerbeds, and walkways.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Town of Cary Permitting</h3>
+              <p style="margin: 0; font-size: 14px;">Our network pulls all required municipal permits through the Town of Cary Inspections &amp; Permits Department for full NC building code sign-off.</p>
+            </div>
+          </div>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 24px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">Regulatory Compliance &amp; Industry Citations</h2>
+          <ul style="padding-left: 20px; font-size: 14px; line-height: 1.8; margin: 0;">
+            <li><a href="https://www.nrca.net/" target="_blank" rel="noopener noreferrer" style="color: #9A3412; font-weight: 700;">National Roofing Contractors Association (NRCA)</a> &mdash; Technical Manual &amp; Steep-Slope Guidelines</li>
+            <li><a href="https://codes.iccsafe.org/content/NCRC2018/chapter-9-roof-assemblies" target="_blank" rel="noopener noreferrer" style="color: #9A3412; font-weight: 700;">North Carolina Residential Code: Chapter 9 Roof Assemblies</a> &mdash; State flashing and fastener standards</li>
+            <li><a href="https://www.carync.gov/services-permits/permits-inspections" target="_blank" rel="noopener noreferrer" style="color: #9A3412; font-weight: 700;">Town of Cary Inspections &amp; Permits Department</a> &mdash; Municipal building permitting portal</li>
+          </ul>
         </section>
         ${renderZipDispatchSection()}
       </main>
@@ -504,21 +532,45 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
   const calcFaqs = [
     {
       q: 'How much does a roof replacement cost in Cary, NC right now?',
-      a: 'Most Cary homeowners pay $8,500 to $13,500 for a standard 1,700 sq ft home with architectural asphalt shingles. Larger homes in North Cary (27513) and West Cary (27519) average $12,000 to $18,000, while standing seam metal roofs run $18,000 to $40,000.',
+      a: 'Most Cary homeowners pay $8,500 to $13,500 for a standard 1,700 sq ft home with architectural asphalt shingles. For North Cary (27513) and West Cary (27519) where homes are larger, expect $12,000 to $18,000. Metal roofs in Cary run $18,000 to $40,000.',
     },
     {
       q: 'Do I need a permit to replace my roof in Cary, NC?',
-      a: 'Yes. The Town of Cary requires a residential building permit ($250–$450 including inspection) for a full roof replacement. Our Cary hubs handle all municipal permitting directly.',
+      a: 'Yes. The Town of Cary requires a building permit for a full roof replacement ($250–$450 including inspection). All our hubs, including our headquarters at 580 New Waverly Pl Ste 216, Cary, NC 27518, handle municipal permitting daily.',
+    },
+    {
+      q: 'How long does a roof replacement take in Cary?',
+      a: 'For most Cary homes, asphalt shingle replacements take 1 to 2 days. Larger estates in Amberly or Preston (27513, 27519) take 2 to 3 days, while standing seam metal or tile projects take 4 to 7 days.',
+    },
+    {
+      q: 'My HOA is in Preston or Amberly. Does that affect my cost?',
+      a: 'Yes. HOAs in Preston, Prestonwood Country Club, Lochmere, and Amberly Village typically require architectural or designer shingles and color pre-approval, adding about $1,000 to $2,000 over basic 3-tab shingles.',
+    },
+    {
+      q: 'Will my homeowners insurance cover my roof in Cary, NC?',
+      a: 'If your roof was damaged by wind or hail during Wake County storms, standard US homeowner policies usually cover replacement minus your deductible, and Class 4 impact-resistant shingles can qualify for annual insurance discounts.',
+    },
+    {
+      q: 'What is the best time of year to replace a roof in Cary, NC?',
+      a: 'Fall (September through November) and Spring (March through May) offer ideal moderate temperatures in Cary, though our mild North Carolina climate supports year-round installation.',
+    },
+    {
+      q: 'Can you work in my specific neighborhood if I am just outside Cary?',
+      a: 'Yes. We dispatch daily to Apex, Morrisville, Holly Springs, West Raleigh, Durham, and Chapel Hill directly from our 5 Wake County ZIP code hubs.',
     },
   ];
+  const calcFaqsHtml = calcFaqs
+    .map(
+      (f, idx) => `
+        <div style="padding: 18px; background: #FAF8F4; border-radius: 10px; border: 1px solid #e8e4df;">
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">${idx + 1}. ${escapeHtml(f.q)}</h3>
+          <p style="margin: 0; font-size: 15px;">${escapeHtml(f.a)}</p>
+        </div>`
+    )
+    .join('');
   const calcDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'cary-nc-roofing-calculator.html',
-    outputFiles: [
-      'cary-nc-roofing-calculator.html',
-      'cary-nc-roofing-calculator/index.html',
-      'roofing-calculator.html',
-      'calculator/index.html',
-    ],
+    outputFiles: ['cary-nc-roofing-calculator.html'],
     aliases: ['cary-nc-roofing-calculator.html', 'cary-nc-roofing-calculator', 'calculator', 'roofing-calculator', 'roofing-calculator.html'],
     title: calcTitle,
     description: calcDesc,
@@ -541,7 +593,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
         <div class="kicker">INSTANT WAKE COUNTY ROOF COST ESTIMATOR</div>
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">Cary, NC Roofing Cost Calculator &amp; Price Guide</h1>
         <p style="font-size: 17px; font-weight: 500; margin-bottom: 24px;">
-          Estimate your exact roof replacement investment in Cary, NC based on home square footage, roof pitch, complexity, tear-off disposal, Town of Cary permit fees, and material choice.
+          Estimate your exact roof replacement investment in Cary, NC based on home square footage, roof pitch, complexity, tear-off disposal ($0.65/sq ft), Town of Cary building permit fees ($350), and material choice.
         </p>
         <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 28px;">
           <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 12px 0;">Installed Cost Per Square Foot in Cary, NC</h2>
@@ -549,10 +601,26 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
             <li><strong>Architectural Asphalt Shingles (GAF / CertainTeed):</strong> $4.80 &ndash; $6.50 / sq ft installed (50-year warranty, 130 MPH wind rating)</li>
             <li><strong>Standard 3-Tab Asphalt Shingles:</strong> $3.80 &ndash; $4.70 / sq ft installed</li>
             <li><strong>Premium Designer / Luxury Shingles:</strong> $7.50 &ndash; $10.20 / sq ft installed</li>
-            <li><strong>Standing Seam Metal Roofing (24-Gauge Kynar 500):</strong> $11.50 &ndash; $16.50 / sq ft installed</li>
+            <li><strong>Standing Seam Metal Roofing (24-Gauge Kynar 500):</strong> $11.50 &ndash; $16.50 / sq ft installed (<a href="/Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof" style="color: #9A3412; font-weight: 700;">Explore Standing Seam Guide</a>)</li>
             <li><strong>Synthetic Slate / Composite Tiles (Class 4):</strong> $13.00 &ndash; $18.50 / sq ft installed</li>
             <li><strong>Commercial TPO / Low-Slope Membrane:</strong> $5.80 &ndash; $8.20 / sq ft installed</li>
           </ul>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 28px;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 14px 0;">Average Roof Replacement Cost by Cary ZIP Code</h2>
+          <ul style="padding-left: 20px; font-size: 15px; line-height: 1.8;">
+            <li><strong>ZIP 27511 (Central &amp; Downtown Cary):</strong> $8,000 &ndash; $12,000 average for older 70s&ndash;90s ranches near Downtown Cary Park &amp; Academy St.</li>
+            <li><strong>ZIP 27512 (East Cary &amp; Crossroads):</strong> $9,000 &ndash; $13,000 average across Walnut St Corridor and Crossroads subdivisions.</li>
+            <li><strong>ZIP 27513 (North Cary &amp; Preston):</strong> $12,000 &ndash; $18,000 average for 2,500&ndash;4,000 sq ft HOA-governed Preston &amp; Park West Village homes.</li>
+            <li><strong>ZIP 27518 (South Cary &amp; Lochmere / Waverly Place HQ):</strong> $9,500 &ndash; $14,500 average around Lochmere, Kildaire Farms, and Regency.</li>
+            <li><strong>ZIP 27519 (West Cary &amp; Amberly / Carpenter):</strong> $11,000 &ndash; $16,500 average for steep two-story estates in Amberly &amp; Carpenter Village.</li>
+          </ul>
+        </section>
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 26px; font-weight: 800; margin: 0 0 16px 0;">FAQs About Roof Replacement Cost in Cary, NC</h2>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            ${calcFaqsHtml}
+          </div>
         </section>
         ${renderZipDispatchSection()}
       </main>
@@ -564,9 +632,36 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
   const locationsTitle = 'Roofing Service Locations in Cary, NC & Triangle | caryncroofing.com';
   const locationsDesc =
     'Local roofing coverage for all Cary, NC zip codes (27511, 27512, 27513, 27518, 27519), plus Apex, Morrisville, and Holly Springs. Same-day dispatch and free on-site roof inspections.';
+  const locationFaqs = [
+    {
+      q: 'Which zip codes does CaryRoofing serve in Cary, NC?',
+      a: 'We provide comprehensive residential and commercial roofing coverage across all 5 official Cary zip codes: 27511 (Central & Downtown Cary), 27512 (East Cary & Crossroads), 27513 (North Cary & Preston), 27518 (South Cary & Lochmere / Waverly Place), and 27519 (West Cary & Amberly), plus adjacent Triangle towns like Apex, Morrisville, and Holly Springs.',
+    },
+    {
+      q: 'How fast is emergency roof dispatch in Cary, NC?',
+      a: 'Our mobile roofing crews are stationed locally in Cary and dispatch within 60 to 90 minutes across Wake County for emergency roof tarping, storm damage, tree impacts, and active ceiling leaks.',
+    },
+    {
+      q: 'Are on-site roof inspections free across all Cary neighborhoods?',
+      a: 'Yes, 100% free on-site roof inspections are provided for all Cary homeowners and business owners with full drone aerial diagnostics, HAAG-certified photo reports, and transparent repair or replacement estimates.',
+    },
+    {
+      q: 'Do you handle Town of Cary roofing permits and building code compliance?',
+      a: 'Yes, our team manages all Town of Cary Inspections & Permits filings, ensuring complete compliance with North Carolina Residential Building Code High-Wind (130 MPH) requirements.',
+    },
+  ];
+  const locationFaqsHtml = locationFaqs
+    .map(
+      (f, idx) => `
+        <div style="padding: 18px; background: #FAF8F4; border-radius: 10px; border: 1px solid #e8e4df;">
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">${idx + 1}. ${escapeHtml(f.q)}</h3>
+          <p style="margin: 0; font-size: 15px;">${escapeHtml(f.a)}</p>
+        </div>`
+    )
+    .join('');
   const locationsDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'our-locations.html',
-    outputFiles: ['our-locations.html', 'our-locations/index.html'],
+    outputFiles: ['our-locations.html'],
     aliases: ['our-locations.html', 'our-locations', 'locations', 'service-areas'],
     title: locationsTitle,
     description: locationsDesc,
@@ -578,6 +673,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
       description: locationsDesc,
       ogImage: `${SITE_ORIGIN}/images/cary-service-map.svg`,
       breadcrumbLabel: 'Our Locations',
+      faqs: locationFaqs,
     }),
     bodyHtml: `
       ${renderSharedHeader()}
@@ -588,9 +684,36 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
         <div class="kicker">WAKE COUNTY &amp; TRIANGLE DISPATCH NETWORK</div>
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">Cary, NC Roofing Service Locations &amp; ZIP Code Directory</h1>
         <p style="font-size: 17px; font-weight: 500; margin-bottom: 24px;">
-          CaryRoofing operates dedicated local dispatch coverage across every official Town of Cary ZIP code—Central &amp; Downtown Cary (27511), East Cary &amp; Crossroads (27512), North Cary &amp; Preston (27513), South Cary &amp; Lochmere / Waverly Place HQ (27518), and West Cary &amp; Amberly (27519).
+          CaryRoofing operates dedicated local dispatch coverage across every official Town of Cary ZIP code&mdash;Central &amp; Downtown Cary (27511), East Cary &amp; Crossroads (27512), North Cary &amp; Preston (27513), South Cary &amp; Lochmere / Waverly Place HQ (27518), and West Cary &amp; Amberly (27519)&mdash;plus Apex, Morrisville, Holly Springs, and West Raleigh / RTP.
         </p>
         ${renderZipDispatchSection()}
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 28px;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 12px 0;">Surrounding Triangle Communities We Serve</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Apex, NC</h3>
+              <p style="margin: 0; font-size: 14px;">Downtown Apex, Peakway corridor, Bella Casa, and Salem Street communities.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Morrisville, NC</h3>
+              <p style="margin: 0; font-size: 14px;">Davis Drive, Park West, Perimeter Park, and RTP adjacent developments.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">Holly Springs, NC</h3>
+              <p style="margin: 0; font-size: 14px;">Sunset Ridge, Holly Springs Rd corridor, 12 Oaks, and Ting Park area.</p>
+            </div>
+            <div style="padding: 16px; background: #FAF8F4; border: 1px solid #e8e4df; border-radius: 10px;">
+              <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">West Raleigh &amp; RTP</h3>
+              <p style="margin: 0; font-size: 14px;">Wade Avenue, Blue Ridge, Crabtree Valley, and commercial roofs in RTP.</p>
+            </div>
+          </div>
+        </section>
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 26px; font-weight: 800; margin: 0 0 16px 0;">Frequently Asked Location &amp; Dispatch Questions</h2>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            ${locationFaqsHtml}
+          </div>
+        </section>
       </main>
       ${renderSharedFooter()}`,
   };
@@ -602,7 +725,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
     'Privacy Policy and customer data protection standards for caryncroofing.com in Cary, NC and Wake County. Strict no-sale of personal homeowner information.';
   const privacyDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'privacy-policy.html',
-    outputFiles: ['privacy-policy.html', 'privacy-policy/index.html'],
+    outputFiles: ['privacy-policy.html'],
     aliases: ['privacy-policy.html', 'privacy-policy', 'privacy'],
     title: privacyTitle,
     description: privacyDesc,
@@ -623,13 +746,40 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
       <main style="max-width: 1100px; margin: 0 auto; padding: 36px 24px; color: #000000; line-height: 1.6;">
         <div class="kicker">LEGAL &amp; DATA TRANSPARENCY</div>
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">Privacy Policy &amp; Data Protection Standards</h1>
-        <p style="font-size: 16px; margin-bottom: 20px;">
-          Effective Date: October 14, 2026. This Privacy Policy outlines how <strong>Cary Roofing Contractors LLC</strong> (caryncroofing.com) collects, uses, and protects personal information obtained from homeowners, commercial property owners, and website visitors across Cary, NC and Wake County.
+        <p style="font-size: 16px; margin-bottom: 24px;">
+          Effective Date: October 14, 2026. This Privacy Policy outlines how <strong>Cary Roofing Contractors LLC</strong> (caryncroofing.com) collects, uses, protects, and discloses personal information obtained from homeowners, commercial property owners, and website visitors across Cary, NC and Wake County.
         </p>
-        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 24px;">
-          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">Strict No-Sale of Personal Homeowner Data</h2>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">1. Company Information &amp; Operational Scope</h2>
           <p style="font-size: 15px; margin: 0;">
-            We never sell, rent, or auction homeowner contact details to third-party lead aggregators. Information submitted via estimate forms or telephone dispatch (+1 919-335-9543) is used strictly to coordinate your on-site roof inspection, Town of Cary permitting, and written estimate.
+            This policy applies to all web interactions, estimate inquiry forms, telephone consultations, and on-site roofing assessments coordinated from our central hub at <strong>580 New Waverly Pl Ste 216, Cary, NC 27518</strong> (Hotline: <a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a>) serving Cary ZIP codes 27511, 27512, 27513, 27518, and 27519.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">2. Information We Collect</h2>
+          <ul style="padding-left: 20px; font-size: 15px; line-height: 1.8; margin: 0;">
+            <li><strong>Contact Details:</strong> Full name, telephone number, email address, and Wake County property address.</li>
+            <li><strong>Roofing Project Specifications:</strong> Roof pitch, square footage, existing shingle or metal profile, reported leak locations, and storm damage photos.</li>
+            <li><strong>Insurance Claim Documentation:</strong> Claim reference numbers when authorized to prepare itemized Xactimate storm restoration estimates.</li>
+            <li><strong>Automated Technical Data:</strong> Standard browser and routing metadata to optimize local ZIP code dispatch performance.</li>
+          </ul>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">3. How We Use Your Information</h2>
+          <p style="font-size: 15px; margin: 0;">
+            Submitted details are used strictly for estimates and diagnostics, local HAAG-certified crew dispatch, Town of Cary Inspections &amp; Permits filings, and registering manufacturer warranties (such as GAF Golden Pledge or CertainTeed SureStart PLUS) in your name.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">4. Strict No-Sale Policy &amp; Data Sharing</h2>
+          <p style="font-size: 15px; margin: 0;">
+            We never sell, rent, or auction homeowner contact details to third-party lead aggregators or marketing brokers. Information is shared only with assigned material delivery crews, municipal building inspection officials, or authorized insurance adjusters at your request.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">5. Data Security, Retention &amp; Contact</h2>
+          <p style="font-size: 15px; margin: 0;">
+            All forms use TLS 1.3 / 256-bit SSL encryption. Active project warranties are retained for the warranty lifespan; inactive inquiries are purged after 24 months. Questions? Email <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412; font-weight: 700;">caryncroofing@gmail.com</a> or call <a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a>.
           </p>
         </section>
       </main>
@@ -643,7 +793,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
     'Terms of Service, contractor referral standards, estimate guidelines, Town of Cary permit compliance, and warranty terms for caryncroofing.com in Cary, NC.';
   const termsDescriptor: PageSeoDescriptor = {
     canonicalSlug: 'terms-of-service.html',
-    outputFiles: ['terms-of-service.html', 'terms-of-service/index.html'],
+    outputFiles: ['terms-of-service.html'],
     aliases: ['terms-of-service.html', 'terms-of-service', 'terms'],
     title: termsTitle,
     description: termsDesc,
@@ -664,13 +814,34 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
       <main style="max-width: 1100px; margin: 0 auto; padding: 36px 24px; color: #000000; line-height: 1.6;">
         <div class="kicker">LEGAL TERMS &amp; CONDITIONS</div>
         <h1 style="font-size: 38px; font-weight: 800; margin: 0 0 16px 0;">Terms of Service &amp; Operational Agreement</h1>
-        <p style="font-size: 16px; margin-bottom: 20px;">
+        <p style="font-size: 16px; margin-bottom: 24px;">
           Effective Date: October 18, 2026. These Terms of Service govern your access to and use of <strong>caryncroofing.com</strong>, including all roofing estimate tools, cost calculators, on-site assessment dispatch services, and licensed contractor interactions across Cary, NC and Wake County.
         </p>
-        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 24px;">
-          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">Estimates, Permitting &amp; Manufacturer Warranties</h2>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">1. Acceptance of Terms</h2>
           <p style="font-size: 15px; margin: 0;">
-            Online calculator figures represent preliminary estimates; final binding project pricing is confirmed following a physical 21-point roof inspection. All full replacements comply with Town of Cary Inspections &amp; Permits requirements and North Carolina Residential Code Chapter 9.
+            By submitting an estimate request form, using our <a href="/cary-nc-roofing-calculator.html" style="color: #9A3412; font-weight: 700;">online roofing calculator</a>, or calling our central Cary dispatch desk at <a href="tel:+19193359543" style="color: #9A3412; font-weight: 700;">+1 919-335-9543</a>, you agree to these Terms of Service.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">2. Scope, Estimates &amp; Town of Cary Permitting</h2>
+          <p style="font-size: 15px; margin: 0 0 10px 0;">
+            Cary Roofing operates a curated network of independently licensed, vetted, and $2M-insured roofing contractors in Wake County. Online calculator figures are preliminary estimates; final binding project pricing is confirmed solely following a physical 21-point roof inspection.
+          </p>
+          <p style="font-size: 15px; margin: 0;">
+            All full replacements comply with Town of Cary Inspections &amp; Permits requirements and Chapter 9 of the North Carolina Residential Building Code.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">3. Warranties &amp; Manufacturer Guarantees</h2>
+          <p style="font-size: 15px; margin: 0;">
+            Manufacturer warranties (GAF Golden Pledge, CertainTeed SureStart PLUS, Owens Corning Platinum) are registered directly after final inspection. Workmanship warranties are provided in writing by the assigned licensed contractor.
+          </p>
+        </section>
+        <section style="padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff; margin-bottom: 20px;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px 0;">4. Governing Law &amp; Legal Contact</h2>
+          <p style="font-size: 15px; margin: 0;">
+            Governed by the laws of the State of North Carolina with exclusive jurisdiction in Wake County courts. Contact <strong>Cary Roofing Contractors LLC</strong> at 580 New Waverly Pl Ste 216, Cary, NC 27518 or <a href="mailto:caryncroofing@gmail.com" style="color: #9A3412; font-weight: 700;">caryncroofing@gmail.com</a>.
           </p>
         </section>
       </main>
@@ -678,6 +849,7 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
   };
 
   // 7. Standing Seam Metal Roof Editorial Guide (Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof)
+  // NOTE: Keeps exact H2 heading ("Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA") and full FAQ parity!
   const standingSlug = 'Why-More-Homeowners-Are-Choosing-Standing-Seam-Metal-Roof';
   const standingUrl = `${SITE_ORIGIN}/${standingSlug}`;
   const standingTitle = 'Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA | CaryRoofing';
@@ -686,22 +858,37 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
   const standingFaqs = [
     {
       q: 'How long does a standing seam metal roof last?',
-      a: 'When properly installed with 24-gauge Galvalume and Kynar 500 coating, a standing seam metal roof easily lasts 40 to 70 years with minimal annual maintenance.',
+      a: 'If it is installed in the proper way, it can easily last 40 to 70 years. Some roofs go even more than that depending on metal gauge, Kynar 500 coating quality, and annual inspection.',
     },
     {
       q: 'How much does a standing seam roof cost per square foot?',
-      a: 'Installed standing seam metal roofing typically ranges from $9 to $16 per square foot depending on metal gauge, roof complexity, and tear-off requirements.',
+      a: 'In the US, it normally costs around $9 to $16 per square foot with full installation depending on material gauge, roof complexity, labor charges, and old roof tear-off requirements.',
+    },
+    {
+      q: 'Does a metal roof make a house hotter?',
+      a: 'No. With a high-reflectance Kynar finish and proper attic ventilation and insulation, standing seam metal roofs reflect solar radiation and help reduce cooling costs.',
+    },
+    {
+      q: 'Can you walk on a standing seam roof?',
+      a: 'Yes, carefully, though wet or steep panels are slippery and improper footing can dent seams or scratch coatings. Calling a professional inspector is recommended for routine checks or repairs.',
+    },
+    {
+      q: 'How often does metal roof need maintenance?',
+      a: 'Minimal maintenance is needed: inspect once per year and after major storms to clear leaves or debris from valleys and check flashing and drainage paths.',
     },
   ];
+  const standingFaqsHtml = standingFaqs
+    .map(
+      (f) => `
+        <div style="padding: 18px; background: #FAF8F4; border-radius: 10px; border: 1px solid #e8e4df;">
+          <h3 style="font-size: 17px; font-weight: 700; margin: 0 0 6px 0;">${escapeHtml(f.q)}</h3>
+          <p style="margin: 0; font-size: 15px;">${escapeHtml(f.a)}</p>
+        </div>`
+    )
+    .join('');
   const standingDescriptor: PageSeoDescriptor = {
     canonicalSlug: standingSlug,
-    outputFiles: [
-      `${standingSlug}/index.html`,
-      `${standingSlug}.html`,
-      'why-more-homeowners-are-choosing-standing-seam-metal-roof/index.html',
-      'standing-seam-metal-roof/index.html',
-      'standing-seam-metal-roof.html',
-    ],
+    outputFiles: [`${standingSlug}/index.html`],
     aliases: [
       standingSlug,
       `${standingSlug}.html`,
@@ -739,15 +926,77 @@ export function getAllStaticPageDescriptors(): PageSeoDescriptor[] {
         <h2 style="font-size: 38px; font-weight: 800; line-height: 1.2; margin: 0 0 16px 0;">
           Why More Homeowners Are Choosing Standing Seam Metal Roof Cary NC USA
         </h2>
-        <p style="font-size: 17px; margin-bottom: 20px;">
-          More Cary, NC homeowners are upgrading from traditional asphalt shingles to concealed-fastener 24-gauge standing seam metal roofing for 40&ndash;70 year durability, 140+ mph hurricane wind resistance, Kynar 500 solar heat reflection, and non-penetrating solar panel clamp compatibility.
+        <p style="font-size: 17px; margin-bottom: 16px;">
+          A quality roof provides structural security, energy efficiency, and long-term property value. More homeowners in Cary, NC are upgrading from traditional <a href="/shingle-tile-slate-roofing-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">asphalt shingles</a> to <a href="/metal-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">architectural standing seam metal roofing</a> because screws and clips are concealed beneath interlocking raised seams, protecting the roof deck for 40 to 70+ years.
         </p>
-        <p style="font-size: 15px; margin-bottom: 28px;">
-          Explore related guides: <a href="/metal-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Metal Roofing Services Cary NC</a> &bull;
-          <a href="/shingle-tile-slate-roofing-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Shingle, Tile &amp; Slate Comparison</a> &bull;
-          <a href="/cary-nc-roofing-calculator.html" style="color: #9A3412; font-weight: 700;">Cary NC Roofing Cost Calculator</a>
-        </p>
+        <div style="margin-bottom: 28px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="tel:+19193359543" style="background: #9A3412; color: #ffffff; padding: 14px 26px; border-radius: 8px; font-weight: 800; text-decoration: none;">Call Cary Hotline: +1 919-335-9543</a>
+          <a href="/contact-cary-roofing.html" style="background: #141c27; color: #ffffff; padding: 14px 26px; border-radius: 8px; font-weight: 800; text-decoration: none;">Get Free Standing Seam Quote</a>
+        </div>
+
+        <section style="margin-bottom: 32px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 12px 0;">What Is a Standing Seam Metal Roof?</h2>
+          <p style="font-size: 15px; margin: 0 0 12px 0;">
+            A standing seam metal roof uses continuous 24-gauge Galvalume steel or aluminum panels running from ridge to eaves joined by 1.5&Prime; to 2&Prime; raised seams with hidden clips. Unlike exposed-fastener metal roofs, rain and UV light never hit fasteners directly. All installations meet <a href="https://www.carync.gov/services-permits/permits-inspections" target="_blank" rel="noopener noreferrer" style="color: #9A3412; font-weight: 700;">Town of Cary Inspections &amp; Permits</a> and <a href="https://www.ncdoi.gov/osfm/engineering-and-codes/nc-state-building-codes" target="_blank" rel="noopener noreferrer" style="color: #9A3412; font-weight: 700;">North Carolina State Building Code</a> requirements.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 14px 0;">Why Are More Homeowners Choosing Standing Seam Metal Roofing?</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">1. Long-Lasting Durability</h3>
+              <p style="margin: 0; font-size: 14px;">Engineered for a 40 to 70+ year lifespan against humid Carolina summers and heavy storm cycles.</p>
+            </div>
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">2. Excellent Weather Protection</h3>
+              <p style="margin: 0; font-size: 14px;">Raised vertical seams and concealed clips withstand 140+ MPH winds and wind-driven rain without exposed screw leaks.</p>
+            </div>
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">3. Clean Modern Appearance</h3>
+              <p style="margin: 0; font-size: 14px;">Smooth vertical lines in Matte Black, Charcoal Gray, Bronze, White, and Dark Green complement modern, colonial, and farmhouse homes.</p>
+            </div>
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">4. Lower Routine Maintenance</h3>
+              <p style="margin: 0; font-size: 14px;">Zero exposed neoprene washers to crack or retighten; simple annual seam and gutter checks.</p>
+            </div>
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">5. Energy Savings (ENERGY STAR)</h3>
+              <p style="margin: 0; font-size: 14px;">Cool-roof reflective Kynar 500 coatings paired with <a href="/roof-insulation-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">attic insulation</a> reduce summer cooling loads.</p>
+            </div>
+            <div style="padding: 18px; border: 1px solid #e8e4df; border-radius: 10px; background: #ffffff;">
+              <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 6px 0;">6. Non-Penetrating Solar Compatibility</h3>
+              <p style="margin: 0; font-size: 14px;">S-5! seam clamps mount solar panels cleanly without drilling holes through roof panels.</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 32px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #ffffff;">
+          <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 12px 0;">Standing Seam vs. R-Panel vs. Asphalt Shingles</h2>
+          <p style="font-size: 15px; margin: 0;">
+            Standing seam offers concealed fasteners and 50+ year longevity; R-Panel uses exposed fasteners suited to garages and workshops; asphalt shingles offer the lowest upfront cost ($4.80&ndash;$6.50/sq ft) with an 18&ndash;25 year service life. Compare exact square-foot pricing with our <a href="/cary-nc-roofing-calculator.html" style="color: #9A3412; font-weight: 700;">Cary NC Roofing Cost Calculator</a>.
+          </p>
+        </section>
+
         ${renderZipDispatchSection()}
+
+        <section style="margin-bottom: 32px;">
+          <h2 style="font-size: 26px; font-weight: 800; margin: 0 0 16px 0;">Frequently Asked Questions: Standing Seam Metal Roof Cost &amp; Care</h2>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            ${standingFaqsHtml}
+          </div>
+        </section>
+
+        <section style="margin-bottom: 24px; padding: 24px; border: 1px solid #e8e4df; border-radius: 12px; background: #FAF8F4;">
+          <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 12px 0;">Related Cary, NC Roofing Guides &amp; Authorities</h2>
+          <ul style="padding-left: 20px; font-size: 14px; line-height: 1.8; margin: 0;">
+            <li><a href="/metal-roofing-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Architectural Metal Roofing Services Cary NC</a></li>
+            <li><a href="/roof-replacement-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">Complete Roof Replacement Services in Cary NC</a></li>
+            <li><a href="/roof-inspection-services-cary-nc-usa.html" style="color: #9A3412; font-weight: 700;">HAAG Drone Roof Inspection Services</a></li>
+            <li><a href="/our-locations.html" style="color: #9A3412; font-weight: 700;">All Cary ZIP Code Service Locations (27511&ndash;27519)</a></li>
+            <li><a href="https://www.metalroofing.com/" target="_blank" rel="noopener noreferrer" style="color: #9A3412;">Metal Roofing Alliance (MRA)</a> &bull; <a href="https://www.energystar.gov/" target="_blank" rel="noopener noreferrer" style="color: #9A3412;">ENERGY STAR Cool Roofs</a> &bull; <a href="https://www.nrca.net/" target="_blank" rel="noopener noreferrer" style="color: #9A3412;">NRCA</a></li>
+          </ul>
+        </section>
       </main>
       ${renderSharedFooter()}`,
   };

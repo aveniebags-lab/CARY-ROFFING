@@ -53,12 +53,19 @@ function staticSeoPagesPlugin(): Plugin {
           return next();
         }
 
+        if (matched.canonicalSlug !== '404.html' && cleanSlug !== matched.canonicalSlug) {
+          res.statusCode = 301;
+          res.setHeader('Location', `/${matched.canonicalSlug}`);
+          res.end();
+          return;
+        }
+
         try {
           const indexHtmlPath = path.resolve(__dirname, 'index.html');
           const rawTemplate = fs.readFileSync(indexHtmlPath, 'utf-8');
           const pageHtml = renderStaticPageHtml(rawTemplate, matched);
           const transformed = await server.transformIndexHtml(rawUrlPath, pageHtml);
-          res.statusCode = 200;
+          res.statusCode = matched.canonicalSlug === '404.html' ? 404 : 200;
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.end(transformed);
         } catch (err) {
